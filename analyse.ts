@@ -1,8 +1,10 @@
 import { scrape } from 'jsr:@panha/scrape/'
-import { parse, stringify } from 'jsr:@std/csv'
+import { parse } from 'jsr:@std/csv'
 const delay = (ms) => new Promise((res) => setTimeout(res, ms))
 
 const alreadyDone = JSON.parse(Deno.readTextFileSync('data.json') || '{}')
+
+const deleted = ['@JCGrelier']
 
 const doneEntries = Object.entries(alreadyDone)
 console.log(`Déjà ${doneEntries.length} comptes de députés vérifiés`)
@@ -11,10 +13,15 @@ import { launch } from 'jsr:@astral/astral'
 
 const csv = Deno.readTextFileSync('députés-datan-25-12-2024.csv')
 
-const députésRaw = parse(csv, {
+const députésRaw0 = parse(csv, {
   skipFirstRow: true,
   strip: true,
 })
+
+const députésRaw = députésRaw0
+  .map((value) => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
 
 const députés = députésRaw.map((d) => {
   if (!d.twitter) return d
@@ -29,16 +36,22 @@ const hasTwitter = députés.filter((d) => d.twitter && d.twitter !== ''),
 console.log(hasTwitter.length, hasNotLength, députés.length)
 
 const bridés = hasTwitter
-  .filter((d) => !doneEntries.find(([at]) => at === d.twitter))
-  .slice(0, 10)
+  .filter(
+    (d) =>
+      !(
+        deleted.includes(d.twitter) ||
+        doneEntries.find(([at]) => at === d.twitter)
+      )
+  )
+  .slice(0, 30)
 
 const atList = [...bridés.map((d) => d.twitter)]
 
 const doFetch = async () => {
   const entries = await Promise.all(
-    atList.map((at, i) => checkAt(at, i * 12000))
+    atList.map((at, i) => checkAt(at, i * 3000))
   )
-  const o = Object.fromEntries(entries)
+  const o = Object.fromEntries(entries.filter(Boolean))
   Deno.writeTextFileSync(
     './data.json',
     JSON.stringify({ ...alreadyDone, ...o })
@@ -46,7 +59,6 @@ const doFetch = async () => {
   return console.log("Voilà c'est analysé dans ./data.json")
 }
 
-/* 
 const ws =
   'ws://127.0.0.1:1337/devtools/browser/e82185e6-f90d-4da1-9a67-0a8445f82b85'
 
@@ -54,8 +66,7 @@ const browser = await launch({
   wsEndpoint: ws,
   headless: false,
 })
-await delay(25000 / 10)
-*/
+await delay(30000 / 1)
 
 const checkAt = async (at, ms) => {
   await delay(ms)
@@ -66,35 +77,47 @@ const checkAt = async (at, ms) => {
   console.log('Lancement du scraping pour ', netAt)
 
   //const url = 'https://xcancel.com/' + netAt
-  //const url = 'https://x.com/' + netAt
-  const url = 'https://nitter.poast.org/' + netAt
+  const url = 'https://x.com/' + netAt
+  //const url = 'https://nitter.poast.org/' + netAt
   //const url = 'https://cartes.app/blog'
   console.log('will' + url)
 
-  /* 
-  const page = await browser.newPage(url)
-  await delay(2000)
-  // Run code in the context of the browser
-  const value = await page.locator('small').evaluateAll((el) => el.textContent)
-  console.log('sq', value)
+  try {
+    const page = await browser.newPage(url)
+    await delay(3000)
+    // Run code in the context of the browser
+    // Run code in the context of the browser
+    const values = await page.evaluate(() => {
+      const html = document.body.innerHTML
 
-  // Close connection
-  //await browser.close()
+      return Array.from(html.matchAll(/datetime="(\d\d\d\d-\d\d-\d\d)T/g)).map(
+        (match) => match[1]
+      )
+    })
+    console.log(values)
+    if (values.length < 2)
+      throw new Error(
+        "Pas assez de tweets trouvés, c'est suspect ! Investiguer " + at
+      )
 
-  /*
-  const browser = await launch()
-  const page = await browser.newPage(url)
-  await page.waitForNetworkIdle({ idleConnections: 0, idleTime: 10000 })
+    const dates = values.map((date) => new Date(date))
 
-  // Take a screenshot of the page and save that to disk
-  const screenshot = await page.screenshot()
-  browser.close()
-  Deno.writeFileSync('./screenshot' + at + '.png', screenshot)
-  console.log('written')
-  */
+    const nowStamp = new Date().getTime()
+    const threeDaysSpan = 3 * 24 * 60 * 60 * 1000
 
-  let scraper = null
+    const recentTweets = dates.map(
+      (date) => date.getTime() > nowStamp - threeDaysSpan
+    )
+    console.log(recentTweets)
+    const hasRecentTweets = recentTweets.filter(Boolean).length > 0
 
+    return [at, hasRecentTweets]
+  } catch (e) {
+    console.log('Erreur pour ' + at)
+    return false
+  }
+
+  return
   try {
     // Wait for 1 second or wait for an <h1> element to appear
     scraper = await scrape(url, {
