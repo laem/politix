@@ -16,7 +16,7 @@ export default function Home() {
           }}
         >
           <div style={{ fontSize: '500%', textAlign: 'center', width: '100%' }}>
-            🤢
+            😒
           </div>
           <h1 class="text-4xl font-bold">PolitiX</h1>
         </header>
