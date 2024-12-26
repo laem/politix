@@ -23,8 +23,36 @@ export default function PerParty({ entries }) {
       <h3>Résumé par parti</h3>
       <ul style={{ listStyleType: 'none' }}>
         {stats.map(([party, total, percentActive]) => (
-          <li key={party}>
-            <PartyVignette party={party} /> <div>{percentActive} %</div>
+          <li
+            key={party}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '.4rem',
+            }}
+          >
+            <div style={{ width: '5rem', marginRight: '0rem' }}>
+              <PartyVignette party={party} />
+            </div>
+            <div style={{ width: '80%' }}>
+              <div
+                style={{
+                  width: percentActive + '%',
+                  background: 'crimson',
+                  borderRadius: '.2rem',
+                  paddingLeft: '.2rem',
+                  color: percentActive < 5 ? 'black' : 'white',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                <div style={{ marginLeft: '.4rem' }}>
+                  {percentActive}&nbsp;%{' '}
+                  <small style={{ color: '#ff9aae' }}>
+                    ({Math.round(percentActive * total)} / {total})
+                  </small>
+                </div>
+              </div>
+            </div>
           </li>
         ))}
       </ul>
