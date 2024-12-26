@@ -47,8 +47,10 @@ export default function Results() {
                 <div>
                   <small style={{ color: '#f1a8b7' }}>{twitter}</small>
                 </div>
-                <div>
-                  {prenom} {nom}
+                <div style={{ maxWidth: '100%' }}>
+                  <div style={{ whiteSpace: 'nowrap', overflow: 'scroll' }}>
+                    {prenom} {nom}
+                  </div>
                 </div>
                 <div
                   style={{
