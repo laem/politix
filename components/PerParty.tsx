@@ -20,7 +20,7 @@ export default function PerParty({ entries }) {
     .sort(([, , a], [, , b]) => -a + b)
   return (
     <div>
-      <h3>Résumé par parti</h3>
+      <h3 style={{ marginBottom: '1rem' }}>Résumé par parti</h3>
       <ul style={{ listStyleType: 'none' }}>
         {stats.map(([party, total, percentActive]) => (
           <li
@@ -48,7 +48,8 @@ export default function PerParty({ entries }) {
                 <div style={{ marginLeft: '.4rem' }}>
                   {percentActive}&nbsp;%{' '}
                   <small style={{ color: '#ff9aae' }}>
-                    ({Math.round(percentActive * total)} / {total})
+                    ({Math.round((percentActive / 100) * total)} / {total}{' '}
+                    testés)
                   </small>
                 </div>
               </div>
