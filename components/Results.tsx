@@ -34,6 +34,7 @@ export default function Results() {
           console.log('DATES', dates)
           const result = hasRecentTweets(dates)
           const député = findDéputé(at)
+          if (!député) throw new Error('Député non trouvé ' + at)
           const { prenom, nom, groupe, groupeAbrev, twitter } = député
           return (
             <li
