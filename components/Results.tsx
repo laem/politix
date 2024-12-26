@@ -2,6 +2,7 @@ const alreadyDone = JSON.parse(Deno.readTextFileSync('data.json') || '{}')
 const csv = Deno.readTextFileSync('députés-datan-25-12-2024.csv')
 import { parse } from 'jsr:@std/csv'
 import { hasRecentTweets } from '../date-utils.ts'
+import { findContrastedTextColor, partyColors } from './couleurs-assemblée.ts'
 const députés = parse(csv, {
   skipFirstRow: true,
   strip: true,
@@ -29,6 +30,8 @@ export default function Results() {
             const result = hasRecentTweets(dates)
             const député = findDéputé(at)
             const { prenom, nom, groupe, groupeAbrev, twitter } = député
+            const partyColor = partyColors[groupeAbrev] || 'chartreuse',
+              partyTextColor = findContrastedTextColor(partyColor, true)
             return (
               <li
                 key={at}
@@ -54,11 +57,11 @@ export default function Results() {
                 </div>
                 <div
                   style={{
-                    background: result ? '#333' : '#888',
+                    background: partyColor,
                     borderRadius: '.4rem',
                     padding: '0 .2rem',
                     width: 'fit-content',
-                    color: 'white',
+                    color: partyTextColor,
                   }}
                 >
                   {groupeAbrev}
