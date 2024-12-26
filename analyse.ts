@@ -43,7 +43,7 @@ const bridés = hasTwitter
         doneEntries.find(([at]) => at === d.twitter)
       )
   )
-  .slice(0, 20)
+  .slice(0, 40)
 
 const atList = [...bridés.map((d) => d.twitter)]
 
@@ -73,7 +73,7 @@ const browser = await launch({
 await delay(30000 / 1)
 
 const checkAt = async (at, i) => {
-  await delay(i * 6000)
+  await delay(i * 10000)
   if (!at.startsWith('@') && at.length < 2)
     throw new Error('Problème dans le pseudo ' + at + '.')
 
