@@ -1,5 +1,5 @@
 import { hasRecentTweets } from '../date-utils.ts'
-import { findDéputé } from './Results.tsx'
+import { PartyVignette, findDéputé } from './Results.tsx'
 import { partyColors } from './couleurs-assemblée.ts'
 
 export default function PerParty({ entries }) {
@@ -21,13 +21,10 @@ export default function PerParty({ entries }) {
   return (
     <div>
       <h3>Résumé par parti</h3>
-      <ul>
+      <ul style={{ listStyleType: 'none' }}>
         {stats.map(([party, total, percentActive]) => (
           <li key={party}>
-            <span style={{ color: 'white', background: partyColors[party] }}>
-              {party}
-            </span>{' '}
-            : {percentActive} %
+            <PartyVignette party={party} /> <div>{percentActive} %</div>
           </li>
         ))}
       </ul>

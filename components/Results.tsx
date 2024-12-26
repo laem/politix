@@ -35,8 +35,6 @@ export default function Results() {
           const result = hasRecentTweets(dates)
           const député = findDéputé(at)
           const { prenom, nom, groupe, groupeAbrev, twitter } = député
-          const partyColor = partyColors[groupeAbrev] || 'chartreuse',
-            partyTextColor = findContrastedTextColor(partyColor, true)
           return (
             <li
               key={at}
@@ -60,17 +58,7 @@ export default function Results() {
                   {prenom} {nom}
                 </div>
               </div>
-              <div
-                style={{
-                  background: partyColor,
-                  borderRadius: '.4rem',
-                  padding: '0 .2rem',
-                  width: 'fit-content',
-                  color: partyTextColor,
-                }}
-              >
-                {groupeAbrev}
-              </div>
+              <PartyVignette party={groupeAbrev} />
               <div>
                 {result ? (
                   <div>
@@ -92,5 +80,23 @@ export default function Results() {
         })}
       </ul>
     </section>
+  )
+}
+
+export const PartyVignette = ({ party }) => {
+  const partyColor = partyColors[party] || 'chartreuse',
+    partyTextColor = findContrastedTextColor(partyColor, true)
+  return (
+    <div
+      style={{
+        background: partyColor,
+        borderRadius: '.4rem',
+        padding: '0 .2rem',
+        width: 'fit-content',
+        color: partyTextColor,
+      }}
+    >
+      {party}
+    </div>
   )
 }

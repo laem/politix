@@ -43,14 +43,12 @@ const bridés = hasTwitter
         doneEntries.find(([at]) => at === d.twitter)
       )
   )
-  .slice(0, 100)
+  .slice(0, 30)
 
 const atList = [...bridés.map((d) => d.twitter)]
 
 const doFetch = async () => {
-  const entries = await Promise.all(
-    atList.map((at, i) => checkAt(at, i * 3000))
-  )
+  const entries = await Promise.all(atList.map((at, i) => checkAt(at, i)))
   const o = Object.fromEntries(entries.filter(Boolean))
 
   const lastDate = new Date().toISOString().split('T')[0]
@@ -74,8 +72,8 @@ const browser = await launch({
 })
 await delay(30000 / 1)
 
-const checkAt = async (at, ms) => {
-  await delay(ms)
+const checkAt = async (at, i) => {
+  await delay(i * 3000)
   if (!at.startsWith('@') && at.length < 2)
     throw new Error('Problème dans le pseudo ' + at + '.')
 
@@ -86,7 +84,7 @@ const checkAt = async (at, ms) => {
   const url = 'https://x.com/' + netAt
   //const url = 'https://nitter.poast.org/' + netAt
   //const url = 'https://cartes.app/blog'
-  console.log('will' + url)
+  console.log('will' + url + ' ' + i)
 
   try {
     const page = await browser.newPage(url)
