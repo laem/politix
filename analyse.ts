@@ -4,7 +4,7 @@ const delay = (ms) => new Promise((res) => setTimeout(res, ms))
 
 const alreadyDone = JSON.parse(Deno.readTextFileSync('data.json') || '{}')
 
-const deleted = ['@JCGrelier']
+const deleted = ['@JCGrelier', '@AndyKerbrat2022']
 
 const doneEntries = Object.entries(alreadyDone)
 console.log(`Déjà ${doneEntries.length} comptes de députés vérifiés`)
