@@ -1,5 +1,5 @@
 import { hasRecentTweets } from '../date-utils.ts'
-import { PartyVignette, findDéputé } from './Results.tsx'
+import { PartyVignette, findDéputé, getPartyName } from './Results.tsx'
 import { partyColors } from './couleurs-assemblée.ts'
 
 export default function PerParty({ entries }) {
@@ -33,33 +33,44 @@ export default function PerParty({ entries }) {
             key={party}
             style={{
               display: 'flex',
-              alignItems: 'center',
-              marginBottom: '.4rem',
+              flexDirection: 'column',
+              marginBottom: '.6rem',
             }}
           >
-            <div style={{ width: '5rem', marginRight: '0rem' }}>
-              <PartyVignette party={party} />
-            </div>
-            <div style={{ width: '80%' }}>
-              <div
-                style={{
-                  width: percentActive + '%',
-                  background: 'crimson',
-                  borderRadius: '.2rem',
-                  paddingLeft: '.2rem',
-                  color: percentActive < 5 ? 'black' : 'white',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                <div style={{ marginLeft: '.4rem' }}>
-                  {percentActive}&nbsp;%{' '}
-                  <small style={{ color: '#ff9aae' }}>
-                    ({Math.round((percentActive / 100) * total)} / {total}{' '}
-                    testés)
-                  </small>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '.4rem',
+              }}
+            >
+              <div style={{ width: '5rem', marginRight: '0rem' }}>
+                <PartyVignette party={party} />
+              </div>
+              <div style={{ width: '80%' }}>
+                <div
+                  style={{
+                    width: percentActive + '%',
+                    background: 'crimson',
+                    borderRadius: '.2rem',
+                    paddingLeft: '.2rem',
+                    color: percentActive < 5 ? 'black' : 'white',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  <div style={{ marginLeft: '.4rem' }}>
+                    {percentActive}&nbsp;%{' '}
+                    <small style={{ color: '#ff9aae' }}>
+                      ({Math.round((percentActive / 100) * total)} / {total}{' '}
+                      testés)
+                    </small>
+                  </div>
                 </div>
               </div>
             </div>
+            <small style={{ color: '#bbb', lineHeight: '.8rem' }}>
+              {getPartyName(party)}
+            </small>
           </li>
         ))}
       </ul>

@@ -87,6 +87,7 @@ export default function Results() {
 export const PartyVignette = ({ party }) => {
   const partyColor = partyColors[party] || 'chartreuse',
     partyTextColor = findContrastedTextColor(partyColor, true)
+  const group = getPartyName(party)
   return (
     <div
       style={{
@@ -96,8 +97,16 @@ export const PartyVignette = ({ party }) => {
         width: 'fit-content',
         color: partyTextColor,
       }}
+      title={group}
     >
       {party}
     </div>
   )
+}
+
+export const getPartyName = (party) => {
+  const fullName = députés.find(
+    ({ groupeAbrev, groupe }) => groupeAbrev === party
+  ).groupe
+  return fullName
 }
