@@ -52,9 +52,15 @@ const doFetch = async () => {
     atList.map((at, i) => checkAt(at, i * 3000))
   )
   const o = Object.fromEntries(entries.filter(Boolean))
+
+  const lastDate = new Date().toISOString().split('T')[0]
   Deno.writeTextFileSync(
     './data.json',
-    JSON.stringify({ ...alreadyDone, ...o })
+    JSON.stringify({
+      ...alreadyDone,
+      ...o,
+      lastDate,
+    })
   )
   return console.log("Voilà c'est analysé dans ./data.json")
 }
@@ -100,18 +106,7 @@ const checkAt = async (at, ms) => {
         "Pas assez de tweets trouvés, c'est suspect ! Investiguer " + at
       )
 
-    const dates = values.map((date) => new Date(date))
-
-    const nowStamp = new Date().getTime()
-    const threeDaysSpan = 3 * 24 * 60 * 60 * 1000
-
-    const recentTweets = dates.map(
-      (date) => date.getTime() > nowStamp - threeDaysSpan
-    )
-    console.log(recentTweets)
-    const hasRecentTweets = recentTweets.filter(Boolean).length > 0
-
-    return [at, hasRecentTweets]
+    return [at, dates]
   } catch (e) {
     console.log('Erreur pour ' + at)
     return false

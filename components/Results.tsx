@@ -1,6 +1,7 @@
 const alreadyDone = JSON.parse(Deno.readTextFileSync('data.json') || '{}')
 const csv = Deno.readTextFileSync('députés-datan-25-12-2024.csv')
 import { parse } from 'jsr:@std/csv'
+import { hasRecentTweets } from '../date-utils.ts'
 const députés = parse(csv, {
   skipFirstRow: true,
   strip: true,
@@ -19,50 +20,54 @@ export default function Results() {
         marginTop: '2rem',
       }}
     >
-      {Object.entries(alreadyDone).map(([at, result]) => {
-        const député = findDéputé(at)
-        const { prenom, nom, groupe, groupeAbrev } = député
-        return (
-          <li
-            key={at}
-            style={{
-              listStyleType: 'none',
-              width: '12rem',
-              height: '5rem',
-              background: result ? 'crimson' : 'transparent',
-              border: result ? '1px solid crimson' : '1px solid gray',
-              color: result ? 'white' : 'black',
-              borderRadius: '.4rem',
-              margin: '.4rem 0',
-              padding: '0 .4rem',
-            }}
-          >
-            <div>
-              {prenom} {nom}
-            </div>
-            <div
+      {Object.entries(alreadyDone)
+        .filter(([at]) => at !== 'lastDate')
+        .map(([at, dates]) => {
+          console.log('DATES', dates)
+          const result = hasRecentTweets(dates)
+          const député = findDéputé(at)
+          const { prenom, nom, groupe, groupeAbrev } = député
+          return (
+            <li
+              key={at}
               style={{
-                background: result ? '#333' : '#888',
+                listStyleType: 'none',
+                width: '12rem',
+                height: '5rem',
+                background: result ? 'crimson' : 'transparent',
+                border: result ? '1px solid crimson' : '1px solid gray',
+                color: result ? 'white' : 'black',
                 borderRadius: '.4rem',
-                padding: '0 .2rem',
-                width: 'fit-content',
-                color: 'white',
+                margin: '.4rem 0',
+                padding: '0 .4rem',
               }}
             >
-              {groupeAbrev}
-            </div>
-            <div>
-              {result ? (
-                <div>
-                  <div>Actif</div>
-                </div>
-              ) : (
-                'Non actif'
-              )}
-            </div>
-          </li>
-        )
-      })}
+              <div>
+                {prenom} {nom}
+              </div>
+              <div
+                style={{
+                  background: result ? '#333' : '#888',
+                  borderRadius: '.4rem',
+                  padding: '0 .2rem',
+                  width: 'fit-content',
+                  color: 'white',
+                }}
+              >
+                {groupeAbrev}
+              </div>
+              <div>
+                {result ? (
+                  <div>
+                    <div>Actif</div>
+                  </div>
+                ) : (
+                  'Non actif'
+                )}
+              </div>
+            </li>
+          )
+        })}
     </ul>
   )
 }
