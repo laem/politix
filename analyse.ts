@@ -43,7 +43,7 @@ const bridés = hasTwitter
         doneEntries.find(([at]) => at === d.twitter)
       )
   )
-  .slice(0, 30)
+  .slice(0, 100)
 
 const atList = [...bridés.map((d) => d.twitter)]
 
@@ -106,7 +106,7 @@ const checkAt = async (at, ms) => {
         "Pas assez de tweets trouvés, c'est suspect ! Investiguer " + at
       )
 
-    return [at, dates]
+    return [at, values]
   } catch (e) {
     console.log('Erreur pour ' + at)
     return false
