@@ -49,7 +49,7 @@ const bridés = hasTwitter
         doneEntries.find(([at]) => at === d.twitter)
       )
   )
-  .slice(0, 60)
+  .slice(0, 100)
 
 const atList = [...bridés.map((d) => d.twitter)]
 
