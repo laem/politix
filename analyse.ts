@@ -4,7 +4,13 @@ const delay = (ms) => new Promise((res) => setTimeout(res, ms))
 
 const alreadyDone = JSON.parse(Deno.readTextFileSync('data.json') || '{}')
 
-const deleted = ['@JCGrelier', '@AndyKerbrat2022', '@Peioizate']
+const deleted = [
+  '@JCGrelier',
+  '@AndyKerbrat2022',
+  '@Peioizate',
+  '@stephan1Rambaud',
+  '@AnnaigLeMeur_AN',
+]
 
 const doneEntries = Object.entries(alreadyDone)
 console.log(`Déjà ${doneEntries.length} comptes de députés vérifiés`)
@@ -43,7 +49,7 @@ const bridés = hasTwitter
         doneEntries.find(([at]) => at === d.twitter)
       )
   )
-  .slice(0, 60)
+  .slice(0, 50)
 
 const atList = [...bridés.map((d) => d.twitter)]
 
