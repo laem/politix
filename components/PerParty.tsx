@@ -20,8 +20,14 @@ export default function PerParty({ entries }) {
     .sort(([, , a], [, , b]) => -a + b)
   return (
     <div>
+      <p style={{ textAlign: 'center', color: '#980c0c' }}>
+        L'analyse est en cours : nous avons pour l'instant testé{' '}
+        {entries.length} députés.
+      </p>
       <h3 style={{ marginBottom: '1rem' }}>Résumé par parti</h3>
-      <ul style={{ listStyleType: 'none' }}>
+      <ul
+        style={{ listStyleType: 'none', maxWidth: '50rem', margin: '0 auto' }}
+      >
         {stats.map(([party, total, percentActive]) => (
           <li
             key={party}
