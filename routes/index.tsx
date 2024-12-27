@@ -1,6 +1,7 @@
 import { useSignal } from '@preact/signals'
 import Counter from '../islands/Counter.tsx'
 import Results from '../components/Results.tsx'
+import { daysSpan } from '../date-utils.ts'
 
 export default function Home() {
   const count = useSignal(3)
@@ -22,7 +23,8 @@ export default function Home() {
         </header>
         <p>
           Découvrez la liste des <em>politix</em>, ces élus de la République qui
-          utilisaient encore activement leur compte X dans les 3 derniers jours.
+          utilisaient encore activement leur compte X dans les {daysSpan}{' '}
+          derniers jours.
         </p>
         <Results />
       </div>

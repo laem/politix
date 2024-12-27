@@ -1,6 +1,7 @@
 import data from './data.json' with { type: "json" }
 
-const threeDaysSpan = 7 * 24 * 60 * 60 * 1000
+export const daysSpan = 7
+const threeDaysSpan = daysSpan * 24 * 60 * 60 * 1000
 
 //"lastDate": "2024-12-26",
 export const updateDate = data['lastDate']
