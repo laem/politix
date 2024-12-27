@@ -1,4 +1,4 @@
-import { hasRecentTweets } from '../date-utils.ts'
+import { hasRecentTweets, updateDate } from '../date-utils.ts'
 import { PartyVignette, findDéputé, getPartyName } from './Results.tsx'
 import { partyColors } from './couleurs-assemblée.ts'
 
@@ -22,7 +22,7 @@ export default function PerParty({ entries }) {
     <div>
       <p style={{ textAlign: 'center', color: '#980c0c' }}>
         L'analyse est en cours : nous avons pour l'instant testé{' '}
-        {entries.length} députés.
+        {entries.length} députés à la date du {updateDate}.
       </p>
       <h3 style={{ marginBottom: '1rem' }}>Résumé par parti</h3>
       <ul
@@ -60,7 +60,7 @@ export default function PerParty({ entries }) {
                 >
                   <div style={{ marginLeft: '.4rem' }}>
                     {percentActive}&nbsp;%{' '}
-                    <small style={{ color: '#ff9aae' }}>
+                    <small style={{ color: '#f8b8c5' }}>
                       ({Math.round((percentActive / 100) * total)} / {total}{' '}
                       testés)
                     </small>
