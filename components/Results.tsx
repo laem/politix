@@ -23,8 +23,10 @@ export default function Results() {
       <h3>Liste complète</h3>
       <ul
         style={{
-          display: 'flex',
-          flexWrap: 'wrap',
+          display: 'grid',
+          gridAutoColumns: '12rem',
+          gridTemplateColumns: 'repeat(auto-fill, 12rem)',
+          alignItems: 'baseline',
           gap: '1rem',
           width: '90vw',
           marginTop: '2rem',
@@ -47,7 +49,6 @@ export default function Results() {
                 border: result ? '1px solid crimson' : '1px solid gray',
                 color: result ? 'white' : 'black',
                 borderRadius: '.4rem',
-                margin: '.4rem 0',
                 padding: '0 .4rem',
               }}
             >
