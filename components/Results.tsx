@@ -42,7 +42,7 @@ export default function Results() {
               style={{
                 listStyleType: 'none',
                 width: '12rem',
-                height: '7rem',
+                minHeight: '7rem',
                 background: result ? 'crimson' : 'transparent',
                 border: result ? '1px solid crimson' : '1px solid gray',
                 color: result ? 'white' : 'black',
