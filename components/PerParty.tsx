@@ -100,6 +100,7 @@ export default function PerParty({ entries, blueskyEntries }) {
                       percentActive: blueskyPercentActive,
                       total: blueskyTotal,
                       background: blueskyBlue,
+                      suffix: '',
                     }}
                   />
                 </div>

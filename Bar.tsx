@@ -1,4 +1,9 @@
-export default function Bar({ percentActive, total, background }) {
+export default function Bar({
+  percentActive,
+  total,
+  background,
+  suffix = 'testés',
+}) {
   return (
     <div
       style={{
@@ -13,7 +18,7 @@ export default function Bar({ percentActive, total, background }) {
       <div style={{ marginLeft: '.4rem' }}>
         {percentActive}&nbsp;%{' '}
         <small style={{ opacity: '0.65' }}>
-          ({Math.round((percentActive / 100) * total)} / {total} testés)
+          ({Math.round((percentActive / 100) * total)} / {total} {suffix})
         </small>
       </div>
     </div>
