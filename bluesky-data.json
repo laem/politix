@@ -1,0 +1,64 @@
+{
+  "PA720908": {
+    "nom": "Moutchou",
+    "prenom": "Naïma",
+    "groupeAbrev": "HOR",
+    "activité": null
+  },
+  "PA840817": {
+    "nom": "Bruneau",
+    "prenom": "Joël",
+    "groupeAbrev": "LIOT",
+    "activité": null
+  },
+  "PA719558": {
+    "nom": "Balanant",
+    "prenom": "Erwan",
+    "groupeAbrev": "DEM",
+    "bsky": "erwanbalanant.bsky.social",
+    "activité": ["2024-12-20", "2024-12-20"]
+  },
+  "PA2952": {
+    "nom": "Warsmann",
+    "prenom": "Jean-Luc",
+    "groupeAbrev": "LIOT",
+    "activité": null
+  },
+  "PA722134": {
+    "nom": "Fiévet",
+    "prenom": "Jean-Marie",
+    "groupeAbrev": "EPR",
+    "activité": null
+  },
+  "PA840955": {
+    "nom": "Pribetich",
+    "prenom": "Pierre",
+    "groupeAbrev": "SOC",
+    "activité": null
+  },
+  "PA841621": {
+    "nom": "Evrard",
+    "prenom": "Auguste",
+    "groupeAbrev": "RN",
+    "activité": null
+  },
+  "PA795876": {
+    "nom": "Rimane",
+    "prenom": "Davy",
+    "groupeAbrev": "GDR",
+    "activité": null
+  },
+  "PA721234": {
+    "nom": "Petit",
+    "prenom": "Maud",
+    "groupeAbrev": "DEM",
+    "activité": null
+  },
+  "PA793270": {
+    "nom": "Rousset",
+    "prenom": "Jean-François",
+    "groupeAbrev": "EPR",
+    "activité": null
+  }
+}
+

@@ -1,6 +1,8 @@
 import { scrape } from 'jsr:@panha/scrape/'
-import { parse } from 'jsr:@std/csv'
 const delay = (ms) => new Promise((res) => setTimeout(res, ms))
+
+import { launch } from 'jsr:@astral/astral'
+import députésRandomOrder from './députés.ts'
 
 const alreadyDone = JSON.parse(Deno.readTextFileSync('data.json') || '{}')
 
@@ -15,21 +17,7 @@ const deleted = [
 const doneEntries = Object.entries(alreadyDone)
 console.log(`Déjà ${doneEntries.length} comptes de députés vérifiés`)
 
-import { launch } from 'jsr:@astral/astral'
-
-const csv = Deno.readTextFileSync('députés-datan-25-12-2024.csv')
-
-const députésRaw0 = parse(csv, {
-  skipFirstRow: true,
-  strip: true,
-})
-
-const députésRaw = députésRaw0
-  .map((value) => ({ value, sort: Math.random() }))
-  .sort((a, b) => a.sort - b.sort)
-  .map(({ value }) => value)
-
-const députés = députésRaw.map((d) => {
+const députés = députésRandomOrder.map((d) => {
   if (!d.twitter) return d
   const match = d.twitter.match(/x\.com\/(.+)$/)
   if (match) return { ...d, twitter: '@' + match[1] }
@@ -54,7 +42,10 @@ const bridés = hasTwitter
 const atList = [...bridés.map((d) => d.twitter)]
 
 const doFetch = async () => {
-  const entries = await Promise.all(atList.map((at, i) => checkAt(at, i)))
+  const entries = await Promise.all(
+    atList.map((at, i) => checkTwitterActivity(at, i))
+  )
+
   const o = Object.fromEntries(entries.filter(Boolean))
 
   const lastDate = new Date().toISOString().split('T')[0]
@@ -78,7 +69,7 @@ const browser = await launch({
 })
 await delay(30000 / 1)
 
-const checkAt = async (at, i) => {
+const checkTwitterActivity = async (at, i) => {
   await delay(i * 20000)
   if (!at.startsWith('@') && at.length < 2)
     throw new Error('Problème dans le pseudo ' + at + '.')
