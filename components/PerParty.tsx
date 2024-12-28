@@ -1,5 +1,10 @@
 import { hasRecentTweets, updateDate } from '../date-utils.ts'
-import { PartyVignette, findDéputé, getPartyName } from './Results.tsx'
+import {
+  PartyVignette,
+  centerStyle,
+  findDéputé,
+  getPartyName,
+} from './Results.tsx'
 import { partyColors } from './couleurs-assemblée.ts'
 
 export default function PerParty({ entries }) {
@@ -24,7 +29,9 @@ export default function PerParty({ entries }) {
         L'analyse est en cours : nous avons pour l'instant testé{' '}
         {entries.length} députés à la date du {updateDate}.
       </p>
-      <h3 style={{ marginBottom: '1rem' }}>Résumé par parti</h3>
+      <h3 style={{ margin: '2rem 0 1rem', ...centerStyle }}>
+        Résumé par parti
+      </h3>
       <ul
         style={{ listStyleType: 'none', maxWidth: '50rem', margin: '0 auto' }}
       >

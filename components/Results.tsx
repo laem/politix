@@ -14,13 +14,14 @@ export const findDéputé = (at) =>
   députés.find((député) => député.twitter === at)
 const entries = Object.entries(alreadyDone).filter(([at]) => at !== 'lastDate')
 
+export const centerStyle = { textAlign: 'center' }
 export default function Results() {
   return (
     <section>
-      <h2 style={{ textAlign: 'center' }}>Les députés</h2>
+      <h2 style={centerStyle}>Les députés</h2>
       <PerParty entries={entries} />
 
-      <h3>Liste complète</h3>
+      <h3 style={centerStyle}>Liste complète</h3>
       <ul
         style={{
           display: 'grid',
