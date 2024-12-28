@@ -3,6 +3,8 @@ import { filterRecentTweets, hasRecentTweets } from './date-utils.ts'
 import députésRandomOrder from './députés.ts'
 import removeAccents from 'npm:remove-accents'
 
+const falsePositives = { PA841825: ['@patricemartin50.bsky.social'] }
+
 const logResult = ([député, activity]) => {
   const { nom, prenom, groupe, bsky } = député
   console.log(`On recherche ${prenom} ${nom}`)
@@ -47,7 +49,7 @@ const findBlueskyAccount = async (député, i) => {
   const json = await request.json()
 
   //console.log(json)
-  const actor = json.actors.find(({ displayName: name }) => {
+  const actor = json.actors.find(({ displayName: name, handle }) => {
     const nomSansAccents = removeAccents(nom).toLowerCase() // cf mariercd.bsky.social
     const prenomSansAccents = removeAccents(prenom).toLowerCase() // cf mariercd.bsky.social et bothorel.bsky.social
     const nameSansAccents = removeAccents(name).toLowerCase()
@@ -57,6 +59,13 @@ const findBlueskyAccount = async (député, i) => {
       !nameSansAccents.includes(prenomSansAccents)
     ) {
       //https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=pen%20marine%20le returns Marine Turchi as the first entry, and an irrelevant result as a second
+      return false
+    }
+
+    if (
+      falsePositives[député.id] &&
+      falsePositives[député.id].includes(handle)
+    ) {
       return false
     }
     return true // We're expecting the bluesky search algo to return the right account as the first

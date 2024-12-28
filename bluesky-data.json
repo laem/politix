@@ -1068,8 +1068,8 @@
     "nom": "Martin",
     "prenom": "Patrice",
     "groupeAbrev": "RN",
-    "bsky": "patricemartin50.bsky.social",
-    "activité": []
+    "bsky": null,
+    "activité": null
   },
   "PA794670": {
     "nom": "Parmentier",
@@ -4163,4 +4163,3 @@
     "activité": null
   }
 }
-
