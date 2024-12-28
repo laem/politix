@@ -27,7 +27,9 @@ export default function PerParty({ entries, blueskyEntries }) {
   const blueskyPerParty = blueskyEntries.reduce((memo, [id, next]) => {
     const { groupeAbrev, activité } = next
 
-    return { ...memo, [groupeAbrev]: [...(memo[groupeAbrev] || []), activité] }
+    const isActive = activité && hasRecentTweets(activité)
+
+    return { ...memo, [groupeAbrev]: [...(memo[groupeAbrev] || []), isActive] }
   }, {})
   const blueskyStats = Object.entries(blueskyPerParty)
     .map(([party, results]) => [
@@ -36,8 +38,6 @@ export default function PerParty({ entries, blueskyEntries }) {
       Math.round((results.filter(Boolean).length / results.length) * 100),
     ])
     .sort(([, , a], [, , b]) => -a + b)
-
-  console.log('bs', blueskyPerParty)
 
   return (
     <div>
