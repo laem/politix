@@ -3,6 +3,7 @@ const csv = Deno.readTextFileSync('députés-datan-25-12-2024.csv')
 import { parse } from 'jsr:@std/csv'
 import { hasRecentTweets } from '../date-utils.ts'
 import { findContrastedTextColor, partyColors } from './couleurs-assemblée.ts'
+import bluesky from '../bluesky-data.json' with { type: "json" }
 import PerParty from './PerParty.tsx'
 
 const députés = parse(csv, {
@@ -14,12 +15,14 @@ export const findDéputé = (at) =>
   députés.find((député) => député.twitter === at)
 const entries = Object.entries(alreadyDone).filter(([at]) => at !== 'lastDate')
 
+const blueskyEntries = Object.entries(bluesky)
+
 export const centerStyle = { textAlign: 'center' }
 export default function Results() {
   return (
     <section>
-      <h2 style={centerStyle}>Les députés</h2>
-      <PerParty entries={entries} />
+      <h2 style={{...centerStyle, marginTop: '1rem'}}>Les députés</h2>
+      <PerParty entries={entries} blueskyEntries={blueskyEntries} />
 
       <h3 style={centerStyle}>Liste complète</h3>
       <ul
@@ -29,12 +32,10 @@ export default function Results() {
           gridTemplateColumns: 'repeat(auto-fill, 12rem)',
           alignItems: 'baseline',
           gap: '1rem',
-          width: '90vw',
           marginTop: '2rem',
         }}
       >
         {entries.map(([at, dates]) => {
-          console.log('DATES', dates)
           const result = hasRecentTweets(dates)
           const député = findDéputé(at)
           if (!député) throw new Error('Député non trouvé ' + at)

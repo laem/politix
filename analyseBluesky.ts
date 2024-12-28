@@ -1,22 +1,27 @@
+import { delay } from './utils.ts'
 import { filterRecentTweets, hasRecentTweets } from './date-utils.ts'
 import députésRandomOrder from './députés.ts'
 
+const logResult = ([député, activity]) => {
+  const { nom, prenom, groupe, bsky } = député
+  console.log(`On recherche ${prenom} ${nom}`)
+  console.log(`-- de ${groupe}`)
+  if (!activity) console.log(`Introuvable ou inactif`)
+  else {
+    console.log(`Trouvé : ${bsky}`)
+    console.log(`Activité`, activity)
+  }
+}
 const analyseBluesky = async () => {
-  const extract = députésRandomOrder.slice(0, 10)
+  const extract = députésRandomOrder
   const results = await Promise.all(
-    extract.map((député) => findBlueskyAccount(député))
+    extract.map(async (député, i) => {
+      const result = await findBlueskyAccount(député, i)
+      logResult(result)
+      return result
+    })
   )
 
-  results.forEach(([député, activity]) => {
-    const { nom, prenom, groupe, bsky } = député
-    console.log(`On recherche ${prenom} ${nom}`)
-    console.log(`-- de ${groupe}`)
-    if (!activity) console.log(`Introuvable ou inactif`)
-    else {
-      console.log(`Trouvé : ${bsky}`)
-      console.log(`Activité`, activity)
-    }
-  })
   const entries = results.map(([député, activity]) => {
     const { nom, prenom, groupe, bsky, groupeAbrev } = député
 
@@ -30,8 +35,10 @@ const analyseBluesky = async () => {
   Deno.writeTextFileSync('./bluesky-data.json', JSON.stringify(o, null, 2))
 }
 
-const findBlueskyAccount = async (député) => {
+const findBlueskyAccount = async (député, i) => {
+  await delay(i * 300)
   const { nom, prenom, groupe } = député
+  console.log(`Will analyse ${prenom} ${nom} ${i}`)
 
   const request = await fetch(
     `https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=${prenom} ${nom}`

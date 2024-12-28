@@ -1,6 +1,5 @@
 import { scrape } from 'jsr:@panha/scrape/'
-const delay = (ms) => new Promise((res) => setTimeout(res, ms))
-
+import { delay } from './utils.ts'
 import { launch } from 'jsr:@astral/astral'
 import députésRandomOrder from './députés.ts'
 

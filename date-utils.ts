@@ -14,7 +14,6 @@ export const hasRecentTweets = (dateStrings) => {
   const recentTweets = dates.map(
     (date) => date.getTime() > baseStamp - threeDaysSpan
   )
-  console.log(recentTweets)
   const hasRecentTweets = recentTweets.filter(Boolean).length > 0
   return hasRecentTweets
 }
