@@ -1,6 +1,7 @@
 import { delay } from './utils.ts'
 import { filterRecentTweets, hasRecentTweets } from './date-utils.ts'
 import députésRandomOrder from './députés.ts'
+import removeAccents from 'npm:remove-accents'
 
 const logResult = ([député, activity]) => {
   const { nom, prenom, groupe, bsky } = député
@@ -47,7 +48,14 @@ const findBlueskyAccount = async (député, i) => {
 
   //console.log(json)
   const actor = json.actors.find(({ displayName: name }) => {
-    if (!name.includes(nom) || !name.includes(prenom)) {
+    const nomSansAccents = removeAccents(nom).toLowerCase() // cf mariercd.bsky.social
+    const prenomSansAccents = removeAccents(prenom).toLowerCase() // cf mariercd.bsky.social et bothorel.bsky.social
+    const nameSansAccents = removeAccents(name).toLowerCase()
+
+    if (
+      !nameSansAccents.includes(nomSansAccents) ||
+      !nameSansAccents.includes(prenomSansAccents)
+    ) {
       //https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=pen%20marine%20le returns Marine Turchi as the first entry, and an irrelevant result as a second
       return false
     }
