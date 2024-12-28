@@ -2,7 +2,7 @@ const alreadyDone = JSON.parse(Deno.readTextFileSync('data.json') || '{}')
 import bluesky from '../bluesky-data.json' with {type: "json"}
 import {hasRecentTweets} from '../date-utils.ts'
 import députésRandomOrder from '../députés.ts'
-import {activeOnBluesky} from '../utils.ts'
+import {activeOnBluesky, onBluesky} from '../utils.ts'
 import PerParty, {blueskyBlue} from './PerParty.tsx'
 import {findContrastedTextColor, partyColors} from './couleurs-assemblée.ts'
 
@@ -28,6 +28,7 @@ export default function Results({givenParty=null}) {
 		  }
 
       <h3 style={centerStyle}>{givenParty ? `Liste pour le parti ${givenParty}` : `Liste complète`}</h3>
+		  <a href="/bluesky" style={{"float": "right", marginRight: '1rem'}}>Voir les députés sur Bluesky</a>
       <ul
         style={{
           display: 'grid',
@@ -87,7 +88,7 @@ const isActiveOnBluesky = activeOnBluesky(député.id)
               </div>
 				  <div>{isActiveOnBluesky ? 
 						  <div>
-						  <small style={{whiteSpace: 'nowrap'}}><a href={`https://bsky.app/profile/${isActiveOnBluesky[1].bsky}`}><img src={'/bluesky.svg'} style={{width: '1rem', height: 'auto', filter: 'grayscale(1) invert(1) brightness(100)', display: 'inline', marginRight: '.2rem'}} width="10" height="10" alt="Logo Bluesky"/>{isActiveOnBluesky[1].bsky.replace('.bsky.social', '')}</a></small>
+						  <small style={{whiteSpace: 'nowrap'}}><BlueskyHandle député={député}/></small>
                     <details>
                       <summary>Actif sur Bluesky</summary>
                       <ol>
@@ -131,6 +132,11 @@ export const PartyVignette = ({ party }) => {
 		  </a>
   )
 }
+export const BlueskyHandle = ({député, invert=true})=>{
+
+const isOnBluesky = onBluesky(député.id)
+
+		return<a href={`https://bsky.app/profile/${isOnBluesky[1].bsky}`}><img src={'/bluesky.svg'} style={{width: '1rem', height: 'auto', filter:  invert ? 'grayscale(1) invert(1) brightness(100)' : 'none', display: 'inline', marginRight: '.2rem'}} width="10" height="10" alt="Logo Bluesky"/>{isOnBluesky[1].bsky.replace('.bsky.social', '')}</a>}
 
 export const getPartyName = (party) => {
   const fullName = députés.find(
