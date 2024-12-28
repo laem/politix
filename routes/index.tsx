@@ -8,6 +8,7 @@ export default function Home() {
       style={{
         maxWidth: '1200px',
         margin: '0 auto',
+        padding: '0 .4rem',
       }}
     >
       <header
@@ -48,6 +49,32 @@ export default function Home() {
       <p style={{ maxWidth: '40rem', margin: '0 auto' }}>
         Découvrez aussi ceux{' '}
         <Em background={blueskyBlue}>qui sont actifs sur Bluesky</Em>.
+      </p>
+      <p style={{ textAlign: 'right' }}>
+        <small>
+          <img
+            src={'/git.svg'}
+            style={{
+              width: '1rem',
+              height: '1rem',
+              filter: 'grayscale(1) invert(0)',
+              display: 'inline',
+              marginRight: '.2rem',
+              verticalAlign: 'middle',
+            }}
+            width="10"
+            height="10"
+            alt="Logo Git"
+          />
+          <a
+            href="https://github.com/laem/politix"
+            style={{
+              textDecoration: 'none',
+            }}
+          >
+            Code source
+          </a>
+        </small>
       </p>
       <Results />
     </div>
