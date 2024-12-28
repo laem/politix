@@ -46,7 +46,13 @@ const findBlueskyAccount = async (député, i) => {
   const json = await request.json()
 
   //console.log(json)
-  const actor = json.actors[0] // We're expecting the bluesky search algo to return the right account as the first
+  const actor = json.actors.find(({ displayName: name }) => {
+    if (!name.includes(nom) || !name.includes(prenom)) {
+      //https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=pen%20marine%20le returns Marine Turchi as the first entry, and an irrelevant result as a second
+      return false
+    }
+    return true // We're expecting the bluesky search algo to return the right account as the first
+  })
   if (!actor) return [député, null]
   if (
     actor.labels &&
