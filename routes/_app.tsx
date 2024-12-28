@@ -5,10 +5,12 @@ export default function App({ Component }: PageProps) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-          Politix - Répartition par parti des députés actifs sur X (Twitter) et
-          Bluesky
-        </title>
+        <title>PolitiX - Quels députés sont actifs sur X et Bluesky ?</title>
+        <meta
+          name="description"
+          content="Politix analyse automatiquement l'activité des députés sur X (Twitter) et sur Bluesky"
+        />
+        <meta property="og:image" content="https://politix.top/jaquette.png" />
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
