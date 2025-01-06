@@ -130,46 +130,6 @@ const checkTwitterActivity = async (at, i) => {
     console.log('Erreur pour ' + at, e)
     return [at, false]
   }
-
-  return
-  try {
-    // Wait for 1 second or wait for an <h1> element to appear
-    scraper = await scrape(url, {
-      //waitForElement: 'date',
-      waitFor: 10000,
-    })
-
-    console.log('Succès du scraping pour ', at)
-    Deno.writeTextFileSync(
-      './html-' + netAt + '.html',
-      `<html>${scraper.html('html')}</html`
-    )
-
-    const innerHTMLList = scraper.html('.tweet-date')
-    if (innerHTMLList.length < 3)
-      throw new Error(
-        "Pas assez de tweets trouvés, c'est suspect ! Investiguer " + at
-      )
-    console.log('inner', innerHTMLList)
-    const dates = innerHTMLList.map(dateFromAttr)
-    /* 
-    //"2024-12-24T10:52:26.000Z"
-    const dates = result.map((date) => new Date(date))
-	*/
-
-    const nowStamp = new Date().getTime()
-    const threeDaysSpan = 3 * 24 * 60 * 60 * 1000
-
-    const recentTweets = dates.map(
-      (date) => date.getTime() > nowStamp - threeDaysSpan
-    )
-    const hasRecentTweets = recentTweets.filter(Boolean).length > 0
-
-    return [at, hasRecentTweets]
-  } catch (e) {
-    if (!scraper) return console.log(e, 'Problème de scrap') || [at, 'error']
-    console.log('Voir le fichier HTML créé pour ' + at)
-  }
 }
 
 //<a href="/JeromeGuedj/status/1630575199975243776#m" title="Feb 28, 2023 · 2:26 PM UTC">28 Feb 2023</a>
