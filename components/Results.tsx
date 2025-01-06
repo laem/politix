@@ -49,6 +49,7 @@ const isActiveOnBluesky = activeOnBluesky(député.id)
 
 
           const result = dates && Array.isArray(dates)&&  hasRecentTweets(dates, xTested[1]['analyseDate'])
+				const notTested = !xTested
           const { prenom, nom, groupe, groupeAbrev, twitter } = député
           return (
             <li
@@ -85,7 +86,7 @@ const isActiveOnBluesky = activeOnBluesky(député.id)
                       </ol>
                     </details>
                   </div>
-                ) : (
+                ) : notTested ? 'Non testé' : (
                   'Non actif sur X'
                 )}
               </div>
