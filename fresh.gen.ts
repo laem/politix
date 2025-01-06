@@ -2,16 +2,16 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $_404 from "./routes/_404.tsx";
-import * as $_app from "./routes/_app.tsx";
-import * as $bluesky from "./routes/bluesky.tsx";
-import * as $fr_index from "./routes/fr/index.tsx";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
-import * as $index from "./routes/index.tsx";
-import * as $parti_party_ from "./routes/parti/[party].tsx";
-import * as $Counter from "./islands/Counter.tsx";
-import * as $OpenBlueskyTabs from "./islands/OpenBlueskyTabs.tsx";
-import type { Manifest } from "$fresh/server.ts";
+import * as $_404 from "./routes/_404.tsx"
+import * as $_app from "./routes/_app.tsx"
+import * as $bluesky from "./routes/bluesky.tsx"
+import * as $fr_index from "./routes/fr/index.tsx"
+import * as $greet_name_ from "./routes/greet/[name].tsx"
+import * as $index from "./routes/index.tsx"
+import * as $parti_party_ from "./routes/parti/[party].tsx"
+import * as $Counter from "./islands/Counter.tsx"
+import * as $OpenBlueskyTabs from "./islands/OpenBlueskyTabs.tsx"
+import type { Manifest } from "$fresh/server.ts"
 
 const manifest = {
   routes: {
@@ -28,6 +28,6 @@ const manifest = {
     "./islands/OpenBlueskyTabs.tsx": $OpenBlueskyTabs,
   },
   baseUrl: import.meta.url,
-} satisfies Manifest;
+} satisfies Manifest
 
-export default manifest;
+export default manifest

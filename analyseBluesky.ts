@@ -1,11 +1,11 @@
-import removeAccents from 'npm:remove-accents'
-import { filterRecentTweets } from './date-utils.ts'
-import députésRandomOrder from './députés.ts'
-import { delay } from './utils.ts'
+import removeAccents from "npm:remove-accents"
+import { filterRecentTweets } from "./date-utils.ts"
+import députésRandomOrder from "./députés.ts"
+import { delay } from "./utils.ts"
 
 const falsePositives = {
-  PA841825: ['@patricemartin50.bsky.social'],
-  PA793262: ['@onesque.bsky.social'],
+  PA841825: ["@patricemartin50.bsky.social"],
+  PA793262: ["@onesque.bsky.social"],
 }
 
 const logResult = ([député, activity]) => {
@@ -18,7 +18,7 @@ const logResult = ([député, activity]) => {
     console.log(`Activité`, activity)
   }
 }
-const analyseDate = new Date().toISOString().split('T')[0]
+const analyseDate = new Date().toISOString().split("T")[0]
 const analyseBluesky = async () => {
   const extract = députésRandomOrder
   const results = await Promise.all(
@@ -26,7 +26,7 @@ const analyseBluesky = async () => {
       const result = await findBlueskyAccount(député, i)
       logResult(result)
       return result
-    })
+    }),
   )
 
   const entries = results.map(([député, activity]) => {
@@ -46,7 +46,7 @@ const analyseBluesky = async () => {
   })
 
   const o = Object.fromEntries(entries)
-  Deno.writeTextFileSync('./bluesky-data.json', JSON.stringify(o, null, 2))
+  Deno.writeTextFileSync("./bluesky-data.json", JSON.stringify(o, null, 2))
 }
 
 const findBlueskyAccount = async (député, i) => {
@@ -55,7 +55,7 @@ const findBlueskyAccount = async (député, i) => {
   console.log(`Will analyse ${prenom} ${nom} ${i}`)
 
   const request = await fetch(
-    `https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=${prenom} ${nom}`
+    `https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=${prenom} ${nom}`,
   )
   const json = await request.json()
 
@@ -84,14 +84,15 @@ const findBlueskyAccount = async (député, i) => {
   if (!actor) return [député, null]
   if (
     actor.labels &&
-    actor.labels.find((label) => label.val === 'impersonation')
-  )
+    actor.labels.find((label) => label.val === "impersonation")
+  ) {
     return [député, null]
+  }
 
   const at = actor.handle
 
   const postsRequest = await fetch(
-    `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${at}`
+    `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${at}`,
   )
 
   const posts = await postsRequest.json()
@@ -99,12 +100,12 @@ const findBlueskyAccount = async (député, i) => {
   if (!posts?.feed) return [député, null]
   //console.log(posts.feed)
   const activity = posts.feed.map(({ post }) =>
-    post.record ? post.record.createdAt.split('T')[0] : null
+    post.record ? post.record.createdAt.split("T")[0] : null
   )
 
   const recent = filterRecentTweets(activity)
     .slice(0, 5)
-    .map((date) => date.toISOString().split('T')[0])
+    .map((date) => date.toISOString().split("T")[0])
   return [{ ...député, bsky: at }, recent]
 }
 

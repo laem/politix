@@ -11,15 +11,10 @@
   },
   "lint": {
     "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
+      "tags": ["fresh", "recommended"]
     }
   },
-  "exclude": [
-    "**/_fresh/*"
-  ],
+  "exclude": ["**/_fresh/*"],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
     "preact": "https://esm.sh/preact@10.22.0",
@@ -34,10 +29,11 @@
   },
   "deploy": {
     "project": "1dac12da-066d-4640-9acb-4fa957ce3e2b",
-    "exclude": [
-      "**/node_modules"
-    ],
+    "exclude": ["**/node_modules"],
     "include": [],
     "entrypoint": "main.ts"
+  },
+  "fmt": {
+    "semiColons": false
   }
 }

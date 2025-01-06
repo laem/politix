@@ -32,5 +32,3 @@ jobs:
           project: "politix"
           entrypoint: "main.ts"
           root: "."
-          
-          

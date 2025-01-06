@@ -1,4 +1,4 @@
-import { Head } from "$fresh/runtime.ts";
+import { Head } from "$fresh/runtime.ts"
 
 export default function Error404() {
   return (
@@ -23,5 +23,5 @@ export default function Error404() {
         </div>
       </div>
     </>
-  );
+  )
 }
