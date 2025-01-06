@@ -3,7 +3,10 @@ import { filterRecentTweets } from './date-utils.ts'
 import députésRandomOrder from './députés.ts'
 import { delay } from './utils.ts'
 
-const falsePositives = { PA841825: ['@patricemartin50.bsky.social'] }
+const falsePositives = {
+  PA841825: ['@patricemartin50.bsky.social'],
+  PA793262: ['@onesque.bsky.social'],
+}
 
 const logResult = ([député, activity]) => {
   const { nom, prenom, groupe, bsky } = député
