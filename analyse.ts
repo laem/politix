@@ -5,14 +5,6 @@ import députésRandomOrder from './députés.ts'
 
 const alreadyDone = JSON.parse(Deno.readTextFileSync('data.json') || '{}')
 
-const deleted = [
-  '@JCGrelier',
-  '@AndyKerbrat2022',
-  '@Peioizate',
-  '@stephan1Rambaud',
-  '@AnnaigLeMeur_AN',
-]
-
 const doneEntries = Object.entries(alreadyDone)
 console.log(`Déjà ${doneEntries.length} comptes de députés vérifiés`)
 
@@ -22,35 +14,42 @@ const députés = députésRandomOrder.map((d) => {
   if (match) return { ...d, twitter: '@' + match[1] }
   return d
 })
+const limit = Deno.args[0]
+const analyseDate = new Date().toISOString().split('T')[0]
 
-const hasTwitter = députés.filter((d) => d.twitter && d.twitter !== ''),
-  hasNotLength = députés.length - hasTwitter.length
-
-console.log(hasTwitter.length, hasNotLength, députés.length)
-
-const extract = hasTwitter
+const extract = députés
   /* Instead of filtering the deleted accounts, we'll save the status of the account in the data.json file to store raw data, and potentially correct the source @ in députés-*
+   */
   .filter(
     (d) =>
-      !(
-        deleted.includes(d.twitter) ||
-        doneEntries.find(([at]) => at === d.twitter)
-      )
-  )*/
-  .slice(0, 10)
+      !doneEntries.find(([id]) => id === d.id && d.analyseDate === analyseDate)
+  )
+  .slice(0, limit)
 
 const doFetch = async () => {
   const entries = await Promise.all(
     extract.map(async (député, i) => {
+      const { nom, prenom, groupeAbrev, twitter: at } = député
+      if (!at || at === '') {
+        return [
+          député.id,
+          {
+            nom,
+            analyseDate,
+            prenom,
+            groupeAbrev,
+            unknownPresence: true,
+          },
+        ]
+      }
       const [, values] = await checkTwitterActivity(député.twitter, i)
-
-      const { nom, prenom, groupeAbrev } = député
 
       return [
         député.id,
         {
           nom,
           prenom,
+          analyseDate,
           groupeAbrev,
           '@': député.twitter || null,
           deletedAccount: values === '!exist',
@@ -63,14 +62,16 @@ const doFetch = async () => {
 
   const o = Object.fromEntries(entries)
 
-  const lastDate = new Date().toISOString().split('T')[0]
   Deno.writeTextFileSync(
     './data.json',
-    JSON.stringify({
-      ...alreadyDone,
-      ...o,
-      lastDate,
-    })
+    JSON.stringify(
+      {
+        ...alreadyDone,
+        ...o,
+      },
+      null,
+      2
+    )
   )
   return console.log("Voilà c'est analysé dans ./data.json")
 }
@@ -82,10 +83,13 @@ const browser = await launch({
   wsEndpoint: ws,
   headless: false,
 })
-await delay(30000 / 1)
+
+const initialDelay = Deno.args[1] || 30
+const iterationDelay = Deno.args[2] || 20
+await delay(initialDelay * 1000)
 
 const checkTwitterActivity = async (at, i) => {
-  await delay(i * 20000)
+  await delay(i * iterationDelay * 1000)
   if (!at.startsWith('@') && at.length < 2)
     throw new Error('Problème dans le pseudo ' + at + '.')
 
@@ -106,24 +110,24 @@ const checkTwitterActivity = async (at, i) => {
     const values = await page.evaluate(() => {
       const html = document.body.innerHTML
 
+      if (html.includes('This account doesn’t exist')) {
+        return '!exist'
+      }
+
       return Array.from(html.matchAll(/datetime="(\d\d\d\d-\d\d-\d\d)T/g)).map(
         (match) => match[1]
       )
     })
 
-    if (html.includes('This account doesn’t exist')) {
-      return [at, '!exist']
-    }
-
     console.log(values)
-    if (values.length < 2)
+    if (values !== '!exist' && values.length < 2)
       throw new Error(
         "Pas assez de tweets trouvés, c'est suspect ! Investiguer " + at
       )
 
     return [at, values]
   } catch (e) {
-    console.log('Erreur pour ' + at)
+    console.log('Erreur pour ' + at, e)
     return [at, false]
   }
 
