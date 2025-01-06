@@ -1,8 +1,10 @@
 import { type PageProps } from '$fresh/server.ts'
+import { Head } from '$fresh/runtime.ts'
+
 export default function App({ Component }: PageProps) {
   return (
     <html>
-      <head>
+      <Head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>PolitiX - Quels députés sont actifs sur X et Bluesky ?</title>
@@ -17,7 +19,7 @@ export default function App({ Component }: PageProps) {
           key="og:image"
         />
         <link rel="stylesheet" href="/styles.css" />
-      </head>
+      </Head>
       <body>
         <Component />
       </body>
