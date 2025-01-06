@@ -8,10 +8,10 @@ import {findContrastedTextColor, partyColors} from './couleurs-assemblée.ts'
 
 const députés = députésRandomOrder
 
-export const findDéputé = (at) =>
-  députés.find((député) => député.twitter === at)
+export const findDéputé = (id) =>
+  députés.find((député) => député.id === id)
 
-const entries = Object.entries(alreadyDone).filter(([at]) => at !== 'lastDate')
+const entries = Object.entries(alreadyDone)
 
 const blueskyEntries = Object.entries(bluesky)
 
@@ -23,7 +23,7 @@ export default function Results({givenParty=null}) {
   return (
     <section>
       <h2 style={{...centerStyle, marginTop: '1rem'}}>Les députés</h2>
-		  {!givenParty && 
+		  {false && !givenParty && 
       <PerParty entries={entries} blueskyEntries={blueskyEntries} />
 		  }
 
@@ -40,12 +40,13 @@ export default function Results({givenParty=null}) {
         }}
       >
         {filteredDéputés(givenParty).map((député) => {
-const xTested =  entries.find(([at])=>at===député.twitter)
-const dates = xTested && xTested[1]
+const xTested =  entries.find(([id,data ])=>data['@']===député.twitter)
+const dates = xTested && xTested[1].activité
 const at = député.twitter
 const isActiveOnBluesky = activeOnBluesky(député.id)
 
-          const result = dates &&  hasRecentTweets(dates)
+
+          const result = dates &&  hasRecentTweets(dates, xTested[1]['analyseDate'])
           const { prenom, nom, groupe, groupeAbrev, twitter } = député
           return (
             <li

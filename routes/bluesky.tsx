@@ -35,7 +35,7 @@ export default function Bluesky() {
 		  .filter(([, {bsky} ])=> bsky)
 
 
-		  .map(([id, {nom, prenom, groupeAbrev, bsky, activité}])=>{
+		  .map(([id, {nom, prenom, groupeAbrev, bsky, activité, analyseDate}])=>{
 
 				  const député = députésRandomOrder.find(d => d.id===id)
 
@@ -45,7 +45,7 @@ export default function Bluesky() {
 				  
 		<PartyVignette party={groupeAbrev}/>
 				  <BlueskyHandle député={député} invert={false}/>
-				  <div>{(activité && hasRecentTweets(activité)) ? 'Actif' : 'Non actif'}</div>
+				  <div>{(activité && hasRecentTweets(activité, analyseDate)) ? 'Actif' : 'Non actif'}</div>
 
 
 				  </li>)})}

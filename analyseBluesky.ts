@@ -1,7 +1,7 @@
-import { delay } from './utils.ts'
-import { filterRecentTweets, hasRecentTweets } from './date-utils.ts'
-import députésRandomOrder from './députés.ts'
 import removeAccents from 'npm:remove-accents'
+import { filterRecentTweets } from './date-utils.ts'
+import députésRandomOrder from './députés.ts'
+import { delay } from './utils.ts'
 
 const falsePositives = { PA841825: ['@patricemartin50.bsky.social'] }
 

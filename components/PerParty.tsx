@@ -1,5 +1,5 @@
 import Bar from '../Bar.tsx'
-import { hasRecentTweets, updateDate } from '../date-utils.ts'
+import { hasRecentTweets } from '../date-utils.ts'
 import députésRandomOrder from '../députés.ts'
 import {
   PartyVignette,
@@ -9,10 +9,10 @@ import {
 } from './Results.tsx'
 
 export default function PerParty({ entries, blueskyEntries }) {
-  const perParty = entries.reduce((memo, [at, dates]) => {
-    const active = hasRecentTweets(dates)
-    const député = findDéputé(at)
-    const { prenom, nom, groupe, groupeAbrev, twitter } = député
+  const perParty = entries.reduce((memo, [id, { analyseDate, activité }]) => {
+    const active = hasRecentTweets(activité, analyseDate)
+    const député = findDéputé(id)
+    const { prenom, nom, groupe, groupeAbrev, twitter, id } = député
     return { ...memo, [groupeAbrev]: [...(memo[groupeAbrev] || []), active] }
   }, {})
 
@@ -25,9 +25,9 @@ export default function PerParty({ entries, blueskyEntries }) {
     .sort(([, , a], [, , b]) => -a + b)
 
   const blueskyPerParty = blueskyEntries.reduce((memo, [id, next]) => {
-    const { groupeAbrev, activité } = next
+    const { groupeAbrev, activité, analyseDate } = next
 
-    const isActive = activité && hasRecentTweets(activité)
+    const isActive = activité && hasRecentTweets(activité, analyseDate)
 
     return { ...memo, [groupeAbrev]: [...(memo[groupeAbrev] || []), isActive] }
   }, {})
@@ -46,8 +46,7 @@ export default function PerParty({ entries, blueskyEntries }) {
     <div>
       <p style={{ textAlign: 'center', color: '#980c0c' }}>
         L'analyse de X est en cours : nous avons testé {entries.length} députés
-        à la date du {updateDate} grâce aux données{' '}
-        <a href="https://datan.fr">datan</a>.
+        grâce aux données <a href="https://datan.fr">datan</a>.
       </p>
       <p style={{ textAlign: 'center', color: 'darkBlue' }}>
         Concernant Bluesky, nous prenons le premier compte trouvé avec la
