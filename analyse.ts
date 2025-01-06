@@ -28,37 +28,40 @@ const hasTwitter = députés.filter((d) => d.twitter && d.twitter !== ''),
 
 console.log(hasTwitter.length, hasNotLength, députés.length)
 
-const bridés = hasTwitter
+const extract = hasTwitter
+  /* Instead of filtering the deleted accounts, we'll save the status of the account in the data.json file to store raw data, and potentially correct the source @ in députés-*
   .filter(
     (d) =>
       !(
         deleted.includes(d.twitter) ||
         doneEntries.find(([at]) => at === d.twitter)
       )
-  )
+  )*/
   .slice(0, 10)
-
-const atList = [...bridés.map((d) => d.twitter)]
 
 const doFetch = async () => {
   const entries = await Promise.all(
-    atList.map((at, i) => checkTwitterActivity(at, i))
+    extract.map(async (député, i) => {
+      const [, values] = await checkTwitterActivity(député.twitter, i)
+
+      const { nom, prenom, groupeAbrev } = député
+
+      return [
+        député.id,
+        {
+          nom,
+          prenom,
+          groupeAbrev,
+          '@': député.twitter || null,
+          deletedAccount: values === '!exist',
+          notFoundAccount: !values,
+          activité: values,
+        },
+      ]
+    })
   )
 
-  const notExisting = entries.filter(([at, values]) => values === '!exist')
-
-  const problems = entries.filter(([at, values]) => !values)
-
-  console.log(
-    `%cNotExisting : "${notExisting.map([at]).join('", "')}"`,
-    'background-color: orange'
-  )
-  console.log(
-    `%cProblems : "${problems.map([at]).join('", "')}"`,
-    'background-color: red'
-  )
-
-  const o = Object.fromEntries(entries.filter(Boolean))
+  const o = Object.fromEntries(entries)
 
   const lastDate = new Date().toISOString().split('T')[0]
   Deno.writeTextFileSync(
