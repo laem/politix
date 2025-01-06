@@ -21,8 +21,6 @@ const topPartiesEntries = Object.entries(partiesCount).sort(
 const totalCount = topPartiesEntries.length,
   firstPartyCount = topPartiesEntries[0][1]
 
-console.log('yaya', topPartiesEntries)
-
 export default function PerParty({ entries, blueskyEntries }) {
   const perParty = entries.reduce((memo, [id, { analyseDate, activité }]) => {
     const active =
@@ -58,7 +56,7 @@ export default function PerParty({ entries, blueskyEntries }) {
     ])
     .sort(([, , a], [, , b]) => -a + b)
 
-  console.log({ blueskyStats, blueskyPerParty })
+  //console.log({ blueskyStats, blueskyPerParty })
 
   return (
     <div>

@@ -13,6 +13,8 @@ export const findDéputé = (id) =>
 
 const entries = Object.entries(alreadyDone)
 
+console.log('Nombre de députés analysés pour X : ',entries.length)
+
 const blueskyEntries = Object.entries(bluesky)
 
 export const centerStyle = { textAlign: 'center' }
@@ -46,7 +48,7 @@ const at = député.twitter
 const isActiveOnBluesky = activeOnBluesky(député.id)
 
 
-          const result = dates &&  hasRecentTweets(dates, xTested[1]['analyseDate'])
+          const result = dates && Array.isArray(dates)&&  hasRecentTweets(dates, xTested[1]['analyseDate'])
           const { prenom, nom, groupe, groupeAbrev, twitter } = député
           return (
             <li
