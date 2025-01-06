@@ -13,8 +13,11 @@ export default function Top() {
         <meta
           name="description"
           content={description}
+		  key="description"
         />
-        <meta property="og:image" content="https://politix.top/fr.png" />
+        <meta property="og:image" content="https://politix.top/fr.png"
+          key="og:image"
+		  />
       </Head>
       <header style={{ display: "flex", alignItems: "center" }}>
         <span style={{ fontSize: "200%" }}>🥇</span>

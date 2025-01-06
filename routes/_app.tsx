@@ -1,4 +1,4 @@
-import { type PageProps } from "$fresh/server.ts"
+import { type PageProps } from '$fresh/server.ts'
 export default function App({ Component }: PageProps) {
   return (
     <html>
@@ -9,8 +9,13 @@ export default function App({ Component }: PageProps) {
         <meta
           name="description"
           content="Politix analyse automatiquement l'activité des députés sur X (Twitter) et sur Bluesky"
+          key="description"
         />
-        <meta property="og:image" content="https://politix.top/jaquette.png" />
+        <meta
+          property="og:image"
+          content="https://politix.top/jaquette.png"
+          key="og:image"
+        />
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
