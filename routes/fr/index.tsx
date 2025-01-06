@@ -1,12 +1,24 @@
 import top from "../../bluesky-top-actors-fr.json" with { type: "json" }
+import { Head } from "$fresh/runtime.ts";
+
+const title = 'Le Top Bluesky francophone'
+const description = `Les plus gros comptes francophones actifs récemment sur Bluesky.`
 
 const { sorted, dates } = top
 export default function Top() {
   return (
-    <main style={{ maxWidth: "40rem", margin: "0 auto" }}>
+    <main style={{ maxWidth: "40rem", margin: "2rem auto"  }}>
+		   <Head>
+        <title>{title}</title>
+        <meta
+          name="description"
+          content={description}
+        />
+        <meta property="og:image" content="https://politix.top/fr.png" />
+      </Head>
       <header style={{ display: "flex", alignItems: "center" }}>
         <span style={{ fontSize: "200%" }}>🥇</span>
-        <h1>Le Top Bluesky francophone</h1>
+        <h1>{title}</h1>
       </header>
       <p>
         Méthodologie : on surveille les skeets les plus populaires dans les

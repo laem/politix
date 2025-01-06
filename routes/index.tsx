@@ -1,66 +1,66 @@
-import { blueskyBlue } from "../components/PerParty.tsx"
-import Results from "../components/Results.tsx"
-import { daysSpan } from "../date-utils.ts"
+import { blueskyBlue } from '../components/PerParty.tsx'
+import Results from '../components/Results.tsx'
+import { daysSpan } from '../date-utils.ts'
 
 export default function Home() {
   return (
     <div
       style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        padding: "0 .4rem",
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 .4rem',
       }}
     >
       <header
         style={{
-          maxWidth: "12rem",
-          background: "crimson",
-          color: "white",
-          borderRadius: ".6rem 2rem",
-          margin: "1rem auto 3rem",
-          padding: "2rem",
+          maxWidth: '12rem',
+          background: 'crimson',
+          color: 'white',
+          borderRadius: '.6rem 2rem',
+          margin: '1rem auto 3rem',
+          padding: '2rem',
         }}
       >
-        <div style={{ fontSize: "500%", textAlign: "center", width: "100%" }}>
+        <div style={{ fontSize: '500%', textAlign: 'center', width: '100%' }}>
           😒
         </div>
         <h1
           style={{
-            filter: "drop-shadow(0 0 0.75rem #000)",
+            filter: 'drop-shadow(0 0 0.75rem #000)',
           }}
         >
           Politi
           <span
             style={{
-              color: "black",
-              filter: "drop-shadow(0 0 0.75rem #fff)",
+              color: 'black',
+              filter: 'drop-shadow(0 0 0.75rem #fff)',
             }}
           >
             X
           </span>
         </h1>
       </header>
-      <p style={{ maxWidth: "40rem", margin: "0 auto" }}>
+      <p style={{ maxWidth: '40rem', margin: '0 auto' }}>
         Découvrez qui sont les <em>politix</em>, ces élus de la République
         <br />
-        <Em background={"crimson"}>qui sont actifs sur X</Em> dans les{" "}
+        <Em background={'crimson'}>qui sont actifs sur X</Em> dans les{' '}
         {daysSpan} derniers jours.
       </p>
-      <p style={{ maxWidth: "40rem", margin: "0 auto" }}>
-        Découvrez aussi ceux{" "}
+      <p style={{ maxWidth: '40rem', margin: '0 auto' }}>
+        Découvrez aussi ceux{' '}
         <Em background={blueskyBlue}>qui sont actifs sur Bluesky</Em>.
       </p>
-      <p style={{ textAlign: "right" }}>
+      <p style={{ textAlign: 'right' }}>
         <small>
           <img
-            src={"/git.svg"}
+            src={'/git.svg'}
             style={{
-              width: "1rem",
-              height: "1rem",
-              filter: "grayscale(1) invert(0)",
-              display: "inline",
-              marginRight: ".2rem",
-              verticalAlign: "middle",
+              width: '1rem',
+              height: '1rem',
+              filter: 'grayscale(1) invert(0)',
+              display: 'inline',
+              marginRight: '.2rem',
+              verticalAlign: 'middle',
             }}
             width="10"
             height="10"
@@ -69,7 +69,7 @@ export default function Home() {
           <a
             href="https://github.com/laem/politix"
             style={{
-              textDecoration: "none",
+              textDecoration: 'none',
             }}
           >
             Code source
@@ -85,10 +85,10 @@ const Em = ({ background, children }) => (
   <em
     style={{
       background,
-      padding: "0 .2rem",
-      color: "white",
-      whiteSpace: "nowrap",
-      borderRadius: ".2rem",
+      padding: '0 .2rem',
+      color: 'white',
+      whiteSpace: 'nowrap',
+      borderRadius: '.2rem',
     }}
   >
     {children}
