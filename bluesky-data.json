@@ -1495,8 +1495,8 @@
     "nom": "Alexandre",
     "prenom": "Laurent",
     "groupeAbrev": "LFI-NFP",
-    "bsky": "onesque.bsky.social",
-    "activité": ["2025-01-03", "2024-12-31"],
+    "bsky": null,
+    "activité": null,
     "analyseDate": "2025-01-06"
   },
   "PA266797": {
@@ -4672,4 +4672,3 @@
     "analyseDate": "2025-01-06"
   }
 }
-
