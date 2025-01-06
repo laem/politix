@@ -18,6 +18,9 @@ const topPartiesEntries = Object.entries(partiesCount).sort(
   ([, a], [, b]) => b - a
 )
 
+const totalCount = topPartiesEntries.length,
+  firstPartyCount = topPartiesEntries[0][1]
+
 console.log('yaya', topPartiesEntries)
 
 export default function PerParty({ entries, blueskyEntries }) {
@@ -61,7 +64,7 @@ export default function PerParty({ entries, blueskyEntries }) {
     <div>
       <p style={{ textAlign: 'center', color: '#980c0c' }}>
         L'analyse de X est en cours : nous avons testé {entries.length} députés
-        grâce aux données <a href="https://datan.fr">datan</a>.
+        grâce aux données <a href="https://datan.fr">datan</a> améliorées.
       </p>
       <p style={{ textAlign: 'center', color: 'darkBlue' }}>
         Concernant Bluesky, nous prenons le premier compte trouvé avec la
@@ -117,17 +120,26 @@ export default function PerParty({ entries, blueskyEntries }) {
                     gap: '.4rem',
                   }}
                 >
-                  <Bar {...{ percentActive, total, background: 'black' }} />
+                  <Bar
+                    {...{
+                      percentActive,
+                      total,
+                      background: 'black',
+                      logo: 'x.png',
+                    }}
+                  />
                   <Bar
                     {...{
                       percentActive: blueskyPercentActive,
                       total: blueskyTotal,
                       background: blueskyBlue,
                       suffix: '',
+                      logo: 'bluesky.svg',
                     }}
                   />
                   <Bar
                     {...{
+                      percentActive: (count / firstPartyCount) * 100,
                       text: `${count} députés`,
                       background: '#eee',
                       color: '#333',
@@ -135,8 +147,17 @@ export default function PerParty({ entries, blueskyEntries }) {
                   />
                 </div>
               </div>
-              <small style={{ color: '#bbb', lineHeight: '.8rem' }}>
-                {getPartyName(party)}
+              <small
+                style={{
+                  color: '#bbb',
+                  lineHeight: '.8rem',
+                  textAlign: 'right',
+                  fontStyle: 'italic',
+                }}
+              >
+                {
+                  getPartyName(party).replace('- Nouveau Front Populaire', '') // cf commentaire dans le composant PartyVignette
+                }
               </small>
             </li>
           )

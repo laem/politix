@@ -67,7 +67,7 @@ const isActiveOnBluesky = activeOnBluesky(député.id)
                   {prenom} {nom}
                 </div>
               </div>
-              <PartyVignette party={groupeAbrev} />
+              <PartyVignette party={groupeAbrev} small={true}/>
               <div>
                 <small style={{ color: '#f1a8b7' }}>X {twitter || ': non présent'}</small>
               </div>
@@ -109,10 +109,11 @@ const isActiveOnBluesky = activeOnBluesky(député.id)
   )
 }
 
-export const PartyVignette = ({ party }) => {
+export const PartyVignette = ({ party , small}) => {
   const partyColor = partyColors[party] || 'chartreuse',
     partyTextColor = findContrastedTextColor(partyColor, true)
   const group = getPartyName(party)
+		const simpleParty= party.replace('-NFP', '')  // Les gens ne comprennent pas pourquoi seul LFI a NFP dans son nom, et ça créée une vignette de parti 2x plus grosse que les autres
   return (
 		  <a href={`/parti/${party}`}
 		  style={{textDecoration: 'none'}}
@@ -121,14 +122,17 @@ export const PartyVignette = ({ party }) => {
       style={{
         background: partyColor,
         borderRadius: '.4rem',
-        padding: '0 .2rem',
-        width: 'fit-content',
+        padding:  small  ? '0 .2rem' : '.4rem .2rem',
+        width: '4rem',
+					  
+					  textAlign: 'center',
         color: partyTextColor,
+					  fontSize:  small ? '100%' : '130%',
 					  border: '2px solid white'
       }}
       title={group}
     >
-      {party}
+      {simpleParty}
     </div>
 		  </a>
   )

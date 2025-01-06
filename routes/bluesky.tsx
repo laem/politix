@@ -43,7 +43,7 @@ export default function Bluesky() {
 
 				  <div>{prenom} {nom}</div>
 				  
-		<PartyVignette party={groupeAbrev}/>
+		<PartyVignette party={groupeAbrev} small={true}/>
 				  <BlueskyHandle député={député} invert={false}/>
 				  <div>{(activité && hasRecentTweets(activité, analyseDate)) ? 'Actif' : 'Non actif'}</div>
 
