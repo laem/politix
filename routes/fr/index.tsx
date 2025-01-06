@@ -4,7 +4,7 @@ const {sorted, dates} = top
 export default function Top() {
   return <main style={{maxWidth: '40rem', margin: '0 auto'}}>
 
-				<header><h1>Le Top Bluesky francophone</h1></header>
+				<header style={{display: 'flex', alignItems: 'center'}}><span style={{fontSize: '200%'}}>🥇</span><h1>Le Top Bluesky francophone</h1></header>
 				<p>Méthodologie : on surveille les skeets les plus populaires dans les derniers jours, et on trie leur auteurs par leur nombre d'abonnés. Les voici.</p>
 				<br/>
 				<p>👉️ C'est donc un mélange entre les plus gros comptes actifs, et les petits comptes qui ont percé récemment.</p>
