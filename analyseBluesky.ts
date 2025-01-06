@@ -1,7 +1,7 @@
-import { delay } from './utils.ts'
-import { filterRecentTweets, hasRecentTweets } from './date-utils.ts'
-import députésRandomOrder from './députés.ts'
 import removeAccents from 'npm:remove-accents'
+import { filterRecentTweets } from './date-utils.ts'
+import députésRandomOrder from './députés.ts'
+import { delay } from './utils.ts'
 
 const falsePositives = { PA841825: ['@patricemartin50.bsky.social'] }
 
@@ -15,6 +15,7 @@ const logResult = ([député, activity]) => {
     console.log(`Activité`, activity)
   }
 }
+const analyseDate = new Date().toISOString().split('T')[0]
 const analyseBluesky = async () => {
   const extract = députésRandomOrder
   const results = await Promise.all(
@@ -30,7 +31,14 @@ const analyseBluesky = async () => {
 
     return [
       député.id,
-      { nom, prenom, groupeAbrev, bsky: bsky || null, activité: activity },
+      {
+        nom,
+        prenom,
+        groupeAbrev,
+        bsky: bsky || null,
+        activité: activity,
+        analyseDate,
+      },
     ]
   })
 

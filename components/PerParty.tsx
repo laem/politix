@@ -1,5 +1,5 @@
 import Bar from '../Bar.tsx'
-import { hasRecentTweets, updateDate } from '../date-utils.ts'
+import { hasRecentTweets } from '../date-utils.ts'
 import députésRandomOrder from '../députés.ts'
 import {
   PartyVignette,
@@ -8,10 +8,26 @@ import {
   getPartyName,
 } from './Results.tsx'
 
+const partiesCount = députésRandomOrder.reduce((memo, next) => {
+  const { groupeAbrev } = next
+
+  return { ...memo, [groupeAbrev]: (memo[groupeAbrev] || 0) + 1 }
+}, {})
+
+const topPartiesEntries = Object.entries(partiesCount).sort(
+  ([, a], [, b]) => b - a
+)
+
+const totalCount = topPartiesEntries.length,
+  firstPartyCount = topPartiesEntries[0][1]
+
 export default function PerParty({ entries, blueskyEntries }) {
-  const perParty = entries.reduce((memo, [at, dates]) => {
-    const active = hasRecentTweets(dates)
-    const député = findDéputé(at)
+  const perParty = entries.reduce((memo, [id, { analyseDate, activité }]) => {
+    const active =
+      activité &&
+      Array.isArray(activité) &&
+      hasRecentTweets(activité, analyseDate)
+    const député = findDéputé(id)
     const { prenom, nom, groupe, groupeAbrev, twitter } = député
     return { ...memo, [groupeAbrev]: [...(memo[groupeAbrev] || []), active] }
   }, {})
@@ -25,12 +41,13 @@ export default function PerParty({ entries, blueskyEntries }) {
     .sort(([, , a], [, , b]) => -a + b)
 
   const blueskyPerParty = blueskyEntries.reduce((memo, [id, next]) => {
-    const { groupeAbrev, activité } = next
+    const { groupeAbrev, activité, analyseDate } = next
 
-    const isActive = activité && hasRecentTweets(activité)
+    const isActive = activité && hasRecentTweets(activité, analyseDate)
 
     return { ...memo, [groupeAbrev]: [...(memo[groupeAbrev] || []), isActive] }
   }, {})
+
   const blueskyStats = Object.entries(blueskyPerParty)
     .map(([party, results]) => [
       party,
@@ -39,24 +56,29 @@ export default function PerParty({ entries, blueskyEntries }) {
     ])
     .sort(([, , a], [, , b]) => -a + b)
 
+  //console.log({ blueskyStats, blueskyPerParty })
+
   return (
     <div>
       <p style={{ textAlign: 'center', color: '#980c0c' }}>
         L'analyse de X est en cours : nous avons testé {entries.length} députés
-        à la date du {updateDate} grâce aux données{' '}
-        <a href="https://datan.fr">datan</a>.
+        grâce aux données <a href="https://datan.fr">datan</a> améliorées.
       </p>
       <p style={{ textAlign: 'center', color: 'darkBlue' }}>
         Concernant Bluesky, nous prenons le premier compte trouvé avec la
         recherche "prénom nom".
       </p>
       <h3 style={{ margin: '2rem 0 1rem', ...centerStyle }}>
-        Résumé par parti
+        Décompte par groupe parlementaire
       </h3>
       <ul
         style={{ listStyleType: 'none', maxWidth: '50rem', margin: '0 auto' }}
       >
-        {stats.map(([party, total, percentActive]) => {
+        {topPartiesEntries.map(([groupeAbrev, count]) => {
+          const twitterParty = stats.find(([party]) => party === groupeAbrev)
+
+          const [party, total, percentActive] = twitterParty
+
           const blueskyStatsLine = blueskyStats.find(
             ([party2]) => party === party2
           )
@@ -67,6 +89,8 @@ export default function PerParty({ entries, blueskyEntries }) {
               ({ groupeAbrev }) => groupeAbrev === party
             ).length,
           ]
+
+          console.log(party, blueskyTotal, blueskyPercentActive)
           return (
             <li
               key={party}
@@ -94,19 +118,44 @@ export default function PerParty({ entries, blueskyEntries }) {
                     gap: '.4rem',
                   }}
                 >
-                  <Bar {...{ percentActive, total, background: 'crimson' }} />
+                  <Bar
+                    {...{
+                      percentActive,
+                      total,
+                      background: 'black',
+                      logo: 'x.png',
+                    }}
+                  />
                   <Bar
                     {...{
                       percentActive: blueskyPercentActive,
                       total: blueskyTotal,
                       background: blueskyBlue,
                       suffix: '',
+                      logo: 'bluesky.svg',
+                    }}
+                  />
+                  <Bar
+                    {...{
+                      percentActive: (count / firstPartyCount) * 100,
+                      text: `${count} députés`,
+                      background: '#eee',
+                      color: '#333',
                     }}
                   />
                 </div>
               </div>
-              <small style={{ color: '#bbb', lineHeight: '.8rem' }}>
-                {getPartyName(party)}
+              <small
+                style={{
+                  color: '#bbb',
+                  lineHeight: '.8rem',
+                  textAlign: 'right',
+                  fontStyle: 'italic',
+                }}
+              >
+                {
+                  getPartyName(party).replace('- Nouveau Front Populaire', '') // cf commentaire dans le composant PartyVignette
+                }
               </small>
             </li>
           )
