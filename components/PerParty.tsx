@@ -8,11 +8,26 @@ import {
   getPartyName,
 } from './Results.tsx'
 
+const partiesCount = députésRandomOrder.reduce((memo, next) => {
+  const { groupeAbrev } = next
+
+  return { ...memo, [groupeAbrev]: (memo[groupeAbrev] || 0) + 1 }
+}, {})
+
+const topPartiesEntries = Object.entries(partiesCount).sort(
+  ([, a], [, b]) => b - a
+)
+
+console.log('yaya', topPartiesEntries)
+
 export default function PerParty({ entries, blueskyEntries }) {
   const perParty = entries.reduce((memo, [id, { analyseDate, activité }]) => {
-    const active = hasRecentTweets(activité, analyseDate)
+    const active =
+      activité &&
+      Array.isArray(activité) &&
+      hasRecentTweets(activité, analyseDate)
     const député = findDéputé(id)
-    const { prenom, nom, groupe, groupeAbrev, twitter, id } = député
+    const { prenom, nom, groupe, groupeAbrev, twitter } = député
     return { ...memo, [groupeAbrev]: [...(memo[groupeAbrev] || []), active] }
   }, {})
 
@@ -53,12 +68,16 @@ export default function PerParty({ entries, blueskyEntries }) {
         recherche "prénom nom".
       </p>
       <h3 style={{ margin: '2rem 0 1rem', ...centerStyle }}>
-        Résumé par parti
+        Décompte par groupe parlementaire
       </h3>
       <ul
         style={{ listStyleType: 'none', maxWidth: '50rem', margin: '0 auto' }}
       >
-        {stats.map(([party, total, percentActive]) => {
+        {topPartiesEntries.map(([groupeAbrev, count]) => {
+          const twitterParty = stats.find(([party]) => party === groupeAbrev)
+
+          const [party, total, percentActive] = twitterParty
+
           const blueskyStatsLine = blueskyStats.find(
             ([party2]) => party === party2
           )
@@ -98,13 +117,20 @@ export default function PerParty({ entries, blueskyEntries }) {
                     gap: '.4rem',
                   }}
                 >
-                  <Bar {...{ percentActive, total, background: 'crimson' }} />
+                  <Bar {...{ percentActive, total, background: 'black' }} />
                   <Bar
                     {...{
                       percentActive: blueskyPercentActive,
                       total: blueskyTotal,
                       background: blueskyBlue,
                       suffix: '',
+                    }}
+                  />
+                  <Bar
+                    {...{
+                      text: `${count} députés`,
+                      background: '#eee',
+                      color: '#333',
                     }}
                   />
                 </div>

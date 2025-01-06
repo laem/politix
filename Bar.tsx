@@ -3,23 +3,31 @@ export default function Bar({
   total,
   background,
   suffix = 'testés',
+  text,
+  color,
 }) {
   return (
     <div
       style={{
-        width: percentActive + '%',
+        width: (percentActive ? percentActive : 100) + '%',
         background,
         borderRadius: '.2rem',
         paddingLeft: '.2rem',
-        color: percentActive < 5 ? 'black' : 'white',
+        color: color || (percentActive < 5 ? 'black' : 'white'),
         whiteSpace: 'nowrap',
       }}
     >
       <div style={{ marginLeft: '.4rem' }}>
-        {percentActive}&nbsp;%{' '}
-        <small style={{ opacity: '0.65' }}>
-          ({Math.round((percentActive / 100) * total)} / {total} {suffix})
-        </small>
+        {text ? (
+          <small>{text}</small>
+        ) : (
+          <>
+            <span>{percentActive}&nbsp;% </span>
+            <small style={{ opacity: '0.65' }}>
+              ({Math.round((percentActive / 100) * total)} / {total} {suffix})
+            </small>
+          </>
+        )}
       </div>
     </div>
   )

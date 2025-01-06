@@ -23,7 +23,7 @@ export default function Results({givenParty=null}) {
   return (
     <section>
       <h2 style={{...centerStyle, marginTop: '1rem'}}>Les députés</h2>
-		  {false && !givenParty && 
+		  {!givenParty && 
       <PerParty entries={entries} blueskyEntries={blueskyEntries} />
 		  }
 
