@@ -36,13 +36,26 @@ const bridés = hasTwitter
         doneEntries.find(([at]) => at === d.twitter)
       )
   )
-  .slice(0, 100)
+  .slice(0, 10)
 
 const atList = [...bridés.map((d) => d.twitter)]
 
 const doFetch = async () => {
   const entries = await Promise.all(
     atList.map((at, i) => checkTwitterActivity(at, i))
+  )
+
+  const notExisting = entries.filter(([at, values]) => values === '!exist')
+
+  const problems = entries.filter(([at, values]) => !values)
+
+  console.log(
+    `%cNotExisting : "${notExisting.map([at]).join('", "')}"`,
+    'background-color: orange'
+  )
+  console.log(
+    `%cProblems : "${problems.map([at]).join('", "')}"`,
+    'background-color: red'
   )
 
   const o = Object.fromEntries(entries.filter(Boolean))
@@ -94,6 +107,11 @@ const checkTwitterActivity = async (at, i) => {
         (match) => match[1]
       )
     })
+
+    if (html.includes('This account doesn’t exist')) {
+      return [at, '!exist']
+    }
+
     console.log(values)
     if (values.length < 2)
       throw new Error(
@@ -103,7 +121,7 @@ const checkTwitterActivity = async (at, i) => {
     return [at, values]
   } catch (e) {
     console.log('Erreur pour ' + at)
-    return false
+    return [at, false]
   }
 
   return

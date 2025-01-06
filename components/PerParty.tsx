@@ -31,6 +31,7 @@ export default function PerParty({ entries, blueskyEntries }) {
 
     return { ...memo, [groupeAbrev]: [...(memo[groupeAbrev] || []), isActive] }
   }, {})
+
   const blueskyStats = Object.entries(blueskyPerParty)
     .map(([party, results]) => [
       party,
@@ -38,6 +39,8 @@ export default function PerParty({ entries, blueskyEntries }) {
       Math.round((results.filter(Boolean).length / results.length) * 100),
     ])
     .sort(([, , a], [, , b]) => -a + b)
+
+  console.log({ blueskyStats, blueskyPerParty })
 
   return (
     <div>
@@ -67,6 +70,8 @@ export default function PerParty({ entries, blueskyEntries }) {
               ({ groupeAbrev }) => groupeAbrev === party
             ).length,
           ]
+
+          console.log(party, blueskyTotal, blueskyPercentActive)
           return (
             <li
               key={party}
