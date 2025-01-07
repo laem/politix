@@ -49,7 +49,7 @@ const List = () => (
         <span>
           {handle.replace(".bsky.social", "")}
           {handle.endsWith("bsky.social") && (
-            <span style={{ color: "lightgray" }}>{".bksy.social"}</span>
+            <span style={{ color: "lightgray" }}>{".bsky.social"}</span>
           )}
         </span>{" "}
         <span title={count + " abonnés"}>{Math.round(count / 1000)}k</span>
