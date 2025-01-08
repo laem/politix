@@ -138,14 +138,16 @@ export const PartyVignette = ({ party, small }) => {
     </a>
   )
 }
-export const BlueskyHandle = ({ député, invert = true , at}) => {
-  const handle= at || (député&& onBluesky(député.id)[1].bsky)
+export const BlueskyHandle = ({ député, invert = true, at, avatar }) => {
+  const handle = at || (député && onBluesky(député.id)[1].bsky)
 
   return (
-    <a href={`https://bsky.app/profile/${handle}`} style={{
-
-				color: "white",
-	}}>
+    <a
+      href={`https://bsky.app/profile/${handle}`}
+      style={{
+        color: "white",
+      }}
+    >
       <img
         src={"/bluesky.svg"}
         style={{
@@ -154,11 +156,27 @@ export const BlueskyHandle = ({ député, invert = true , at}) => {
           filter: invert ? "grayscale(1) invert(1) brightness(100)" : "none",
           display: "inline",
           marginRight: ".2rem",
+              verticalAlign: "middle",
         }}
         width="10"
         height="10"
         alt="Logo Bluesky"
       />
+      {avatar &&
+        (
+          <img
+            src={avatar}
+            style={{
+              width: "1.4rem",
+							border: "2px solid white",
+              height: "auto",
+              borderRadius: "1rem",
+              display: "inline",
+              verticalAlign: "middle",
+              margin: "0 .3rem 0 .1rem",
+            }}
+          />
+        )}
       {handle.replace(".bsky.social", "")}
     </a>
   )
@@ -189,9 +207,9 @@ export const politixStyle = (at, result, isActiveOnBluesky) => ({
   background: result ? xColor : isActiveOnBluesky ? blueskyBlue : "transparent",
   border: (result && !isActiveOnBluesky)
     ? ("3px solid " + xColor)
-      : (isActiveOnBluesky)
-        ? `4px solid ${blueskyBlue}`
-        : "3px solid lightgray",
+    : isActiveOnBluesky
+    ? `4px solid ${blueskyBlue}`
+    : "3px solid lightgray",
   color: (result || isActiveOnBluesky) ? "white" : "black",
   borderRadius: ".4rem",
   padding: "0 .4rem",

@@ -67,12 +67,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2024-12-23",
-        "2025-01-08",
-        "2025-01-07",
-        "2025-01-07"
-      ],
+      "x": ["2024-12-23", "2025-01-08", "2025-01-07", "2025-01-07"],
       "bsky": null
     }
   },
@@ -143,12 +138,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2025-01-07",
-        "2025-01-07",
-        "2025-01-06",
-        "2025-01-06"
-      ],
+      "x": ["2025-01-07", "2025-01-07", "2025-01-06", "2025-01-06"],
       "bsky": []
     }
   },
@@ -197,6 +187,7 @@
     "analyseDate": "2025-01-08",
     "x": "@Elisabeth_Borne",
     "bsky": "elisabeth-borne.bsky.social",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:7anbkw7tnm6bose4s77ejptn/bafkreidlnzln5jhdm6h4c3urgtsbrgm6ouuodud24v4pfgzqoo4lfv623u@jpeg",
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
@@ -338,6 +329,7 @@
     "analyseDate": "2025-01-08",
     "x": "@jnbarrot",
     "bsky": "jnbarrot.bsky.social",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:japtxw5ojajah645imwomtxq/bafkreiehn5f3mhkzy3ftpdfwvlvepztzaz3rbkib4y273g27bjcqnmbguu@jpeg",
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
@@ -437,12 +429,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2024-12-31",
-        "2025-01-08",
-        "2025-01-08",
-        "2024-01-07"
-      ],
+      "x": ["2024-12-31", "2025-01-08", "2025-01-08", "2024-01-07"],
       "bsky": null
     }
   },
@@ -475,12 +462,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2025-01-08",
-        "2025-01-07",
-        "2025-01-06",
-        "2025-01-04"
-      ],
+      "x": ["2025-01-08", "2025-01-07", "2025-01-06", "2025-01-04"],
       "bsky": null
     }
   },
@@ -532,12 +514,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2023-07-21",
-        "2023-07-16",
-        "2023-07-17",
-        "2023-07-14"
-      ],
+      "x": ["2023-07-21", "2023-07-16", "2023-07-17", "2023-07-14"],
       "bsky": null
     }
   },
@@ -572,12 +549,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2025-01-04",
-        "2025-01-07",
-        "2025-01-07",
-        "2025-01-06"
-      ],
+      "x": ["2025-01-04", "2025-01-07", "2025-01-07", "2025-01-06"],
       "bsky": []
     }
   },
@@ -668,12 +640,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2025-01-08",
-        "2025-01-06",
-        "2024-12-31",
-        "2024-12-30"
-      ],
+      "x": ["2025-01-08", "2025-01-06", "2024-12-31", "2024-12-30"],
       "bsky": null
     }
   },

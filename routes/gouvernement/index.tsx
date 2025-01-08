@@ -29,11 +29,14 @@ export default function Top() {
         />
       </Head>
       <header style={{ display: "flex", alignItems: "center" }}>
-        <span style={{ fontSize: "200%", marginRight: '.2rem' }}>🥇</span>
+        <span style={{ fontSize: "200%", marginRight: ".2rem" }}>🥇</span>
         <h1>{title}</h1>
       </header>
-		  <p>{description}</p>
-		  <p>Un ministre est actif quand il a publié un message dans les 7 derniers jours.</p>
+      <p>{description}</p>
+      <p>
+        Un ministre est actif quand il a publié un message dans les 7 derniers
+        jours.
+      </p>
       <br />
       <List />
     </main>
@@ -41,73 +44,92 @@ export default function Top() {
 }
 
 const entries = Object.entries(top)
-const priorityFilter = ([nom])=> nom.includes('Macron') || nom.includes('Gouvernement')
+const priorityFilter = ([nom]) =>
+  nom.includes("Macron") || nom.includes("Gouvernement")
 const priorityEntries = entries.filter(priorityFilter)
-const rest = entries.filter(e => !priorityFilter(e))
+const rest = entries.filter((e) => !priorityFilter(e))
 const List = () => (
   <ul
     style={politixGridStyle}
   >
-    {([...priorityEntries, ...rest]).map(([nom, { "x": xAt, bsky: bskyAt, activité: {x: xActivity, bsky: bskyActivity}, deletedXAccount, notFoundXAccount }]) => {
-      const isActiveOnX = xActivity && Array.isArray(xActivity) &&
-        hasRecentTweets(xActivity, analyseDate)
-      const isActiveOnBluesky = bskyActivity && Array.isArray(bskyActivity) &&
-        hasRecentTweets(bskyActivity, analyseDate)
+    {[...priorityEntries, ...rest].map(
+      (
+        [
+          nom,
+          {
+            "x": xAt,
+            bsky: bskyAt,
+            avatar,
+            activité: { x: xActivity, bsky: bskyActivity },
+            deletedXAccount,
+            notFoundXAccount,
+          },
+        ],
+      ) => {
+        const isActiveOnX = xActivity && Array.isArray(xActivity) &&
+          hasRecentTweets(xActivity, analyseDate)
+        const isActiveOnBluesky = bskyActivity && Array.isArray(bskyActivity) &&
+          hasRecentTweets(bskyActivity, analyseDate)
 
-      return (
-        <li
-          key={""}
-          style={politixStyle(xAt, isActiveOnX, isActiveOnBluesky)}
-        >
-          <div style={{ maxWidth: "100%" }}>
-            <div style={{ whiteSpace: "nowrap", overflow: "scroll" }}>
-              {nom}
+        return (
+          <li
+            key={""}
+            style={politixStyle(xAt, isActiveOnX, isActiveOnBluesky)}
+          >
+            <div style={{ maxWidth: "100%" }}>
+              <div style={{ whiteSpace: "nowrap", overflow: "scroll" }}>
+                {nom}
+              </div>
             </div>
-          </div>
-          <div>
-            <small style={{ color: "#f1a8b7" }}>
-              X {xAt || ": non présent"}
-            </small>
-          </div>
-          <div>
-            {isActiveOnX
-              ? (
-                <div>
-                  <details>
-                    <summary>Actif sur X</summary>
-                    <ol>
-                      {xActivity.map((date, i) => (
-                        <li key={date + i}>{date}</li>
-                      ))}
-                    </ol>
-                  </details>
-                </div>
-              )
-              : (
-                "Non actif sur X"
-              )}
-          </div>
-          <div>
-            {isActiveOnBluesky
-              ? (
-                <div>
-                  <small style={{ whiteSpace: "nowrap" }}>
-                    <BlueskyHandle at={bskyAt} invert={false} />
-                  </small>
-                  <details>
-                    <summary>Actif sur Bluesky</summary>
-                    <ol>
-                      {bskyActivity.map((date, i) => (
-                        <li key={date + i}>{date}</li>
-                      ))}
-                    </ol>
-                  </details>
-                </div>
-              )
-              : "Non actif sur Bluesky"}
-          </div>
-        </li>
-      )
-    })}
+            <div>
+              <small style={{ color: "#f1a8b7" }}>
+                X {xAt || ": non présent"}
+              </small>
+            </div>
+            <div>
+              {isActiveOnX
+                ? (
+                  <div>
+                    <details>
+                      <summary>Actif sur X</summary>
+                      <ol>
+                        {xActivity.map((date, i) => (
+                          <li key={date + i}>{date}</li>
+                        ))}
+                      </ol>
+                    </details>
+                  </div>
+                )
+                : (
+                  "Non actif sur X"
+                )}
+            </div>
+            <div>
+              {isActiveOnBluesky
+                ? (
+                  <div>
+                    <small style={{ whiteSpace: "nowrap" }}>
+                      <BlueskyHandle
+                        at={bskyAt}
+                        invert={false}
+                        avatar={avatar}
+                      />
+                    </small>
+                    <details>
+                      <summary>Actif sur Bluesky</summary>
+                      <ol>
+                        {bskyActivity.map((date, i) => (
+                          <li key={date + i}>{date}</li>
+                        ))}
+                      </ol>
+                    </details>
+                  </div>
+                )
+                : "Non actif sur Bluesky"}
+            </div>
+          </li>
+        )
+      },
+    )}
   </ul>
 )
