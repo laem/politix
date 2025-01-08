@@ -1,62 +1,67 @@
+// Merci https://gist.github.com/mouette/4cd38e6dce84bd232c78b77506d9a899#file-ministres-x-csv
 import { launch } from 'jsr:@astral/astral'
-import députésRandomOrder from './députés.ts'
-import { delay } from './utils.ts'
+import { parse } from 'jsr:@std/csv'
 import { analyseDate } from './date-utils.ts'
+import { delay } from './utils.ts'
+
+const csv = Deno.readTextFileSync('ministres-x.csv')
+
+const ministres = parse(csv, {
+  skipFirstRow: true,
+  strip: true,
+})
+
+let file
+try {
+  file = deno.readtextfilesync('ministres.json')
+} catch (e) {
+  file = '{}'
+}
+
+const alreadyDone = JSON.parse(file)
+const doneEntries = Object.entries(alreadyDone)
 
 const limit = Deno.args[0]
 const initialDelay = Deno.args[1] || 30
 const iterationDelay = Deno.args[2] || 20
 
-const alreadyDone = JSON.parse(Deno.readTextFileSync('data.json') || '{}')
-
-const doneEntries = Object.entries(alreadyDone)
-console.log(`Déjà ${doneEntries.length} comptes de députés vérifiés`)
-
-const députés = députésRandomOrder.map((d) => {
-  if (!d.twitter) return d
-  const match = d.twitter.match(/x\.com\/(.+)$/)
-  if (match) return { ...d, twitter: '@' + match[1] }
-  return d
-})
-
-const extract = députés
+const extract = ministres
   /* Instead of filtering the deleted accounts, we'll save the status of the account in the data.json file to store raw data, and potentially correct the source @ in députés-*
    */
   .filter(
     (d) =>
       !doneEntries.find(
         ([id, { analyseDate: doneAnalyseDate }]) =>
-          id === d.id && doneAnalyseDate === analyseDate
+          id === d['@X'] && doneAnalyseDate === analyseDate
       )
   )
   .slice(0, limit)
 
+console.log(extract)
+
 const doFetch = async () => {
   const entries = await Promise.all(
-    extract.map(async (député, i) => {
-      const { nom, prenom, groupeAbrev, twitter: at } = député
+    extract.map(async (politix, i) => {
+      const { Nom: nom, '@X': at } = politix
       if (!at || at === '') {
         return [
-          député.id,
+          nom,
           {
             nom,
             analyseDate,
-            prenom,
-            groupeAbrev,
             unknownPresence: true,
           },
         ]
       }
-      const [, values] = await checkTwitterActivity(député.twitter, i)
+
+      const [, values] = await checkTwitterActivity(at, i)
 
       return [
-        député.id,
+        nom,
         {
           nom,
-          prenom,
           analyseDate,
-          groupeAbrev,
-          '@': député.twitter || null,
+          '@': at,
           deletedAccount: values === '!exist',
           notFoundAccount: !values,
           activité: values,
@@ -68,7 +73,7 @@ const doFetch = async () => {
   const o = Object.fromEntries(entries)
 
   Deno.writeTextFileSync(
-    './data.json',
+    './ministres.json',
     JSON.stringify(
       {
         ...alreadyDone,
@@ -78,7 +83,7 @@ const doFetch = async () => {
       2
     )
   )
-  return console.log("Voilà c'est analysé dans ./data.json")
+  return console.log("Voilà c'est analysé dans ./ministres.json")
 }
 
 const ws =
@@ -134,40 +139,6 @@ const checkTwitterActivity = async (at, i) => {
   } catch (e) {
     console.log('Erreur pour ' + at, e)
     return [at, false]
-  }
-}
-
-//<a href="/JeromeGuedj/status/1630575199975243776#m" title="Feb 28, 2023 · 2:26 PM UTC">28 Feb 2023</a>
-const regex = /title="([A-Z][a-z][a-z]) (\d+), (\d\d\d\d)/
-const monthNames = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec',
-]
-const dateFromAttr = (str) => {
-  const match = str.match(regex)
-
-  if (match) {
-    const month = match[1]
-    const day = match[2]
-    const year = match[3]
-    //    console.log(`Day: ${day}, Month: ${month}, Year: ${year}`)
-
-    const monthIndex = monthNames.indexOf(month)
-    const date = new Date(year, monthIndex, day)
-    return date
-  } else {
-    console.log('No match found')
-    return null
   }
 }
 
