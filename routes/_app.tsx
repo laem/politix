@@ -1,5 +1,5 @@
-import { type PageProps } from '$fresh/server.ts'
-import { Head } from '$fresh/runtime.ts'
+import { type PageProps } from "$fresh/server.ts"
+import { Head } from "$fresh/runtime.ts"
 
 export default function App({ Component }: PageProps) {
   return (

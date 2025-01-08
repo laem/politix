@@ -35,14 +35,7 @@ export default function Results({ givenParty = null }) {
         Voir les députés sur Bluesky
       </a>
       <ul
-        style={{
-          display: "grid",
-          gridAutoColumns: "12rem",
-          gridTemplateColumns: "repeat(auto-fill, 12rem)",
-          alignItems: "baseline",
-          gap: "1rem",
-          marginTop: "2rem",
-        }}
+        style={politixGridStyle}
       >
         {filteredDéputés(givenParty).map((député) => {
           const xTested = entries.find(([id, data]) =>
@@ -59,26 +52,7 @@ export default function Results({ givenParty = null }) {
           return (
             <li
               key={at}
-              style={{
-                listStyleType: "none",
-                width: "12rem",
-                minHeight: "8.5rem",
-                background: result
-                  ? "crimson"
-                  : isActiveOnBluesky
-                  ? blueskyBlue
-                  : "transparent",
-                border: result
-                  ? "3px solid crimson"
-                  : (at
-                    ? "3px solid crimson"
-                    : (isActiveOnBluesky
-                      ? `3px solid ${blueskyBlue}`
-                      : "3px solid lightgray")),
-                color: (result || isActiveOnBluesky) ? "white" : "black",
-                borderRadius: ".4rem",
-                padding: "0 .4rem",
-              }}
+              style={politixStyle(at, result, isActiveOnBluesky)}
             >
               <div style={{ maxWidth: "100%" }}>
                 <div style={{ whiteSpace: "nowrap", overflow: "scroll" }}>
@@ -193,3 +167,34 @@ export const getPartyName = (party) => {
   ).groupe
   return fullName
 }
+
+export const politixGridStyle = {
+  display: "grid",
+  gridAutoColumns: "12rem",
+  gridTemplateColumns: "repeat(auto-fill, 12rem)",
+  alignItems: "baseline",
+  gap: "1rem",
+  marginTop: "2rem",
+}
+
+const xColor = '#4c0815'
+export const politixStyle = (at, result, isActiveOnBluesky) => ({
+  listStyleType: "none",
+  width: "12rem",
+  minHeight: "8.5rem",
+  background: result
+    ? xColor
+    : isActiveOnBluesky
+    ? blueskyBlue
+    : "transparent",
+  border: result
+    ? ("3px solid "+xColor)
+    : (at
+      ? ("3px solid " + xColor)
+      : (isActiveOnBluesky
+        ? `3px solid ${blueskyBlue}`
+        : "3px solid lightgray")),
+  color: (result || isActiveOnBluesky) ? "white" : "black",
+  borderRadius: ".4rem",
+  padding: "0 .4rem",
+})

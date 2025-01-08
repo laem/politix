@@ -1,23 +1,26 @@
 import top from "../../bluesky-top-actors-fr.json" with { type: "json" }
-import { Head } from "$fresh/runtime.ts";
+import { Head } from "$fresh/runtime.ts"
 
-const title = 'Le Top Bluesky francophone'
-const description = `Les plus gros comptes francophones actifs récemment sur Bluesky.`
+const title = "Le Top Bluesky francophone"
+const description =
+  `Les plus gros comptes francophones actifs récemment sur Bluesky.`
 
 const { sorted, dates } = top
 export default function Top() {
   return (
-    <main style={{ maxWidth: "40rem", margin: "2rem auto"  }}>
-		   <Head>
+    <main style={{ maxWidth: "40rem", margin: "2rem auto" }}>
+      <Head>
         <title>{title}</title>
         <meta
           name="description"
           content={description}
-		  key="description"
+          key="description"
         />
-        <meta property="og:image" content="https://politix.top/fr.png"
+        <meta
+          property="og:image"
+          content="https://politix.top/fr.png"
           key="og:image"
-		  />
+        />
       </Head>
       <header style={{ display: "flex", alignItems: "center" }}>
         <span style={{ fontSize: "200%" }}>🥇</span>
