@@ -24,7 +24,7 @@ export default function Top() {
         />
         <meta
           property="og:image"
-          content="https://politix.top/fr.png"
+          content="https://politix.top/gouvernement.png"
           key="og:image"
         />
       </Head>
