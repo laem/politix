@@ -3,7 +3,7 @@ import { launch } from 'jsr:@astral/astral'
 import { parse } from 'jsr:@std/csv'
 import { analyseDate } from './date-utils.ts'
 import { delay } from './utils.ts'
-import { findBlueskyAccount, logResult } from './analyseBluesky.ts'
+import { findBlueskyAccount, logResult } from './findBlueskyAccount.ts'
 
 const csv = Deno.readTextFileSync('ministres-x.csv')
 
@@ -46,7 +46,7 @@ const doFetch = async () => {
       const { Nom: name, '@X': at } = politix
 
       const prenom = name.split(' ')[0]
-      const nom = name.split(' ')[1]
+      const nom = name.split(' ').slice(1).join(' ')
       const noTwitterAccount = !at || at === ''
 
       const [, values] = noTwitterAccount

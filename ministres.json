@@ -1,505 +1,700 @@
 {
   "Agnès Pannier-Runacher": {
-    "nom": "Agnès Pannier-Runacher",
+    "nom": "Pannier-Runacher",
+    "prenom": "Agnès",
     "analyseDate": "2025-01-08",
-    "@": "@AgnesRunacher",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2024-12-23",
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-01",
-      "2024-12-31",
-      "2024-12-29"
-    ]
+    "x": "@AgnesRunacher",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2024-12-23",
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-01",
+        "2024-12-31",
+        "2024-12-29"
+      ],
+      "bsky": null
+    }
   },
   "Amélie de Montchalin": {
-    "nom": "Amélie de Montchalin",
+    "nom": "de Montchalin",
+    "prenom": "Amélie",
     "analyseDate": "2025-01-08",
-    "@": "@AdeMontchalin",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06"
-    ]
+    "x": "@AdeMontchalin",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06"
+      ],
+      "bsky": null
+    }
   },
   "Annie Genevard": {
-    "nom": "Annie Genevard",
+    "nom": "Genevard",
+    "prenom": "Annie",
     "analyseDate": "2025-01-08",
-    "@": "@AnnieGenevard",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-06",
-      "2025-01-06",
-      "2025-01-06"
-    ]
+    "x": "@AnnieGenevard",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06",
+        "2025-01-06",
+        "2025-01-06"
+      ],
+      "bsky": null
+    }
   },
   "Astrid Panosyan-Bouvet": {
-    "nom": "Astrid Panosyan-Bouvet",
+    "nom": "Panosyan-Bouvet",
+    "prenom": "Astrid",
     "analyseDate": "2025-01-08",
-    "@": "@AstridPanosyan",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2024-12-23",
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07"
-    ]
+    "x": "@AstridPanosyan",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2024-12-23",
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07"
+      ],
+      "bsky": null
+    }
   },
   "Aurore Bergé": {
-    "nom": "Aurore Bergé",
+    "nom": "Bergé",
+    "prenom": "Aurore",
     "analyseDate": "2025-01-08",
-    "@": "@auroreberge",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2024-01-24",
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-07"
-    ]
+    "x": "@auroreberge",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2024-01-24",
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-07"
+      ],
+      "bsky": null
+    }
   },
   "Benjamin Haddad": {
-    "nom": "Benjamin Haddad",
+    "nom": "Haddad",
+    "prenom": "Benjamin",
     "analyseDate": "2025-01-08",
-    "@": "@benjaminhaddad",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2024-12-23",
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-06"
-    ]
+    "x": "@benjaminhaddad",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2024-12-23",
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06"
+      ],
+      "bsky": null
+    }
   },
   "Bruno Retailleau": {
-    "nom": "Bruno Retailleau",
+    "nom": "Retailleau",
+    "prenom": "Bruno",
     "analyseDate": "2025-01-08",
-    "@": "@BrunoRetailleau",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-08",
-      "2025-01-08",
-      "2025-01-08",
-      "2025-01-08"
-    ]
+    "x": "@BrunoRetailleau",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-08"
+      ],
+      "bsky": null
+    }
   },
   "Catherine Vautrin": {
-    "nom": "Catherine Vautrin",
+    "nom": "Vautrin",
+    "prenom": "Catherine",
     "analyseDate": "2025-01-08",
-    "@": "@CaVautrin",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-06"
-    ]
+    "x": "@CaVautrin",
+    "bsky": "catherinevautrin.bsky.social",
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06"
+      ],
+      "bsky": []
+    }
   },
   "Charlotte Parmentier-Lecocq": {
-    "nom": "Charlotte Parmentier-Lecocq",
+    "nom": "Parmentier-Lecocq",
+    "prenom": "Charlotte",
     "analyseDate": "2025-01-08",
-    "@": "@lecocqcharlotte",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2024-12-23",
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-08",
-      "2025-01-07"
-    ]
+    "x": "@lecocqcharlotte",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2024-12-23",
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-08",
+        "2025-01-07"
+      ],
+      "bsky": null
+    }
   },
   "Clara Chappaz": {
-    "nom": "Clara Chappaz",
+    "nom": "Chappaz",
+    "prenom": "Clara",
     "analyseDate": "2025-01-08",
-    "@": "@ClaraChappaz",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-06"
-    ]
+    "x": "@ClaraChappaz",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06"
+      ],
+      "bsky": null
+    }
   },
   "Élisabeth Borne": {
-    "nom": "Élisabeth Borne",
+    "nom": "Borne",
+    "prenom": "Élisabeth",
     "analyseDate": "2025-01-08",
-    "@": "@Elisabeth_Borne",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-05",
-      "2025-01-04",
-      "2025-01-02"
-    ]
+    "x": "@Elisabeth_Borne",
+    "bsky": "elisabeth-borne.bsky.social",
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-05",
+        "2025-01-04",
+        "2025-01-02"
+      ],
+      "bsky": [
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06",
+        "2025-01-05"
+      ]
+    }
   },
   "Éric Lombard": {
-    "nom": "Éric Lombard",
+    "nom": "Lombard",
+    "prenom": "Éric",
     "analyseDate": "2025-01-08",
-    "@": "@Eric_R_Lombard",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-06",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-06",
-      "2025-01-05"
-    ]
+    "x": "@Eric_R_Lombard",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-06",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06",
+        "2025-01-05"
+      ],
+      "bsky": null
+    }
   },
   "François Bayrou": {
-    "nom": "François Bayrou",
+    "nom": "Bayrou",
+    "prenom": "François",
     "analyseDate": "2025-01-08",
-    "@": "@bayrou",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-05",
-      "2025-01-04",
-      "2025-01-03"
-    ]
+    "x": "@bayrou",
+    "bsky": "bayrou.fr",
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-05",
+        "2025-01-04",
+        "2025-01-03"
+      ],
+      "bsky": []
+    }
   },
   "François Rebsamen": {
-    "nom": "François Rebsamen",
+    "nom": "Rebsamen",
+    "prenom": "François",
     "analyseDate": "2025-01-08",
-    "@": "@frebsamen",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-07",
-      "2025-01-01",
-      "2024-12-30",
-      "2024-12-24",
-      "2024-12-24",
-      "2024-12-24"
-    ]
+    "x": "@frebsamen",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-07",
+        "2025-01-01",
+        "2024-12-30",
+        "2024-12-24",
+        "2024-12-24",
+        "2024-12-24"
+      ],
+      "bsky": null
+    }
   },
   "François-Noël Buffet": {
-    "nom": "François-Noël Buffet",
+    "nom": "Buffet",
+    "prenom": "François-Noël",
     "analyseDate": "2025-01-08",
-    "@": "@fnb_officiel",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-07"
-    ]
+    "x": "@fnb_officiel",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-07"
+      ],
+      "bsky": null
+    }
   },
   "Françoise Gatel": {
-    "nom": "Françoise Gatel",
+    "nom": "Gatel",
+    "prenom": "Françoise",
     "analyseDate": "2025-01-08",
-    "@": "@FrancoiseGatel",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2024-12-31",
-      "2025-01-08",
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07"
-    ]
+    "x": "@FrancoiseGatel",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2024-12-31",
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07"
+      ],
+      "bsky": null
+    }
   },
   "Gérald Darmanin": {
-    "nom": "Gérald Darmanin",
+    "nom": "Darmanin",
+    "prenom": "Gérald",
     "analyseDate": "2025-01-08",
-    "@": "@GDarmanin",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-06",
-      "2025-01-06"
-    ]
+    "x": "@GDarmanin",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06",
+        "2025-01-06"
+      ],
+      "bsky": null
+    }
   },
   "Jean-Noël Barrot": {
-    "nom": "Jean-Noël Barrot",
+    "nom": "Barrot",
+    "prenom": "Jean-Noël",
     "analyseDate": "2025-01-08",
-    "@": "@jnbarrot",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-07"
-    ]
+    "x": "@jnbarrot",
+    "bsky": "jnbarrot.bsky.social",
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-07"
+      ],
+      "bsky": [
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06",
+        "2025-01-06"
+      ]
+    }
   },
   "Juliette Méadel": {
-    "nom": "Juliette Méadel",
+    "nom": "Méadel",
+    "prenom": "Juliette",
     "analyseDate": "2025-01-08",
-    "@": "@juliettemeadel",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-02",
-      "2025-01-02",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-06"
-    ]
+    "x": "@juliettemeadel",
+    "bsky": "juliettemeadel.bsky.social",
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-02",
+        "2025-01-02",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06"
+      ],
+      "bsky": []
+    }
   },
   "Laurent Marcangeli": {
-    "nom": "Laurent Marcangeli",
+    "nom": "Marcangeli",
+    "prenom": "Laurent",
     "analyseDate": "2025-01-08",
-    "@": "@LMarcangeli",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-07",
-      "2025-01-05",
-      "2025-01-04",
-      "2025-01-01",
-      "2024-12-31"
-    ]
+    "x": "@LMarcangeli",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-07",
+        "2025-01-05",
+        "2025-01-04",
+        "2025-01-01",
+        "2024-12-31"
+      ],
+      "bsky": null
+    }
   },
   "Laurent Saint-Martin": {
-    "nom": "Laurent Saint-Martin",
+    "nom": "Saint-Martin",
+    "prenom": "Laurent",
     "analyseDate": "2025-01-08",
-    "@": "@LaurentSMartin",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-06"
-    ]
+    "x": "@LaurentSMartin",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06"
+      ],
+      "bsky": null
+    }
   },
   "Manuel Valls": {
-    "nom": "Manuel Valls",
+    "nom": "Valls",
+    "prenom": "Manuel",
     "analyseDate": "2025-01-08",
-    "unknownPresence": true
+    "x": false,
+    "bsky": "manuelvalls.bsky.social",
+    "deletedXAccount": false,
+    "notFoundXAccount": true,
+    "activité": {
+      "x": null,
+      "bsky": []
+    }
   },
   "Marc Ferracci": {
-    "nom": "Marc Ferracci",
+    "nom": "Ferracci",
+    "prenom": "Marc",
     "analyseDate": "2025-01-08",
-    "@": "@FerracciMarc",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2024-12-31",
-      "2025-01-08",
-      "2025-01-08",
-      "2024-01-07"
-    ]
+    "x": "@FerracciMarc",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2024-12-31",
+        "2025-01-08",
+        "2025-01-08",
+        "2024-01-07"
+      ],
+      "bsky": null
+    }
   },
   "Marie Barsacq": {
-    "nom": "Marie Barsacq",
+    "nom": "Barsacq",
+    "prenom": "Marie",
     "analyseDate": "2025-01-08",
-    "@": "@MarieBarsacq",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2022-10-15",
-      "2022-10-15",
-      "2022-09-14",
-      "2022-09-13",
-      "2022-08-25",
-      "2022-07-21"
-    ]
+    "x": "@MarieBarsacq",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2022-10-15",
+        "2022-10-15",
+        "2022-09-14",
+        "2022-09-13",
+        "2022-08-25",
+        "2022-07-21"
+      ],
+      "bsky": null
+    }
   },
   "Nathalie Delattre": {
-    "nom": "Nathalie Delattre",
+    "nom": "Delattre",
+    "prenom": "Nathalie",
     "analyseDate": "2025-01-08",
-    "@": "@n_delattre",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-04"
-    ]
+    "x": "@n_delattre",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-04"
+      ],
+      "bsky": null
+    }
   },
   "Patricia Mirallès": {
-    "nom": "Patricia Mirallès",
+    "nom": "Mirallès",
+    "prenom": "Patricia",
     "analyseDate": "2025-01-08",
-    "@": "@MIRALLESMP",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2024-12-23",
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-05",
-      "2025-01-05"
-    ]
+    "x": "@MIRALLESMP",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2024-12-23",
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-05",
+        "2025-01-05"
+      ],
+      "bsky": null
+    }
   },
   "Patrick Mignola": {
-    "nom": "Patrick Mignola",
+    "nom": "Mignola",
+    "prenom": "Patrick",
     "analyseDate": "2025-01-08",
-    "@": "@PatrickMignola",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-06"
-    ]
+    "x": "@PatrickMignola",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06"
+      ],
+      "bsky": null
+    }
   },
   "Philippe Baptiste": {
-    "nom": "Philippe Baptiste",
+    "nom": "Baptiste",
+    "prenom": "Philippe",
     "analyseDate": "2025-01-08",
-    "@": "@PhBaptiste",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2023-07-21",
-      "2023-07-16",
-      "2023-07-17",
-      "2023-07-14"
-    ]
+    "x": "@PhBaptiste",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2023-07-21",
+        "2023-07-16",
+        "2023-07-17",
+        "2023-07-14"
+      ],
+      "bsky": null
+    }
   },
   "Philippe Tabarot": {
-    "nom": "Philippe Tabarot",
+    "nom": "Tabarot",
+    "prenom": "Philippe",
     "analyseDate": "2025-01-08",
-    "@": "@PhilippeTabarot",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-08",
-      "2025-01-08",
-      "2025-01-08",
-      "2025-01-08",
-      "2025-01-06",
-      "2025-01-06"
-    ]
+    "x": "@PhilippeTabarot",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-06",
+        "2025-01-06"
+      ],
+      "bsky": null
+    }
   },
   "Rachida Dati": {
-    "nom": "Rachida Dati",
+    "nom": "Dati",
+    "prenom": "Rachida",
     "analyseDate": "2025-01-08",
-    "@": "@datirachida",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-04",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06"
-    ]
+    "x": "@datirachida",
+    "bsky": "rachidadati.bsky.social",
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-04",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06"
+      ],
+      "bsky": []
+    }
   },
   "Sébastien Lecornu": {
-    "nom": "Sébastien Lecornu",
+    "nom": "Lecornu",
+    "prenom": "Sébastien",
     "analyseDate": "2025-01-08",
-    "@": "@SebLecornu",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2024-12-24",
-      "2025-01-08",
-      "2025-01-08",
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07"
-    ]
+    "x": "@SebLecornu",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2024-12-24",
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07"
+      ],
+      "bsky": null
+    }
   },
   "Sophie Primas": {
-    "nom": "Sophie Primas",
+    "nom": "Primas",
+    "prenom": "Sophie",
     "analyseDate": "2025-01-08",
-    "@": "@sophieprimas",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-06"
-    ]
+    "x": "@sophieprimas",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06"
+      ],
+      "bsky": null
+    }
   },
   "Thani Mohamed Soilihi": {
-    "nom": "Thani Mohamed Soilihi",
+    "nom": "Mohamed Soilihi",
+    "prenom": "Thani",
     "analyseDate": "2025-01-08",
-    "@": "@TMohamedSoilihi",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-06",
-      "2025-01-06"
-    ]
+    "x": "@TMohamedSoilihi",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-06",
+        "2025-01-06"
+      ],
+      "bsky": null
+    }
   },
   "Valérie Létard": {
-    "nom": "Valérie Létard",
+    "nom": "Létard",
+    "prenom": "Valérie",
     "analyseDate": "2025-01-08",
-    "@": "@valerieletard",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-05",
-      "2025-01-01",
-      "2025-01-01",
-      "2024-12-31"
-    ]
+    "x": "@valerieletard",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-05",
+        "2025-01-01",
+        "2025-01-01",
+        "2024-12-31"
+      ],
+      "bsky": null
+    }
   },
   "Véronique Louwagie": {
-    "nom": "Véronique Louwagie",
+    "nom": "Louwagie",
+    "prenom": "Véronique",
     "analyseDate": "2025-01-08",
-    "@": "@VeroLouwagie",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-06",
-      "2024-12-31",
-      "2024-12-30"
-    ]
+    "x": "@VeroLouwagie",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-06",
+        "2024-12-31",
+        "2024-12-30"
+      ],
+      "bsky": null
+    }
   },
   "Yannick Neuder": {
-    "nom": "Yannick Neuder",
+    "nom": "Neuder",
+    "prenom": "Yannick",
     "analyseDate": "2025-01-08",
-    "@": "@yannickneuder",
-    "deletedAccount": false,
-    "notFoundAccount": false,
-    "activité": [
-      "2025-01-08",
-      "2025-01-07",
-      "2025-01-07",
-      "2025-01-06",
-      "2025-01-03",
-      "2025-01-03"
-    ]
+    "x": "@yannickneuder",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-03",
+        "2025-01-03"
+      ],
+      "bsky": null
+    }
   }
 }
