@@ -696,5 +696,43 @@
       ],
       "bsky": null
     }
+  },
+  "Emmanuel Macron": {
+    "nom": "Macron",
+    "prenom": "Emmanuel",
+    "analyseDate": "2025-01-08",
+    "x": "@EmmanuelMacron",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-07",
+        "2025-01-08",
+        "2025-01-07",
+        "2025-01-06",
+        "2025-01-01"
+      ],
+      "bsky": null
+    }
+  },
+  "Le Gouvernement": {
+    "nom": "Gouvernement",
+    "prenom": "Le",
+    "analyseDate": "2025-01-08",
+    "x": "@gouvernementFR",
+    "bsky": null,
+    "deletedXAccount": false,
+    "notFoundXAccount": false,
+    "activité": {
+      "x": [
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-08",
+        "2025-01-08"
+      ],
+      "bsky": null
+    }
   }
 }

@@ -6,6 +6,7 @@ import { delay } from './utils.ts'
 import { findBlueskyAccount, logResult } from './findBlueskyAccount.ts'
 
 const csv = Deno.readTextFileSync('ministres-x.csv')
+const bskyFalsePositives = ['manuelvalls.bsky.social']
 
 const ministres = parse(csv, {
   skipFirstRow: true,
@@ -14,7 +15,7 @@ const ministres = parse(csv, {
 
 let file
 try {
-  file = deno.readtextfilesync('ministres.json')
+  file = Deno.readTextFileSync('ministres.json')
 } catch (e) {
   file = '{}'
 }
@@ -32,8 +33,9 @@ const extract = ministres
   .filter(
     (d) =>
       !doneEntries.find(
-        ([id, { analyseDate: doneAnalyseDate }]) =>
-          id === d['@X'] && doneAnalyseDate === analyseDate
+        ([nom, { analyseDate: doneAnalyseDate }]) =>
+          console.log(d, nom, analyseDate, doneAnalyseDate) ||
+          (nom === d['Nom'] && doneAnalyseDate === analyseDate)
       )
   )
   .slice(0, limit)
@@ -56,6 +58,7 @@ const doFetch = async () => {
       const [{ bsky }, activity] = result
       logResult(result)
 
+      const verifiedBsky = bsky && !bskyFalsePositives.includes(bsky)
       return [
         name,
         {
@@ -63,7 +66,7 @@ const doFetch = async () => {
           prenom,
           analyseDate,
           x: noTwitterAccount ? false : at,
-          bsky: bsky || null,
+          bsky: verifiedBsky || null,
           deletedXAccount: values === '!exist',
           notFoundXAccount: !values,
           activité: { x: values, bsky: activity },
