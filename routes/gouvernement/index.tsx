@@ -41,11 +41,14 @@ export default function Top() {
 }
 
 const entries = Object.entries(top)
+const priorityFilter = ([nom])=> nom.includes('Macron') || nom.includes('Gouvernement')
+const priorityEntries = entries.filter(priorityFilter)
+const rest = entries.filter(e => !priorityFilter(e))
 const List = () => (
   <ul
     style={politixGridStyle}
   >
-    {entries.map(([nom, { "x": xAt, bsky: bskyAt, activité: {x: xActivity, bsky: bskyActivity}, deletedXAccount, notFoundXAccount }]) => {
+    {([...priorityEntries, ...rest]).map(([nom, { "x": xAt, bsky: bskyAt, activité: {x: xActivity, bsky: bskyActivity}, deletedXAccount, notFoundXAccount }]) => {
       const isActiveOnX = xActivity && Array.isArray(xActivity) &&
         hasRecentTweets(xActivity, analyseDate)
       const isActiveOnBluesky = bskyActivity && Array.isArray(bskyActivity) &&
