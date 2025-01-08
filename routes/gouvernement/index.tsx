@@ -39,7 +39,7 @@ const List = () => (
     style={politixGridStyle}
   >
     {entries.map(([nom, { "@": at, activité , notTested, notFoundAccount}]) => {
-      const result = hasRecentTweets(activité, analyseDate)
+      const result =  activité && Array.isArray(activité)&& hasRecentTweets(activité, analyseDate)
 			const isActiveOnBluesky = null
       return (
         <li

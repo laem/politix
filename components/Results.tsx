@@ -175,6 +175,7 @@ export const politixGridStyle = {
   alignItems: "baseline",
   gap: "1rem",
   marginTop: "2rem",
+		paddingLeft: '1rem'
 }
 
 const xColor = '#4c0815'
