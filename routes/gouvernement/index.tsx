@@ -8,9 +8,9 @@ import {
 } from "../../components/Results.tsx"
 import { analyseDate, hasRecentTweets } from "../../date-utils.ts"
 
-const title = "Nos ministres sont-ils actifs sur X ?"
+const title = "Nos ministres sont-ils sur X ?"
 const description =
-  `Analyse de l'activité des ministres de notre gouvernement sur le réseau social d'influence X de Musk, et de leur activité sur Bluesky, l'alternative ouverte à X.`
+  `Analyse de l'activité des ministres de notre gouvernement sur le réseau social d'influence X de Musk, ainsi que sur Bluesky, l'alternative ouverte à X.`
 
 export default function Top() {
   return (
@@ -29,9 +29,11 @@ export default function Top() {
         />
       </Head>
       <header style={{ display: "flex", alignItems: "center" }}>
-        <span style={{ fontSize: "200%" }}>🥇</span>
+        <span style={{ fontSize: "200%", marginRight: '.2rem' }}>🥇</span>
         <h1>{title}</h1>
       </header>
+		  <p>{description}</p>
+		  <p>Un ministre est actif quand il a publié un message dans les 7 derniers jours.</p>
       <br />
       <List />
     </main>
