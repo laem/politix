@@ -8,6 +8,7 @@ import {
 } from "../../components/Results.tsx"
 import { analyseDate, hasRecentTweets } from "../../date-utils.ts"
 import {blueskyBlue} from "../../components/PerParty.tsx"
+import BackToHome from "../../components/BackToHome.tsx"
 
 const title = "Nos ministres sont-ils sur X ?"
 const description =
@@ -15,7 +16,7 @@ const description =
 
 export default function Top() {
   return (
-    <main style={{ maxWidth: "40rem", margin: "2rem auto" }}>
+    <main style={{ maxWidth: "40rem", margin: "1rem auto" }}>
       <Head>
         <title>{title}</title>
         <meta
@@ -29,7 +30,8 @@ export default function Top() {
           key="og:image"
         />
       </Head>
-      <header style={{ display: "flex", alignItems: "center" }}>
+      <BackToHome />
+      <header style={{ display: "flex", alignItems: "center", marginTop: '1rem' }}>
         <span style={{ fontSize: "200%", marginRight: ".2rem" }}>🥇</span>
         <h1>{title}</h1>
       </header>

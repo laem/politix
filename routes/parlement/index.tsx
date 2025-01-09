@@ -1,4 +1,5 @@
 import { Head } from '$fresh/runtime.ts'
+import BackToHome from '../../components/BackToHome.tsx'
 import Results from '../../components/Results.tsx'
 
 const title =
@@ -7,7 +8,7 @@ const description = `Une analyse régulière de l'activité des députés de la 
 
 export default function Top() {
   return (
-    <main style={{ maxWidth: '40rem', margin: '2rem auto' }}>
+    <main style={{ maxWidth: '40rem', margin: '1rem auto' }}>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} key="description" />
@@ -17,7 +18,10 @@ export default function Top() {
           key="og:image"
         />
       </Head>
-      <header style={{ display: 'flex', alignItems: 'center' }}>
+      <BackToHome />
+      <header
+        style={{ display: 'flex', alignItems: 'center', marginTop: '1rem' }}
+      >
         <span style={{ fontSize: '200%' }}>🥇</span>
         <h1>{title}</h1>
       </header>

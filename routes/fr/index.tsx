@@ -1,5 +1,6 @@
 import top from "../../bluesky-top-actors-fr.json" with { type: "json" }
 import { Head } from "$fresh/runtime.ts"
+import BackToHome from "../../components/BackToHome.tsx"
 
 const title = "Le Top Bluesky francophone"
 const description =
@@ -8,7 +9,7 @@ const description =
 const { sorted, dates } = top
 export default function Top() {
   return (
-    <main style={{ maxWidth: "40rem", margin: "2rem auto" }}>
+    <main style={{ maxWidth: "40rem", margin: "1rem auto" }}>
       <Head>
         <title>{title}</title>
         <meta
@@ -22,7 +23,8 @@ export default function Top() {
           key="og:image"
         />
       </Head>
-      <header style={{ display: "flex", alignItems: "center" }}>
+      <BackToHome />
+      <header style={{ display: "flex", alignItems: "center", marginTop: '1rem' }}>
         <span style={{ fontSize: "200%" }}>🥇</span>
         <h1>{title}</h1>
       </header>
