@@ -7,6 +7,7 @@ import {
   politixStyle,
 } from "../../components/Results.tsx"
 import { analyseDate, hasRecentTweets } from "../../date-utils.ts"
+import {blueskyBlue} from "../../components/PerParty.tsx"
 
 const title = "Nos ministres sont-ils sur X ?"
 const description =
@@ -105,8 +106,8 @@ const List = () => (
                 )}
             </div>
             <div>
-              {isActiveOnBluesky
-                ? (
+              {bskyAt != null
+                && (
                   <div>
                     <small style={{ whiteSpace: "nowrap" }}>
                       <BlueskyHandle
@@ -115,17 +116,17 @@ const List = () => (
                         avatar={avatar}
                       />
                     </small>
+						{isActiveOnBluesky ? 
                     <details>
-                      <summary>Actif sur Bluesky</summary>
+                      <summary style={{background: blueskyBlue, padding: '0 .4rem 0 .2rem', borderRadius: '.2rem', marginTop: '.2rem', lineHeight: '1.1rem', width: 'fit-content'}}>Actif sur Bluesky</summary>
                       <ol>
                         {bskyActivity.map((date, i) => (
                           <li key={date + i}>{date}</li>
                         ))}
                       </ol>
-                    </details>
+                    </details> : "Non actif sur Bluesky"}
                   </div>
-                )
-                : "Non actif sur Bluesky"}
+                )}
             </div>
           </li>
         )
