@@ -1,6 +1,6 @@
-import removeAccents from "npm:remove-accents"
-import { filterRecentTweets } from "./date-utils.ts"
-import { delay } from "./utils.ts"
+import removeAccents from 'npm:remove-accents'
+import { filterRecentTweets } from './date-utils.ts'
+import { delay } from './utils.ts'
 
 export const logResult = ([député, activity]) => {
   const { nom, prenom, groupe, bsky } = député
@@ -13,8 +13,9 @@ export const logResult = ([député, activity]) => {
   }
 }
 const falsePositives = {
-  PA841825: ["@patricemartin50.bsky.social"],
-  PA793262: ["@onesque.bsky.social"],
+  PA841825: ['@patricemartin50.bsky.social'],
+  PA793262: ['@onesque.bsky.social'],
+  PA793362: ['@williamjo.se'],
 }
 export const findBlueskyAccount = async (politix, i) => {
   await delay(i * 300)
@@ -22,7 +23,7 @@ export const findBlueskyAccount = async (politix, i) => {
   console.log(`Will analyse ${prenom} ${nom} ${i}`)
 
   const request = await fetch(
-    `https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=${prenom} ${nom}`,
+    `https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=${prenom} ${nom}`
   )
   const json = await request.json()
 
@@ -51,7 +52,7 @@ export const findBlueskyAccount = async (politix, i) => {
   if (!actor) return [politix, null]
   if (
     actor.labels &&
-    actor.labels.find((label) => label.val === "impersonation")
+    actor.labels.find((label) => label.val === 'impersonation')
   ) {
     return [politix, null]
   }
@@ -59,7 +60,7 @@ export const findBlueskyAccount = async (politix, i) => {
   const at = actor.handle
 
   const postsRequest = await fetch(
-    `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${at}`,
+    `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${at}`
   )
 
   const posts = await postsRequest.json()
@@ -67,11 +68,11 @@ export const findBlueskyAccount = async (politix, i) => {
   if (!posts?.feed) return [politix, null]
   //console.log(posts.feed)
   const activity = posts.feed.map(({ post }) =>
-    post.record ? post.record.createdAt.split("T")[0] : null
+    post.record ? post.record.createdAt.split('T')[0] : null
   )
 
   const recent = filterRecentTweets(activity)
     .slice(0, 5)
-    .map((date) => date.toISOString().split("T")[0])
+    .map((date) => date.toISOString().split('T')[0])
   return [{ ...politix, bsky: at, avatar: actor.avatar }, recent]
 }
