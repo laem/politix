@@ -3438,5 +3438,2989 @@
       "2025-01-07",
       "2025-01-07"
     ]
+  },
+  "PA1592": {
+    "nom": "Habib",
+    "prenom": "David",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LIOT",
+    "@": "@DavidDhabib",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-02",
+      "2025-01-07",
+      "2024-12-13",
+      "2024-12-10",
+      "2024-12-10",
+      "2024-12-05",
+      "2024-12-05",
+      "2024-12-03",
+      "2024-12-02"
+    ]
+  },
+  "PA841327": {
+    "nom": "Roussel",
+    "prenom": "Fabrice",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@RousselFabrice",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-07"
+    ]
+  },
+  "PA793948": {
+    "nom": "Thierry",
+    "prenom": "Nicolas",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@nthierry",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-06-14",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-07",
+      "2024-12-18"
+    ]
+  },
+  "PA840939": {
+    "nom": "Godard",
+    "prenom": "Océane",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@O_charretgodard",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-09",
+      "2025-01-07",
+      "2024-12-23",
+      "2024-12-22",
+      "2024-12-20",
+      "2024-12-21"
+    ]
+  },
+  "PA719918": {
+    "nom": "Lainé",
+    "prenom": "Fabien",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DEM",
+    "@": "@fabien_laine",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2025-01-01",
+      "2025-01-01",
+      "2024-12-27",
+      "2024-12-24"
+    ]
+  },
+  "PA794022": {
+    "nom": "Iordanoff",
+    "prenom": "Jérémie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@iordanoff",
+    "deletedAccount": true,
+    "notFoundAccount": false,
+    "activité": "!exist"
+  },
+  "PA842155": {
+    "nom": "Diouara",
+    "prenom": "Aly",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@AlyDiouara",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-26",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA774954": {
+    "nom": "Blin",
+    "prenom": "Anne-Laure",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DR",
+    "@": "@annelaureblin",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-08",
+      "2025-01-08",
+      "2025-01-08",
+      "2024-12-18",
+      "2024-12-18",
+      "2024-12-18",
+      "2024-12-06",
+      "2024-12-06"
+    ]
+  },
+  "PA795950": {
+    "nom": "Amiel",
+    "prenom": "David",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@Amiel_David_",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-08"
+    ]
+  },
+  "PA721202": {
+    "nom": "Coquerel",
+    "prenom": "Éric",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@ericcoquerel",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-04",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12"
+    ]
+  },
+  "PA841339": {
+    "nom": "Brard",
+    "analyseDate": "2025-01-12",
+    "prenom": "Jean-Michel",
+    "groupeAbrev": "HOR",
+    "unknownPresence": true
+  },
+  "PA720138": {
+    "nom": "Saint-Paul",
+    "prenom": "Laetitia",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "HOR",
+    "@": "@l_saintpaul",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-11-29",
+      "2024-11-29",
+      "2024-10-22",
+      "2024-10-22",
+      "2024-10-01"
+    ]
+  },
+  "PA793464": {
+    "nom": "Delogu",
+    "prenom": "Sébastien",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@sebastiendelogu",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-07",
+      "2025-01-03",
+      "2025-01-02"
+    ]
+  },
+  "PA794830": {
+    "nom": "Ott",
+    "prenom": "Hubert",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DEM",
+    "@": "@HubertOttAlsace",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-15",
+      "2024-12-15",
+      "2024-12-15",
+      "2024-12-03",
+      "2024-12-03"
+    ]
+  },
+  "PA795100": {
+    "nom": "Martineau",
+    "prenom": "Éric",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DEM",
+    "@": "@EricMartineau72\r",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2023-06-19",
+      "2025-01-05",
+      "2025-01-05",
+      "2025-01-03",
+      "2025-01-04",
+      "2025-01-03"
+    ]
+  },
+  "PA795636": {
+    "nom": "Lucas-Lundy",
+    "prenom": "Benjamin",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@Benjam1Lucas",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-12",
+      "2025-01-12"
+    ]
+  },
+  "PA719404": {
+    "nom": "Le Gac",
+    "prenom": "Didier",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@didierlegac",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-06",
+      "2025-01-03",
+      "2025-01-03",
+      "2025-01-03",
+      "2025-01-02",
+      "2025-01-02"
+    ]
+  },
+  "PA841769": {
+    "nom": "Michoux",
+    "analyseDate": "2025-01-12",
+    "prenom": "Éric",
+    "groupeAbrev": "UDR",
+    "unknownPresence": true
+  },
+  "PA794810": {
+    "nom": "Morel",
+    "prenom": "Louise",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DEM",
+    "@": "@LouiseMorel67",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-23",
+      "2024-12-23",
+      "2024-12-18",
+      "2024-12-14",
+      "2024-12-13",
+      "2024-12-03"
+    ]
+  },
+  "PA840135": {
+    "nom": "Dufosset",
+    "analyseDate": "2025-01-12",
+    "prenom": "Alexandre",
+    "groupeAbrev": "RN",
+    "unknownPresence": true
+  },
+  "PA718850": {
+    "nom": "Cordier",
+    "prenom": "Pierre",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DR",
+    "@": "@CORDIERPierre08",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-17",
+      "2024-12-13",
+      "2024-12-13",
+      "2024-12-13",
+      "2024-12-13"
+    ]
+  },
+  "PA721158": {
+    "nom": "Anglade",
+    "prenom": "Pieyre-Alexandre",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@PA_Anglade",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-08",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA842211": {
+    "nom": "Bellay",
+    "analyseDate": "2025-01-12",
+    "prenom": "Béatrice",
+    "groupeAbrev": "SOC",
+    "unknownPresence": true
+  },
+  "PA309643": {
+    "nom": "Besse",
+    "prenom": "Véronique",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "NI",
+    "@": "@veroniquebesse",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-01",
+      "2024-12-24"
+    ]
+  },
+  "PA794598": {
+    "nom": "Jacobelli",
+    "prenom": "Laurent",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@ljacobelli",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA842029": {
+    "nom": "Lejeune",
+    "prenom": "Claire",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@ClaireMLejeune",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-11",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA794946": {
+    "nom": "Villedieu",
+    "prenom": "Antoine",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@villedieu_a",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2023-11-29",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA719528": {
+    "nom": "Portarrieu",
+    "prenom": "Jean-François",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "HOR",
+    "@": "@jfportarrieu",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-08"
+    ]
+  },
+  "PA841047": {
+    "nom": "Ceccoli",
+    "analyseDate": "2025-01-12",
+    "prenom": "François-Xavier",
+    "groupeAbrev": "DR",
+    "unknownPresence": true
+  },
+  "PA840171": {
+    "nom": "Grégoire",
+    "analyseDate": "2025-01-12",
+    "prenom": "Emmanuel",
+    "groupeAbrev": "SOC",
+    "unknownPresence": true
+  },
+  "PA331582": {
+    "nom": "Vigier",
+    "prenom": "Philippe",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DEM",
+    "@": "@VigierPhilippe",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2025-01-06",
+      "2025-01-05",
+      "2024-12-23",
+      "2024-12-23",
+      "2024-12-18"
+    ]
+  },
+  "PA330240": {
+    "nom": "Ciotti",
+    "prenom": "Éric",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "UDR",
+    "@": "@ECiotti",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-08",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10"
+    ]
+  },
+  "PA840903": {
+    "nom": "Christophle",
+    "prenom": "Paul",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@paulchristophle",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-09",
+      "2024-12-20"
+    ]
+  },
+  "PA330909": {
+    "nom": "Descoeur",
+    "prenom": "Vincent",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DR",
+    "@": "@VincentDescoeur",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2021-10-12",
+      "2019-10-04",
+      "2019-09-10",
+      "2019-09-02",
+      "2019-07-18"
+    ]
+  },
+  "PA793134": {
+    "nom": "Buisson",
+    "prenom": "Jérôme",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@jerome_buisson",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA794330": {
+    "nom": "Brosse",
+    "prenom": "Anthony",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@BrosseAnthony",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-06",
+      "2025-01-05",
+      "2024-12-17",
+      "2024-12-16",
+      "2024-12-16",
+      "2024-12-10"
+    ]
+  },
+  "PA841295": {
+    "nom": "Courbon",
+    "prenom": "Pierrick",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@pierrickcourbon",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-09-25",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-07",
+      "2025-01-07"
+    ]
+  },
+  "PA794658": {
+    "nom": "Fait",
+    "prenom": "Philippe",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@jeanmarctellier",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-05-27",
+      "2024-05-22",
+      "2024-05-17",
+      "2024-05-01",
+      "2024-04-11"
+    ]
+  },
+  "PA841837": {
+    "nom": "Le Bourgeois",
+    "prenom": "Robert",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@LeBourgeois7610",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-17",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-07",
+      "2025-01-07"
+    ]
+  },
+  "PA643184": {
+    "nom": "Klinkert",
+    "prenom": "Brigitte",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@klinkertbrigitt",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-07"
+    ]
+  },
+  "PA793102": {
+    "nom": "Girard",
+    "analyseDate": "2025-01-12",
+    "prenom": "Christian",
+    "groupeAbrev": "RN",
+    "unknownPresence": true
+  },
+  "PA841487": {
+    "nom": "Boulogne",
+    "prenom": "Anthony",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@AntBoulogne54",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA608264": {
+    "nom": "Capdevielle",
+    "prenom": "Colette",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@c_capdevielle",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-08",
+      "2025-01-08",
+      "2025-01-09",
+      "2025-01-08"
+    ]
+  },
+  "PA841243": {
+    "nom": "Saint-Pasteur",
+    "analyseDate": "2025-01-12",
+    "prenom": "Sébastien",
+    "groupeAbrev": "SOC",
+    "unknownPresence": true
+  },
+  "PA793796": {
+    "nom": "Taupiac",
+    "prenom": "David",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LIOT",
+    "@": "@davidtaupiac",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2025-01-06",
+      "2025-01-06",
+      "2024-12-31",
+      "2024-12-24"
+    ]
+  },
+  "PA721908": {
+    "nom": "Braun-Pivet",
+    "prenom": "Yaël",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@YaelBRAUNPIVET",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12"
+    ]
+  },
+  "PA793664": {
+    "nom": "Pochon",
+    "prenom": "Marie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@mariepochon",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-07",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12"
+    ]
+  },
+  "PA840997": {
+    "nom": "Biteau",
+    "analyseDate": "2025-01-12",
+    "prenom": "Benoît",
+    "groupeAbrev": "ECOS",
+    "unknownPresence": true
+  },
+  "PA841693": {
+    "nom": "Laussucq",
+    "prenom": "Jean",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@JeanLaussucq",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-09",
+      "2025-01-07",
+      "2024-12-23",
+      "2024-12-23",
+      "2024-12-18"
+    ]
+  },
+  "PA342240": {
+    "nom": "Bourgeaux",
+    "analyseDate": "2025-01-12",
+    "prenom": "Jean-Luc",
+    "groupeAbrev": "DR",
+    "unknownPresence": true
+  },
+  "PA721296": {
+    "nom": "Gouffier Valente",
+    "prenom": "Guillaume",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@G_GouffierVal",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-09"
+    ]
+  },
+  "PA794854": {
+    "nom": "Echaniz",
+    "prenom": "Inaki",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@inakiechaniz",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2023-02-07",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-08",
+      "2025-01-07",
+      "2025-01-08"
+    ]
+  },
+  "PA795330": {
+    "nom": "Caroit",
+    "prenom": "Eléonore",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@CaroitEleonore",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA719798": {
+    "nom": "Labaronne",
+    "prenom": "Daniel",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@LabaronneDaniel",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-07",
+      "2025-01-03",
+      "2025-01-02",
+      "2025-01-03",
+      "2025-01-02",
+      "2024-12-23"
+    ]
+  },
+  "PA841761": {
+    "nom": "Dutremble",
+    "prenom": "Aurélien",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@A_Dutremble",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-09-25",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12"
+    ]
+  },
+  "PA795430": {
+    "nom": "Delautrette",
+    "prenom": "Stéphane",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@SDelautrette",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-02"
+    ]
+  },
+  "PA841439": {
+    "nom": "Jenft",
+    "analyseDate": "2025-01-12",
+    "prenom": "Pascal",
+    "groupeAbrev": "RN",
+    "unknownPresence": true
+  },
+  "PA795982": {
+    "nom": "Saintoul",
+    "prenom": "Aurélien",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@A_Saintoul",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA841553": {
+    "nom": "Tesson",
+    "analyseDate": "2025-01-12",
+    "prenom": "Thierry",
+    "groupeAbrev": "RN",
+    "unknownPresence": true
+  },
+  "PA841419": {
+    "nom": "Girard",
+    "analyseDate": "2025-01-12",
+    "prenom": "Damien",
+    "groupeAbrev": "ECOS",
+    "unknownPresence": true
+  },
+  "PA643192": {
+    "nom": "Jourdan",
+    "analyseDate": "2025-01-12",
+    "prenom": "Chantal",
+    "groupeAbrev": "SOC",
+    "unknownPresence": true
+  },
+  "PA793166": {
+    "nom": "Dessigny",
+    "prenom": "Jocelyn",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@JocelynDessigny",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-12",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-07"
+    ]
+  },
+  "PA795596": {
+    "nom": "Vannier",
+    "prenom": "Paul",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@PaulVannierFI",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10"
+    ]
+  },
+  "PA721004": {
+    "nom": "Lakrafi",
+    "prenom": "Amélia",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@amelia_lkf",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-07",
+      "2025-01-08",
+      "2024-12-29"
+    ]
+  },
+  "PA794118": {
+    "nom": "Vermorel-Marques",
+    "prenom": "Antoine",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DR",
+    "@": "@antoinevermorel",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2024-12-11",
+      "2024-12-04",
+      "2024-12-04",
+      "2024-12-04",
+      "2024-12-03"
+    ]
+  },
+  "PA840765": {
+    "nom": "Lhardit",
+    "prenom": "Laurent",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@laurentlhardit",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-09"
+    ]
+  },
+  "PA841183": {
+    "nom": "Mansouri",
+    "prenom": "Hanane",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "UDR",
+    "@": "@hanane_mnsr",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-07",
+      "2024-12-26"
+    ]
+  },
+  "PA606545": {
+    "nom": "Roumégas",
+    "prenom": "Jean-Louis",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@jlroumegas",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-24",
+      "2024-12-21",
+      "2024-12-21",
+      "2024-12-21",
+      "2024-12-18"
+    ]
+  },
+  "PA794154": {
+    "nom": "Raux",
+    "prenom": "Jean-Claude",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@JeanClaudeRaux",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-10-15",
+      "2025-01-10",
+      "2024-12-23",
+      "2024-12-23"
+    ]
+  },
+  "PA717379": {
+    "nom": "Maillard",
+    "prenom": "Sylvain",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@sylvainmaillard",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-08"
+    ]
+  },
+  "PA840657": {
+    "nom": "Ricourt Vaginay",
+    "prenom": "Sophie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "UDR",
+    "@": "@SophieVaginay",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-08",
+      "2025-01-07",
+      "2025-01-06",
+      "2024-12-23"
+    ]
+  },
+  "PA793892": {
+    "nom": "Galzy",
+    "prenom": "Stéphanie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@GalzyStephanie",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-10"
+    ]
+  },
+  "PA842147": {
+    "nom": "Mongardien",
+    "analyseDate": "2025-01-12",
+    "prenom": "Christophe",
+    "groupeAbrev": "EPR",
+    "unknownPresence": true
+  },
+  "PA842037": {
+    "nom": "Cernon",
+    "prenom": "Bérenger",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@slappy_w",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-17",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA719138": {
+    "nom": "Castellani",
+    "prenom": "Michel",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LIOT",
+    "@": "@Castellani_",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2024-12-31",
+      "2024-12-21",
+      "2024-12-17",
+      "2024-12-03"
+    ]
+  },
+  "PA721062": {
+    "nom": "Ratenon",
+    "prenom": "Jean-Hugues",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@DeputeRatenon",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2020-03-21",
+      "2020-02-04",
+      "2020-01-28",
+      "2020-01-28",
+      "2020-01-24"
+    ]
+  },
+  "PA793716": {
+    "nom": "Croizier",
+    "prenom": "Laurent",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DEM",
+    "@": "@CroizierLaurent",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-08",
+      "2025-01-08",
+      "2025-01-08",
+      "2025-01-09"
+    ]
+  },
+  "PA794486": {
+    "nom": "Spillebout",
+    "prenom": "Violette",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@Vspillebout",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-12",
+      "2025-01-12"
+    ]
+  },
+  "PA841017": {
+    "nom": "Huwart",
+    "analyseDate": "2025-01-12",
+    "prenom": "Harold",
+    "groupeAbrev": "LIOT",
+    "unknownPresence": true
+  },
+  "PA793262": {
+    "nom": "Alexandre",
+    "prenom": "Laurent",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@LauAlexandre12",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-01",
+      "2025-01-10",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-01"
+    ]
+  },
+  "PA796090": {
+    "nom": "Caron",
+    "prenom": "Aymeric",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@CaronAymericoff",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-21",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA2960": {
+    "nom": "Woerth",
+    "prenom": "Éric",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@ericwoerth",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-07",
+      "2024-12-12",
+      "2024-12-11",
+      "2024-12-11"
+    ]
+  },
+  "PA642935": {
+    "nom": "Becht",
+    "prenom": "Olivier",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@becht_olivier",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2023-10-11",
+      "2024-12-26",
+      "2024-12-20",
+      "2024-12-13",
+      "2024-12-11",
+      "2024-12-11",
+      "2024-12-11",
+      "2024-12-10"
+    ]
+  },
+  "PA335758": {
+    "nom": "Riester",
+    "prenom": "Franck",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@franckriester",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-07",
+      "2025-01-07",
+      "2025-01-04",
+      "2025-01-04",
+      "2024-12-23",
+      "2024-12-23"
+    ]
+  },
+  "PA721844": {
+    "nom": "Piron",
+    "prenom": "Béatrice",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "HOR",
+    "@": "@beatricepiron",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-11"
+    ]
+  },
+  "PA794762": {
+    "nom": "Dogor-Such",
+    "prenom": "Sandrine",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@Sandrine_Dogor",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-08",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-06"
+    ]
+  },
+  "PA335054": {
+    "nom": "Karamanli",
+    "prenom": "Marietta",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@MKaramanli72",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-23",
+      "2024-12-15",
+      "2024-12-11",
+      "2024-12-09",
+      "2024-11-28"
+    ]
+  },
+  "PA794478": {
+    "nom": "Guiraud",
+    "prenom": "David",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@guiraudind",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2022-06-19",
+      "2025-01-12",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-09"
+    ]
+  },
+  "PA840889": {
+    "nom": "Bloch",
+    "analyseDate": "2025-01-12",
+    "prenom": "Matthieu",
+    "groupeAbrev": "UDR",
+    "unknownPresence": true
+  },
+  "PA794678": {
+    "nom": "Frappé",
+    "prenom": "Thierry",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@thierry_frappe",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2025-01-07",
+      "2024-12-31",
+      "2024-12-30",
+      "2024-12-28",
+      "2024-12-28"
+    ]
+  },
+  "PA720822": {
+    "nom": "Bilde",
+    "prenom": "Bruno",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@BrunoBilde",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-02",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-08",
+      "2025-01-07"
+    ]
+  },
+  "PA841251": {
+    "nom": "Feld",
+    "analyseDate": "2025-01-12",
+    "prenom": "Mathilde",
+    "groupeAbrev": "LFI-NFP",
+    "unknownPresence": true
+  },
+  "PA841919": {
+    "nom": "Diop",
+    "analyseDate": "2025-01-12",
+    "prenom": "Dieynaba",
+    "groupeAbrev": "SOC",
+    "unknownPresence": true
+  },
+  "PA793174": {
+    "nom": "Monnet",
+    "prenom": "Yannick",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "GDR",
+    "@": "@YannickMonnet3",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-07",
+      "2025-01-04",
+      "2025-01-03"
+    ]
+  },
+  "PA793398": {
+    "nom": "Patrier-Leitus",
+    "prenom": "Jérémie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "HOR",
+    "@": "@JPatrierLeitus",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-25",
+      "2025-01-09",
+      "2025-01-08",
+      "2025-01-08"
+    ]
+  },
+  "PA721134": {
+    "nom": "Lescure",
+    "prenom": "Roland",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@rolandlescure",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-08"
+    ]
+  },
+  "PA841463": {
+    "nom": "Mercier",
+    "prenom": "Estelle",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@estellemercier2",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-31",
+      "2024-12-30",
+      "2024-12-23",
+      "2024-12-17",
+      "2024-12-17",
+      "2024-12-16"
+    ]
+  },
+  "PA774962": {
+    "nom": "Lebon",
+    "prenom": "Karine",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "GDR",
+    "@": "@KarineLebon",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2025-01-06",
+      "2024-12-23",
+      "2024-12-23",
+      "2024-12-23"
+    ]
+  },
+  "PA793444": {
+    "nom": "Bompard",
+    "prenom": "Manuel",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@mbompard",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-08",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-10",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12"
+    ]
+  },
+  "PA793736": {
+    "nom": "Clouet",
+    "prenom": "Hadrien",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@HadrienClouet",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-11",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-12"
+    ]
+  },
+  "PA793772": {
+    "nom": "Bex",
+    "prenom": "Christophe",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@ChristopheBex",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-20",
+      "2025-01-12",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-09"
+    ]
+  },
+  "PA795786": {
+    "nom": "Ménaché",
+    "prenom": "Yaël",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@YaelMenache",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2023-12-07",
+      "2025-01-11"
+    ]
+  },
+  "PA342384": {
+    "nom": "Martin",
+    "prenom": "Élisa",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@ElisaMartinGre",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA795410": {
+    "nom": "Roullaud",
+    "prenom": "Béatrice",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@ROULLAUDBEATRIC",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2025-01-11",
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA719052": {
+    "nom": "Kervran",
+    "prenom": "Loïc",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "HOR",
+    "@": "@LoicKervran18",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-08",
+      "2025-01-05",
+      "2024-12-27",
+      "2024-12-27",
+      "2024-12-24"
+    ]
+  },
+  "PA817203": {
+    "nom": "Miller",
+    "prenom": "Laure",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@Laure_Miller",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-06",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-08",
+      "2025-01-07"
+    ]
+  },
+  "PA722336": {
+    "nom": "Thiébaut",
+    "prenom": "Vincent",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "HOR",
+    "@": "@VincentThiebaut",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-04",
+      "2025-01-11",
+      "2025-01-11",
+      "2024-12-17",
+      "2024-12-13",
+      "2024-12-04"
+    ]
+  },
+  "PA610002": {
+    "nom": "Sas",
+    "prenom": "Eva",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@_EvaSas",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-08",
+      "2025-01-07"
+    ]
+  },
+  "PA794278": {
+    "nom": "Albertini",
+    "prenom": "Xavier",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "HOR",
+    "@": "@xavieralbertini",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-31",
+      "2025-01-12",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-09"
+    ]
+  },
+  "PA794734": {
+    "nom": "Guiniot",
+    "prenom": "Michel",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@MichelGuiniot",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-18",
+      "2024-12-18",
+      "2024-12-13",
+      "2024-12-13",
+      "2024-12-12",
+      "2024-12-12",
+      "2024-12-10"
+    ]
+  },
+  "PA793912": {
+    "nom": "Carrière",
+    "prenom": "Sylvain",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@Sylv20CARRIERE",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-06",
+      "2025-01-01"
+    ]
+  },
+  "PA720468": {
+    "nom": "Chenu",
+    "prenom": "Sébastien",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@sebchenu",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA794442": {
+    "nom": "Robert-Dehault",
+    "prenom": "Laurence",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@LRDehault",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-09",
+      "2025-01-08",
+      "2025-01-07"
+    ]
+  },
+  "PA794058": {
+    "nom": "Gruet",
+    "prenom": "Justine",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DR",
+    "@": "@JustineGruet",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2024-12-23",
+      "2024-12-23",
+      "2024-12-18",
+      "2024-12-13"
+    ]
+  },
+  "PA817211": {
+    "nom": "Pilato",
+    "prenom": "René",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@PilatoRene",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-08-14",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA719412": {
+    "nom": "Le Feur",
+    "prenom": "Sandrine",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@SandrineLeFeur",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-06",
+      "2024-12-21"
+    ]
+  },
+  "PA796106": {
+    "nom": "Bénard",
+    "analyseDate": "2025-01-12",
+    "prenom": "Édouard",
+    "groupeAbrev": "GDR",
+    "unknownPresence": true
+  },
+  "PA795482": {
+    "nom": "Meunier",
+    "prenom": "Manon",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@ManonMeunier_UP",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-08",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-07"
+    ]
+  },
+  "PA795966": {
+    "nom": "Rambaud",
+    "prenom": "Stéphane",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@stephan1Rambaud",
+    "deletedAccount": true,
+    "notFoundAccount": false,
+    "activité": "!exist"
+  },
+  "PA796062": {
+    "nom": "Portes",
+    "prenom": "Thomas",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@Portes_Thomas",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2021-10-21",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10"
+    ]
+  },
+  "PA793354": {
+    "nom": "Mélin",
+    "prenom": "Joëlle",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@JoelleMelinRN",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2024-12-31",
+      "2024-12-24",
+      "2024-12-22",
+      "2024-12-20"
+    ]
+  },
+  "PA841613": {
+    "nom": "de Fleurian",
+    "prenom": "Marc",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@MarcDeFleurian",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-10-30",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-07",
+      "2025-01-07"
+    ]
+  },
+  "PA720154": {
+    "nom": "Dubré-Chirat",
+    "prenom": "Nicole",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@NicoleDubre17",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10"
+    ]
+  },
+  "PA842085": {
+    "nom": "Humbert",
+    "prenom": "Sébastien",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@Seb_Humbert",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-09"
+    ]
+  },
+  "PA840979": {
+    "nom": "Le Fur",
+    "analyseDate": "2025-01-12",
+    "prenom": "Corentin",
+    "groupeAbrev": "DR",
+    "unknownPresence": true
+  },
+  "PA719778": {
+    "nom": "Jolivet",
+    "prenom": "François",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "HOR",
+    "@": "@FJolivet36",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-06",
+      "2025-01-06"
+    ]
+  },
+  "PA793218": {
+    "nom": "Guitton",
+    "prenom": "Jordan",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@jordan_guitton",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA793210": {
+    "nom": "Panifous",
+    "analyseDate": "2025-01-12",
+    "prenom": "Laurent",
+    "groupeAbrev": "LIOT",
+    "unknownPresence": true
+  },
+  "PA342415": {
+    "nom": "Battistel",
+    "prenom": "Marie-Noëlle",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@BattistelMarie",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-12",
+      "2024-12-12",
+      "2024-12-12",
+      "2024-12-11",
+      "2024-12-04",
+      "2024-11-28"
+    ]
+  },
+  "PA794954": {
+    "nom": "Salmon",
+    "prenom": "Emeric",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@EmericSalmon",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-10-03",
+      "2025-01-11",
+      "2023-12-07",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA793816": {
+    "nom": "Thomin",
+    "prenom": "Mélanie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@mel_thomin",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-04"
+    ]
+  },
+  "PA796018": {
+    "nom": "Simonnet",
+    "prenom": "Danielle",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@SimonnetDeputee",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-07",
+      "2025-01-11",
+      "2025-01-03",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA840713": {
+    "nom": "Delorme Duret",
+    "analyseDate": "2025-01-12",
+    "prenom": "Sophie",
+    "groupeAbrev": "EPR",
+    "unknownPresence": true
+  },
+  "PA842073": {
+    "nom": "Dussausaye",
+    "prenom": "Gaëtan",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@G_Dussausaye",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA722328": {
+    "nom": "Kremer",
+    "analyseDate": "2025-01-12",
+    "prenom": "Eliane",
+    "groupeAbrev": "DR",
+    "unknownPresence": true
+  },
+  "PA795176": {
+    "nom": "Metzdorf",
+    "prenom": "Nicolas",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@NicolasMetzdorf",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-09",
+      "2025-01-08",
+      "2025-01-07",
+      "2025-01-06",
+      "2025-01-06"
+    ]
+  },
+  "PA795644": {
+    "nom": "Da Conceicao Carvalho",
+    "prenom": "Nathalie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@NathCarvalho91",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-08"
+    ]
+  },
+  "PA342196": {
+    "nom": "Rouaux",
+    "prenom": "Claudia",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@claudia_rouaux",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-11-23",
+      "2024-11-19",
+      "2024-11-12",
+      "2024-11-08",
+      "2024-11-08",
+      "2024-11-08"
+    ]
+  },
+  "PA2940": {
+    "nom": "Voynet",
+    "analyseDate": "2025-01-12",
+    "prenom": "Dominique",
+    "groupeAbrev": "ECOS",
+    "unknownPresence": true
+  },
+  "PA721896": {
+    "nom": "Faucillon",
+    "prenom": "Elsa",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "GDR",
+    "@": "@elsafaucillon",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-07",
+      "2025-01-03"
+    ]
+  },
+  "PA719436": {
+    "nom": "Meizonnet",
+    "prenom": "Nicolas",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@NMeizonnet",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA793844": {
+    "nom": "Bordes",
+    "analyseDate": "2025-01-12",
+    "prenom": "Pascale",
+    "groupeAbrev": "RN",
+    "unknownPresence": true
+  },
+  "PA796034": {
+    "nom": "Giletti",
+    "prenom": "Frank",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@FrankGiletti",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-10",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-09"
+    ]
+  },
+  "PA793708": {
+    "nom": "Peytavie",
+    "prenom": "Sébastien",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@speytavie",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-03",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-07"
+    ]
+  },
+  "PA722142": {
+    "nom": "Ruffin",
+    "prenom": "François",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@Francois_Ruffin",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-08",
+      "2025-01-11",
+      "2023-10-31",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA795762": {
+    "nom": "Califer",
+    "prenom": "Elie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@ElieCalifer",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-01",
+      "2024-12-05",
+      "2024-12-04",
+      "2024-12-04",
+      "2024-12-03"
+    ]
+  },
+  "PA608826": {
+    "nom": "Duby-Muller",
+    "prenom": "Virginie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DR",
+    "@": "@DubyMuller",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-09"
+    ]
+  },
+  "PA774958": {
+    "nom": "Leseul",
+    "prenom": "Gérard",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@LeseulG",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-08"
+    ]
+  },
+  "PA793452": {
+    "nom": "Davi",
+    "prenom": "Hendrik",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@hendrik_davi",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-10-07",
+      "2024-12-06",
+      "2024-11-20",
+      "2024-11-20",
+      "2024-11-20"
+    ]
+  },
+  "PA721426": {
+    "nom": "Riotton",
+    "prenom": "Véronique",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@V_Riotton",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-01",
+      "2024-12-30",
+      "2024-12-24",
+      "2024-12-23"
+    ]
+  },
+  "PA736201": {
+    "nom": "Taillé-Polian",
+    "prenom": "Sophie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@STaillePolian",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-08",
+      "2025-01-09",
+      "2025-01-11",
+      "2025-01-10"
+    ]
+  },
+  "PA841633": {
+    "nom": "Dufau",
+    "prenom": "Peio",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@Peioizate",
+    "deletedAccount": true,
+    "notFoundAccount": false,
+    "activité": "!exist"
+  },
+  "PA722358": {
+    "nom": "Gassilloud",
+    "prenom": "Thomas",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@tgassilloud",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-04",
+      "2024-12-04",
+      "2024-12-04",
+      "2024-12-02",
+      "2024-12-02",
+      "2024-12-02",
+      "2024-12-02",
+      "2024-11-30"
+    ]
+  },
+  "PA794582": {
+    "nom": "Pfeffer",
+    "prenom": "Kévin",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@k_pfeffer",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-10",
+      "2025-01-11",
+      "2023-12-07",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA720100": {
+    "nom": "Pradié",
+    "prenom": "Aurélien",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "NI",
+    "@": "@AurelienPradie",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-16",
+      "2025-01-12",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA795240": {
+    "nom": "Reid Arbelot",
+    "analyseDate": "2025-01-12",
+    "prenom": "Mereana",
+    "groupeAbrev": "GDR",
+    "unknownPresence": true
+  },
+  "PA607619": {
+    "nom": "Molac",
+    "prenom": "Paul",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LIOT",
+    "@": "@paul_molac",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-19",
+      "2024-12-13",
+      "2024-12-11",
+      "2024-12-05",
+      "2024-12-05"
+    ]
+  },
+  "PA720342": {
+    "nom": "Le Peih",
+    "prenom": "Nicole",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@NicoleLePeih",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-17",
+      "2024-11-26",
+      "2024-11-22",
+      "2024-11-15",
+      "2024-10-31",
+      "2024-10-31"
+    ]
+  },
+  "PA722162": {
+    "nom": "Turquois",
+    "prenom": "Nicolas",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DEM",
+    "@": "@TurquoisNicolas",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-13",
+      "2024-12-13",
+      "2024-12-13",
+      "2024-12-13"
+    ]
+  },
+  "PA840673": {
+    "nom": "Rossi",
+    "analyseDate": "2025-01-12",
+    "prenom": "Valérie",
+    "groupeAbrev": "SOC",
+    "unknownPresence": true
+  },
+  "PA2952": {
+    "nom": "Warsmann",
+    "prenom": "Jean-Luc",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LIOT",
+    "@": "@warsmann",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2023-08-03",
+      "2023-07-19",
+      "2022-05-31",
+      "2022-01-10",
+      "2021-12-24"
+    ]
+  },
+  "PA795278": {
+    "nom": "Bellamy",
+    "prenom": "Béatrice",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "HOR",
+    "@": "@BeaBellamy85",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-08",
+      "2025-01-08",
+      "2025-01-07"
+    ]
+  },
+  "PA795010": {
+    "nom": "Garin",
+    "prenom": "Marie-Charlotte",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@mc_garin",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-29",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-08",
+      "2025-01-08",
+      "2024-12-29"
+    ]
+  },
+  "PA793532": {
+    "nom": "Lepvraud",
+    "prenom": "Murielle",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@MLepvraud",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-09",
+      "2025-01-08",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-08"
+    ]
+  },
+  "PA719632": {
+    "nom": "Panonacle",
+    "prenom": "Sophie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@SoPanonacle",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2023-11-25",
+      "2023-11-25",
+      "2023-11-25",
+      "2023-11-24",
+      "2023-11-22",
+      "2023-10-29",
+      "2023-10-29"
+    ]
+  },
+  "PA606098": {
+    "nom": "Marleix",
+    "prenom": "Olivier",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DR",
+    "@": "@oliviermarleix",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-08",
+      "2025-01-08",
+      "2024-12-24",
+      "2024-12-24",
+      "2024-12-22"
+    ]
+  },
+  "PA795046": {
+    "nom": "Yadan",
+    "prenom": "Caroline",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@CarolineYADAN",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-10"
+    ]
+  },
+  "PA643143": {
+    "nom": "Baptiste",
+    "prenom": "Christian",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@ChrisBapt",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-05",
+      "2024-12-24",
+      "2024-12-23",
+      "2024-12-23",
+      "2024-12-13"
+    ]
+  },
+  "PA720022": {
+    "nom": "Lauzzana",
+    "prenom": "Michel",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@lauzzanamichel",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-07",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA794982": {
+    "nom": "Delpech",
+    "prenom": "Julie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@juliedelpech72",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-07",
+      "2024-12-24",
+      "2024-12-23",
+      "2024-12-19"
+    ]
+  },
+  "PA721410": {
+    "nom": "Bonnivard",
+    "prenom": "Émilie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DR",
+    "@": "@BonnivardE",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-02-12",
+      "2024-12-13",
+      "2024-12-04",
+      "2024-12-04",
+      "2024-11-27"
+    ]
+  },
+  "PA719558": {
+    "nom": "Balanant",
+    "prenom": "Erwan",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DEM",
+    "@": "@erwanbalanant",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-09",
+      "2025-01-07",
+      "2025-01-03",
+      "2025-01-03",
+      "2024-12-20"
+    ]
+  },
+  "PA719286": {
+    "nom": "Colombani",
+    "prenom": "Paul-André",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LIOT",
+    "@": "@pacolombani",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-03",
+      "2025-01-12",
+      "2024-12-31",
+      "2024-12-31",
+      "2024-12-24"
+    ]
+  },
+  "PA841207": {
+    "nom": "Alloncle",
+    "analyseDate": "2025-01-12",
+    "prenom": "Charles",
+    "groupeAbrev": "UDR",
+    "unknownPresence": true
+  },
+  "PA841931": {
+    "nom": "Mazaury",
+    "analyseDate": "2025-01-12",
+    "prenom": "Laurent",
+    "groupeAbrev": "LIOT",
+    "unknownPresence": true
+  },
+  "PA795588": {
+    "nom": "Amrani",
+    "prenom": "Farida",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@Farida_Amrani_",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-01",
+      "2025-01-10",
+      "2025-01-08"
+    ]
+  },
+  "PA794094": {
+    "nom": "Bouloux",
+    "prenom": "Mickaël",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@MickaelBouloux",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-01",
+      "2025-01-07",
+      "2024-12-31",
+      "2024-12-23",
+      "2024-12-23"
+    ]
+  },
+  "PA841853": {
+    "nom": "Hervieu",
+    "prenom": "Céline",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "SOC",
+    "@": "@Celine_Hervieu",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-04",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-07"
+    ]
+  },
+  "PA795962": {
+    "nom": "Missoffe",
+    "analyseDate": "2025-01-12",
+    "prenom": "Joséphine",
+    "groupeAbrev": "EPR",
+    "unknownPresence": true
+  },
+  "PA719388": {
+    "nom": "Le Meur",
+    "prenom": "Annaïg",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@AnnaigLeMeur_AN",
+    "deletedAccount": true,
+    "notFoundAccount": false,
+    "activité": "!exist"
+  },
+  "PA720846": {
+    "nom": "Lachaud",
+    "prenom": "Bastien",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@lachaudb",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-08",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA841495": {
+    "nom": "Amblard",
+    "prenom": "Maxime",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@MaximeAmblard5",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-09-23",
+      "2025-01-10",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-07"
+    ]
+  },
+  "PA795164": {
+    "nom": "Trouvé",
+    "prenom": "Aurélie",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@TrouveAurelie",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-10-09",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10"
+    ]
+  },
+  "PA643175": {
+    "nom": "Dupont",
+    "prenom": "Stella",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "NI",
+    "@": "@stelladupont",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-09",
+      "2025-01-07",
+      "2025-01-06",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-07",
+      "2024-12-23"
+    ]
+  },
+  "PA720038": {
+    "nom": "Josso",
+    "prenom": "Sandrine",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DEM",
+    "@": "@sandrinejossoan",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-07",
+      "2025-01-06"
+    ]
+  },
+  "PA721170": {
+    "nom": "Vojetta",
+    "prenom": "Stéphane",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@StephaneVojetta",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-24",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-09"
+    ]
+  },
+  "PA794502": {
+    "nom": "Taverne",
+    "prenom": "Michaël",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@TaverneMichael",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA840685": {
+    "nom": "Trébuchet",
+    "prenom": "Vincent",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "UDR",
+    "@": "@Vt_Trebuchet",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-11-05",
+      "2024-11-05",
+      "2024-12-12",
+      "2024-12-12",
+      "2024-12-10",
+      "2024-12-07"
+    ]
+  },
+  "PA840773": {
+    "nom": "Fayssat",
+    "prenom": "Olivier",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "UDR",
+    "@": "@OlivierFayssat",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA793656": {
+    "nom": "Pollet",
+    "prenom": "Lisette",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@LisettePollet",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA720190": {
+    "nom": "Sorre",
+    "prenom": "Bertrand",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@BertrandSorre",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2018-06-07",
+      "2018-06-08",
+      "2018-06-06",
+      "2018-06-07",
+      "2018-06-07",
+      "2018-06-07"
+    ]
+  },
+  "PA795422": {
+    "nom": "Maudet",
+    "prenom": "Damien",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "LFI-NFP",
+    "@": "@damienmaudt",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-12-06",
+      "2024-12-06",
+      "2025-01-12",
+      "2025-01-10",
+      "2025-01-10",
+      "2025-01-09"
+    ]
+  },
+  "PA719118": {
+    "nom": "Cormier-Bouligeon",
+    "prenom": "François",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "EPR",
+    "@": "@FCBDeputeduCher",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-08",
+      "2025-01-07",
+      "2025-01-07"
+    ]
+  },
+  "PA722390": {
+    "nom": "Corneloup",
+    "analyseDate": "2025-01-12",
+    "prenom": "Josiane",
+    "groupeAbrev": "DR",
+    "unknownPresence": true
+  },
+  "PA720644": {
+    "nom": "Nury",
+    "prenom": "Jérôme",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DR",
+    "@": "@jeromenury",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-11",
+      "2024-10-24",
+      "2024-09-17",
+      "2024-09-16",
+      "2024-09-16"
+    ]
+  },
+  "PA793780": {
+    "nom": "Arrighi",
+    "prenom": "Christine",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "ECOS",
+    "@": "@ChArrighi",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-09",
+      "2025-01-09",
+      "2025-01-07",
+      "2025-01-07",
+      "2025-01-04"
+    ]
+  },
+  "PA841395": {
+    "nom": "Michelet",
+    "prenom": "Maxime",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "UDR",
+    "@": "@Maxime_Michelet",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2024-07-11",
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-10",
+      "2025-01-10"
+    ]
+  },
+  "PA794562": {
+    "nom": "Ballard",
+    "prenom": "Philippe",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "RN",
+    "@": "@BallardPhilippe",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2025-01-12",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11",
+      "2025-01-11"
+    ]
+  },
+  "PA841665": {
+    "nom": "Fégné",
+    "analyseDate": "2025-01-12",
+    "prenom": "Denis",
+    "groupeAbrev": "SOC",
+    "unknownPresence": true
+  },
+  "PA721442": {
+    "nom": "Petex",
+    "prenom": "Christelle",
+    "analyseDate": "2025-01-12",
+    "groupeAbrev": "DR",
+    "@": "@ChristellePetex",
+    "deletedAccount": false,
+    "notFoundAccount": false,
+    "activité": [
+      "2018-01-25",
+      "2017-07-03",
+      "2017-07-03",
+      "2017-04-24",
+      "2017-04-24",
+      "2017-04-22"
+    ]
   }
 }
