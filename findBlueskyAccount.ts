@@ -16,6 +16,8 @@ const falsePositives = {
   PA841825: ['@patricemartin50.bsky.social'],
   PA793262: ['@onesque.bsky.social'],
   PA793362: ['@williamjo.se'],
+  PA720614: ['mlpcdn.bsky.social'],
+  PA817203: ['@lauremiller.bsky.social'],
 }
 export const findBlueskyAccount = async (politix, i) => {
   await delay(i * 300)

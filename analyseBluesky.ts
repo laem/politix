@@ -1,6 +1,7 @@
-import députésRandomOrder from "./députés.ts"
+import députésRandomOrder from './députés.ts'
+import { findBlueskyAccount, logResult } from './findBlueskyAccount.ts'
 
-const analyseDate = new Date().toISOString().split("T")[0]
+const analyseDate = new Date().toISOString().split('T')[0]
 const analyseBluesky = async () => {
   const extract = députésRandomOrder
   const results = await Promise.all(
@@ -8,7 +9,7 @@ const analyseBluesky = async () => {
       const result = await findBlueskyAccount(député, i)
       logResult(result)
       return result
-    }),
+    })
   )
 
   const entries = results.map(([député, activity]) => {
@@ -28,7 +29,7 @@ const analyseBluesky = async () => {
   })
 
   const o = Object.fromEntries(entries)
-  Deno.writeTextFileSync("./bluesky-data.json", JSON.stringify(o, null, 2))
+  Deno.writeTextFileSync('./bluesky-data.json', JSON.stringify(o, null, 2))
 }
 
 analyseBluesky()
