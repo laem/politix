@@ -24,7 +24,10 @@ const analyse = async () => {
     json.posts.map((post) => post.record.createdAt.split('T')[0])
   )
 
-  const handles = new Set(json.posts.map((post) => post.author.handle))
+  const handles = new Set([
+    ...json.posts.map((post) => post.author.handle),
+    ...Object.keys(old.sorted),
+  ])
 
   const actorsFollowerCount = await Promise.all(
     [...handles].map(async (handle, i) => {
