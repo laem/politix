@@ -1,14 +1,13 @@
-import top from "../../ministres.json" with { type: "json" }
-import { Head } from "$fresh/runtime.ts"
-import {
-  BlueskyHandle,
-  PartyVignette,
-  politixGridStyle,
-  politixStyle,
-} from "../../components/Results.tsx"
-import { analyseDate, hasRecentTweets } from "../../date-utils.ts"
-import {blueskyBlue} from "../../components/PerParty.tsx"
+import {Head} from "$fresh/runtime.ts"
 import BackToHome from "../../components/BackToHome.tsx"
+import {blueskyBlue} from "../../components/PerParty.tsx"
+import {
+	BlueskyHandle,
+	politixGridStyle,
+	politixStyle
+} from "../../components/Results.tsx"
+import { hasRecentTweets} from "../../date-utils.ts"
+import top from "../../ministres.json" with {type: "json"}
 
 const title = "Nos ministres sont-ils sur X ?"
 const description =
@@ -64,6 +63,7 @@ const List = () => (
             bsky: bskyAt,
             avatar,
             activité: { x: xActivity, bsky: bskyActivity },
+				  analyseDate,
             deletedXAccount,
             notFoundXAccount,
           },
@@ -71,6 +71,7 @@ const List = () => (
       ) => {
         const isActiveOnX = xActivity && Array.isArray(xActivity) &&
           hasRecentTweets(xActivity, analyseDate)
+			  console.log('hasRecentTweets', xActivity, analyseDate)
         const isActiveOnBluesky = bskyActivity && Array.isArray(bskyActivity) &&
           hasRecentTweets(bskyActivity, analyseDate)
 

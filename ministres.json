@@ -67,12 +67,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2024-12-23",
-        "2025-01-11",
-        "2025-01-11",
-        "2025-01-11"
-      ],
+      "x": ["2024-12-23", "2025-01-11", "2025-01-11", "2025-01-11"],
       "bsky": null
     }
   },
@@ -85,12 +80,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2024-01-24",
-        "2025-01-10",
-        "2025-01-11",
-        "2025-01-07"
-      ],
+      "x": ["2024-01-24", "2025-01-10", "2025-01-11", "2025-01-07"],
       "bsky": null
     }
   },
@@ -486,12 +476,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2025-01-10",
-        "2025-01-10",
-        "2025-01-10",
-        "2025-01-09"
-      ],
+      "x": ["2025-01-10", "2025-01-10", "2025-01-10", "2025-01-09"],
       "bsky": null
     }
   },
@@ -542,12 +527,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2023-07-21",
-        "2023-07-16",
-        "2023-07-17",
-        "2023-07-14"
-      ],
+      "x": ["2023-07-21", "2023-07-16", "2023-07-17", "2023-07-14"],
       "bsky": null
     }
   },
@@ -583,12 +563,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2025-01-11",
-        "2025-01-12",
-        "2025-01-11",
-        "2025-01-11"
-      ],
+      "x": ["2025-01-11", "2025-01-12", "2025-01-11", "2025-01-11"],
       "bsky": []
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2ft77mboyc4cyiyezw6chyor/bafkreibqbynvfwu3p3xmpgzpnhgpcehxqjlgv4adjccfyf6kylpzselz6m@jpeg"
@@ -753,3 +728,4 @@
     }
   }
 }
+
