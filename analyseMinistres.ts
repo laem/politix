@@ -6,7 +6,7 @@ import { delay } from './utils.ts'
 import { findBlueskyAccount, logResult } from './findBlueskyAccount.ts'
 
 const csv = Deno.readTextFileSync('ministres-x.csv')
-const bskyFalsePositives = ['manuelvalls.bsky.social']
+const bskyFalsePositives = ['manuelvalls.bsky.social', 'phil374.bsky.social']
 
 const ministres = parse(csv, {
   skipFirstRow: true,

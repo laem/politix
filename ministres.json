@@ -86,12 +86,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2024-01-24",
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-17"
-      ],
+      "x": ["2024-01-24", "2025-01-17", "2025-01-17", "2025-01-17"],
       "bsky": null
     }
   },
@@ -260,10 +255,7 @@
         "2025-01-14",
         "2025-01-09"
       ],
-      "bsky": [
-        "2025-01-17",
-        "2025-01-15"
-      ]
+      "bsky": ["2025-01-17", "2025-01-15"]
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:tilwauuncalh5wsgda3mx5ls/bafkreih364t3jjmyyanzumcmezyppaumvr56j4mga5eplbnf6bluj2veiq@jpeg"
   },
@@ -276,12 +268,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-17"
-      ],
+      "x": ["2025-01-17", "2025-01-17", "2025-01-17", "2025-01-17"],
       "bsky": []
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:opdmp2tmuz3vnefqhkmocyad/bafkreicl2dxtilyvwnc22g4t2g5sdustppjj7x2gcm4hfsdykn3n5qjuhi@jpeg"
@@ -545,14 +532,10 @@
     "prenom": "Philippe",
     "analyseDate": "2025-01-18",
     "x": "@PhBaptiste",
-    "bsky": "phil374.bsky.social",
     "deletedXAccount": false,
     "notFoundXAccount": true,
     "activité": {
-      "x": false,
-      "bsky": [
-        "2025-01-16"
-      ]
+      "x": false
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:f2allz6yovsdhudzc2zhvoup/bafkreiasdpzexfmuulylgtvj7len3mpaq2ycqefnzqn35lq5kl7cnoeyke@jpeg"
   },
@@ -585,12 +568,7 @@
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": [
-        "2025-01-17",
-        "2025-01-18",
-        "2025-01-16",
-        "2025-01-16"
-      ],
+      "x": ["2025-01-17", "2025-01-18", "2025-01-16", "2025-01-16"],
       "bsky": []
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2ft77mboyc4cyiyezw6chyor/bafkreibqbynvfwu3p3xmpgzpnhgpcehxqjlgv4adjccfyf6kylpzselz6m@jpeg"
@@ -749,3 +727,4 @@
     }
   }
 }
+
