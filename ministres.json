@@ -2,7 +2,7 @@
   "Agnès Pannier-Runacher": {
     "nom": "Pannier-Runacher",
     "prenom": "Agnès",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@AgnesRunacher",
     "bsky": null,
     "deletedXAccount": false,
@@ -21,7 +21,7 @@
   "Amélie de Montchalin": {
     "nom": "de Montchalin",
     "prenom": "Amélie",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@AdeMontchalin",
     "bsky": null,
     "deletedXAccount": false,
@@ -29,9 +29,9 @@
     "activité": {
       "x": [
         "2025-01-18",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17",
-        "2025-01-16",
         "2025-01-16"
       ],
       "bsky": null
@@ -40,19 +40,19 @@
   "Annie Genevard": {
     "nom": "Genevard",
     "prenom": "Annie",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@AnnieGenevard",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-18",
         "2025-01-17",
         "2025-01-15",
         "2025-01-15",
         "2025-01-15",
-        "2025-01-14",
-        "2025-01-13"
+        "2025-01-14"
       ],
       "bsky": null
     }
@@ -60,7 +60,7 @@
   "Astrid Panosyan-Bouvet": {
     "nom": "Panosyan-Bouvet",
     "prenom": "Astrid",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@AstridPanosyan",
     "bsky": null,
     "deletedXAccount": false,
@@ -68,11 +68,10 @@
     "activité": {
       "x": [
         "2024-12-23",
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-17"
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-18"
       ],
       "bsky": null
     }
@@ -80,30 +79,36 @@
   "Aurore Bergé": {
     "nom": "Bergé",
     "prenom": "Aurore",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@auroreberge",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": ["2024-01-24", "2025-01-17", "2025-01-17", "2025-01-17"],
+      "x": [
+        "2024-01-24",
+        "2025-01-19",
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-17"
+      ],
       "bsky": null
     }
   },
   "Benjamin Haddad": {
     "nom": "Haddad",
     "prenom": "Benjamin",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@benjaminhaddad",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
-        "2024-12-23",
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-17",
+        "2025-01-18",
+        "2025-01-19",
+        "2025-01-18",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17"
       ],
@@ -113,19 +118,19 @@
   "Bruno Retailleau": {
     "nom": "Retailleau",
     "prenom": "Bruno",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@BrunoRetailleau",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-19",
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-18",
         "2025-01-17",
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-16",
-        "2025-01-16"
+        "2025-01-17"
       ],
       "bsky": null
     }
@@ -133,16 +138,15 @@
   "Catherine Vautrin": {
     "nom": "Vautrin",
     "prenom": "Catherine",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@CaVautrin",
     "bsky": "catherinevautrin.bsky.social",
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-17",
+        "2025-01-19",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17",
         "2025-01-17",
@@ -155,7 +159,7 @@
   "Charlotte Parmentier-Lecocq": {
     "nom": "Parmentier-Lecocq",
     "prenom": "Charlotte",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@lecocqcharlotte",
     "bsky": null,
     "deletedXAccount": false,
@@ -163,10 +167,10 @@
     "activité": {
       "x": [
         "2024-12-23",
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-16",
-        "2025-01-16"
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-17"
       ],
       "bsky": null
     }
@@ -174,19 +178,19 @@
   "Clara Chappaz": {
     "nom": "Chappaz",
     "prenom": "Clara",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@ClaraChappaz",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17",
         "2025-01-17",
         "2025-01-17",
-        "2025-01-17",
-        "2025-01-16"
+        "2025-01-17"
       ],
       "bsky": null
     }
@@ -194,7 +198,7 @@
   "Élisabeth Borne": {
     "nom": "Borne",
     "prenom": "Élisabeth",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@Elisabeth_Borne",
     "bsky": "elisabeth-borne.bsky.social",
     "deletedXAccount": false,
@@ -221,7 +225,7 @@
   "Éric Lombard": {
     "nom": "Lombard",
     "prenom": "Éric",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@Eric_R_Lombard",
     "bsky": null,
     "deletedXAccount": false,
@@ -241,7 +245,7 @@
   "François Bayrou": {
     "nom": "Bayrou",
     "prenom": "François",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@bayrou",
     "bsky": "bayrou.fr",
     "deletedXAccount": false,
@@ -255,20 +259,28 @@
         "2025-01-14",
         "2025-01-09"
       ],
-      "bsky": ["2025-01-17", "2025-01-15"]
+      "bsky": [
+        "2025-01-17",
+        "2025-01-15"
+      ]
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:tilwauuncalh5wsgda3mx5ls/bafkreih364t3jjmyyanzumcmezyppaumvr56j4mga5eplbnf6bluj2veiq@jpeg"
   },
   "François Rebsamen": {
     "nom": "Rebsamen",
     "prenom": "François",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@frebsamen",
     "bsky": "frebsamen.bsky.social",
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": ["2025-01-17", "2025-01-17", "2025-01-17", "2025-01-17"],
+      "x": [
+        "2025-01-17",
+        "2025-01-17",
+        "2025-01-17",
+        "2025-01-17"
+      ],
       "bsky": []
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:opdmp2tmuz3vnefqhkmocyad/bafkreicl2dxtilyvwnc22g4t2g5sdustppjj7x2gcm4hfsdykn3n5qjuhi@jpeg"
@@ -276,7 +288,7 @@
   "François-Noël Buffet": {
     "nom": "Buffet",
     "prenom": "François-Noël",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@fnb_officiel",
     "bsky": null,
     "deletedXAccount": false,
@@ -295,16 +307,16 @@
   "Françoise Gatel": {
     "nom": "Gatel",
     "prenom": "Françoise",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@FrancoiseGatel",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-17",
+        "2025-01-19",
+        "2025-01-19",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17"
       ],
@@ -314,16 +326,16 @@
   "Gérald Darmanin": {
     "nom": "Darmanin",
     "prenom": "Gérald",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@GDarmanin",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17",
-        "2025-01-13",
         "2025-01-13",
         "2025-01-13"
       ],
@@ -333,26 +345,25 @@
   "Jean-Noël Barrot": {
     "nom": "Barrot",
     "prenom": "Jean-Noël",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@jnbarrot",
     "bsky": "jnbarrot.bsky.social",
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-19",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17",
-        "2025-01-16",
-        "2025-01-16",
-        "2025-01-15",
-        "2025-01-15"
+        "2025-01-16"
       ],
       "bsky": [
+        "2025-01-19",
         "2025-01-17",
         "2025-01-17",
         "2025-01-15",
-        "2025-01-15",
-        "2025-01-13"
+        "2025-01-15"
       ]
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:japtxw5ojajah645imwomtxq/bafkreic3e6d3hsu7yvcbuf7fvxvpdpfs3rceejl24rupa3mq6ejpkcftd4@jpeg"
@@ -360,19 +371,18 @@
   "Juliette Méadel": {
     "nom": "Méadel",
     "prenom": "Juliette",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@juliettemeadel",
     "bsky": "juliettemeadel.bsky.social",
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17",
         "2025-01-17",
-        "2025-01-17",
-        "2025-01-16",
-        "2025-01-16"
+        "2025-01-17"
       ],
       "bsky": []
     },
@@ -381,18 +391,18 @@
   "Laurent Marcangeli": {
     "nom": "Marcangeli",
     "prenom": "Laurent",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@LMarcangeli",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-19",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17",
-        "2025-01-17",
-        "2025-01-16",
-        "2025-01-15"
+        "2025-01-17"
       ],
       "bsky": null
     }
@@ -400,19 +410,19 @@
   "Laurent Saint-Martin": {
     "nom": "Saint-Martin",
     "prenom": "Laurent",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@LaurentSMartin",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-19",
+        "2025-01-19",
+        "2025-01-19",
+        "2025-01-19",
         "2025-01-17",
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-16",
-        "2025-01-15",
-        "2025-01-15"
+        "2025-01-17"
       ],
       "bsky": null
     }
@@ -420,7 +430,7 @@
   "Manuel Valls": {
     "nom": "Valls",
     "prenom": "Manuel",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": false,
     "bsky": null,
     "deletedXAccount": false,
@@ -434,7 +444,7 @@
   "Marc Ferracci": {
     "nom": "Ferracci",
     "prenom": "Marc",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@FerracciMarc",
     "bsky": null,
     "deletedXAccount": false,
@@ -442,8 +452,8 @@
     "activité": {
       "x": [
         "2025-01-15",
-        "2025-01-17",
-        "2025-01-17",
+        "2025-01-18",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17"
       ],
@@ -453,7 +463,7 @@
   "Marie Barsacq": {
     "nom": "Barsacq",
     "prenom": "Marie",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@MarieBarsacq",
     "bsky": null,
     "deletedXAccount": false,
@@ -473,16 +483,16 @@
   "Nathalie Delattre": {
     "nom": "Delattre",
     "prenom": "Nathalie",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@n_delattre",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-17",
+        "2025-01-19",
+        "2025-01-18",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17"
       ],
@@ -492,7 +502,7 @@
   "Patricia Mirallès": {
     "nom": "Mirallès",
     "prenom": "Patricia",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@MIRALLESMP",
     "bsky": null,
     "deletedXAccount": false,
@@ -500,10 +510,11 @@
     "activité": {
       "x": [
         "2024-12-23",
-        "2025-01-17",
-        "2025-01-17",
-        "2025-01-16",
-        "2025-01-15"
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-17"
       ],
       "bsky": null
     }
@@ -511,7 +522,7 @@
   "Patrick Mignola": {
     "nom": "Mignola",
     "prenom": "Patrick",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@PatrickMignola",
     "bsky": null,
     "deletedXAccount": false,
@@ -530,30 +541,39 @@
   "Philippe Baptiste": {
     "nom": "Baptiste",
     "prenom": "Philippe",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@PhBaptiste",
+    "bsky": null,
     "deletedXAccount": false,
-    "notFoundXAccount": true,
+    "notFoundXAccount": false,
     "activité": {
-      "x": false
+      "x": [
+        "2023-07-21",
+        "2023-07-16",
+        "2023-07-17",
+        "2023-07-14"
+      ],
+      "bsky": [
+        "2025-01-16"
+      ]
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:f2allz6yovsdhudzc2zhvoup/bafkreiasdpzexfmuulylgtvj7len3mpaq2ycqefnzqn35lq5kl7cnoeyke@jpeg"
   },
   "Philippe Tabarot": {
     "nom": "Tabarot",
     "prenom": "Philippe",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@PhilippeTabarot",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-18",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-16",
         "2025-01-15",
-        "2025-01-14",
-        "2025-01-14",
         "2025-01-14"
       ],
       "bsky": null
@@ -562,13 +582,21 @@
   "Rachida Dati": {
     "nom": "Dati",
     "prenom": "Rachida",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@datirachida",
     "bsky": "rachidadati.bsky.social",
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
-      "x": ["2025-01-17", "2025-01-18", "2025-01-16", "2025-01-16"],
+      "x": [
+        "2025-01-16",
+        "2025-01-19",
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-18",
+        "2025-01-18"
+      ],
       "bsky": []
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:2ft77mboyc4cyiyezw6chyor/bafkreibqbynvfwu3p3xmpgzpnhgpcehxqjlgv4adjccfyf6kylpzselz6m@jpeg"
@@ -576,18 +604,18 @@
   "Sébastien Lecornu": {
     "nom": "Lecornu",
     "prenom": "Sébastien",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@SebLecornu",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-19",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17",
         "2025-01-17",
-        "2025-01-16",
-        "2025-01-16",
         "2025-01-16"
       ],
       "bsky": null
@@ -596,7 +624,7 @@
   "Sophie Primas": {
     "nom": "Primas",
     "prenom": "Sophie",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@sophieprimas",
     "bsky": null,
     "deletedXAccount": false,
@@ -607,6 +635,7 @@
         "2025-01-17",
         "2025-01-16",
         "2025-01-15",
+        "2025-01-15",
         "2025-01-15"
       ],
       "bsky": null
@@ -615,14 +644,14 @@
   "Thani Mohamed Soilihi": {
     "nom": "Mohamed Soilihi",
     "prenom": "Thani",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@TMohamedSoilihi",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
-        "2025-01-17",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17",
         "2025-01-17",
@@ -634,18 +663,17 @@
   "Valérie Létard": {
     "nom": "Létard",
     "prenom": "Valérie",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@valerieletard",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-19",
         "2025-01-18",
         "2025-01-17",
-        "2025-01-17",
-        "2025-01-15",
-        "2025-01-14"
+        "2025-01-17"
       ],
       "bsky": null
     }
@@ -653,15 +681,15 @@
   "Véronique Louwagie": {
     "nom": "Louwagie",
     "prenom": "Véronique",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@VeroLouwagie",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
+        "2025-01-18",
         "2025-01-17",
-        "2025-01-16",
         "2025-01-16",
         "2025-01-16",
         "2025-01-16"
@@ -672,15 +700,16 @@
   "Yannick Neuder": {
     "nom": "Neuder",
     "prenom": "Yannick",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@yannickneuder",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
-        "2025-01-17",
-        "2025-01-17",
+        "2025-01-19",
+        "2025-01-19",
+        "2025-01-18",
         "2025-01-17",
         "2025-01-17",
         "2025-01-17"
@@ -691,7 +720,7 @@
   "Emmanuel Macron": {
     "nom": "Macron",
     "prenom": "Emmanuel",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@EmmanuelMacron",
     "bsky": null,
     "deletedXAccount": false,
@@ -710,14 +739,14 @@
   "Le Gouvernement": {
     "nom": "Gouvernement",
     "prenom": "Le",
-    "analyseDate": "2025-01-18",
+    "analyseDate": "2025-01-19",
     "x": "@gouvernementFR",
     "bsky": null,
     "deletedXAccount": false,
     "notFoundXAccount": false,
     "activité": {
       "x": [
-        "2025-01-17",
+        "2025-01-19",
         "2025-01-17",
         "2025-01-17",
         "2025-01-17",
@@ -727,4 +756,3 @@
     }
   }
 }
-
