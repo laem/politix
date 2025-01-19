@@ -63,7 +63,10 @@ const doFetch = async () => {
               },
             ]
           }
-          const [, values] = await checkTwitterActivity(député.twitter, i)
+          const [, values] = await checkTwitterActivity(
+            député.twitter,
+            chunkSize * chunkIndex + i
+          )
 
           return [
             député.id,
