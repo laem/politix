@@ -60,7 +60,7 @@ export default function PerParty({ entries, blueskyEntries }) {
   return (
     <div>
       <p style={{ textAlign: "center", color: "#980c0c" }}>
-        La dernière analyse X date du 12 janvier 2025 : nous avons testé{" "}
+        La dernière analyse X est en cours au 20 janvier 2025 : nous avons testé{" "}
         {entries.length} députés grâce aux données{" "}
         <a href="https://datan.fr">datan</a> améliorées.
       </p>
