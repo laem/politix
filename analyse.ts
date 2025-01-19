@@ -7,6 +7,8 @@ const limit = +Deno.args[0]
 const initialDelay = +Deno.args[1] || 30
 const iterationDelay = +Deno.args[2] || 20
 
+const scrapDelay = 3000
+
 const seconds = limit * iterationDelay + initialDelay,
   minutes = seconds / 60
 console.log('Will take ' + seconds + ' seconds, donc ' + minutes)
@@ -17,77 +19,61 @@ const députés = députésRandomOrder.map((d) => {
   if (match) return { ...d, twitter: '@' + match[1] }
   return d
 })
-const chunkSize = 3
+
+const alreadyDone = readFile()
+const doneEntries = Object.entries(alreadyDone)
+
+console.log(`Déjà ${doneEntries.length} comptes de députés vérifiés`)
+
+const todo = députés
+  /* Instead of filtering the deleted accounts, we'll save the status of the account in the data.json file to store raw data, and potentially correct the source @ in députés-*
+   */
+  .filter(
+    (d) =>
+      !doneEntries.find(
+        ([id, { analyseDate: doneAnalyseDate }]) =>
+          id === d.id && doneAnalyseDate === analyseDate
+      )
+  )
 
 const doFetch = async () => {
-  const chunks = arrayToChunks(députés, chunkSize)
-
   await Promise.all(
-    chunks.map(async (chunk, chunkIndex) => {
-      await delay(chunkIndex * (iterationDelay + 1) * 1000 * chunkSize)
-      let alreadyDone
-
-      try {
-        alreadyDone = JSON.parse(Deno.readTextFileSync('data.json') || '{}')
-      } catch (e) {
-        alreadyDone = {}
+    todo.map(async (député, i) => {
+      const { nom, prenom, groupeAbrev, twitter: at } = député
+      if (!at || at === '') {
+        return [
+          député.id,
+          {
+            nom,
+            analyseDate,
+            prenom,
+            groupeAbrev,
+            unknownPresence: true,
+          },
+        ]
       }
+      const [, values] = await checkTwitterActivity(député.twitter, i)
 
-      const doneEntries = Object.entries(alreadyDone)
-      console.log(`Déjà ${doneEntries.length} comptes de députés vérifiés`)
+      const entry = [
+        député.id,
+        {
+          nom,
+          prenom,
+          analyseDate,
+          groupeAbrev,
+          '@': député.twitter || null,
+          deletedAccount: values === '!exist',
+          notFoundAccount: !values,
+          activité: values,
+        },
+      ]
 
-      const todo = chunk
-        /* Instead of filtering the deleted accounts, we'll save the status of the account in the data.json file to store raw data, and potentially correct the source @ in députés-*
-         */
-        .filter(
-          (d) =>
-            !doneEntries.find(
-              ([id, { analyseDate: doneAnalyseDate }]) =>
-                id === d.id && doneAnalyseDate === analyseDate
-            )
-        )
-        .slice(0, limit)
+      const o = Object.fromEntries([entry])
 
-      const entries = await Promise.all(
-        todo.map(async (député, i) => {
-          const { nom, prenom, groupeAbrev, twitter: at } = député
-          if (!at || at === '') {
-            return [
-              député.id,
-              {
-                nom,
-                analyseDate,
-                prenom,
-                groupeAbrev,
-                unknownPresence: true,
-              },
-            ]
-          }
-          const [, values] = await checkTwitterActivity(
-            député.twitter,
-            chunkSize * chunkIndex + i
-          )
+      const done = readFile()
 
-          return [
-            député.id,
-            {
-              nom,
-              prenom,
-              analyseDate,
-              groupeAbrev,
-              '@': député.twitter || null,
-              deletedAccount: values === '!exist',
-              notFoundAccount: !values,
-              activité: values,
-            },
-          ]
-        })
-      )
-
-      const o = Object.fromEntries(entries)
-
-      write({
-        ...alreadyDone,
+      writeFile({
+        ...done,
         ...o,
       })
     })
@@ -96,9 +82,19 @@ const doFetch = async () => {
   return console.log("Voilà c'est analysé dans ./data.json")
 }
 
-const write = (data) => {
+const writeFile = (data) => {
   Deno.writeTextFileSync('./data.json', JSON.stringify(data, null, 2))
   console.log('File written with ' + Object.keys(data).length + ' data points')
+}
+function readFile() {
+  let alreadyDone
+
+  try {
+    alreadyDone = JSON.parse(Deno.readTextFileSync('data.json') || '{}')
+  } catch (e) {
+    alreadyDone = {}
+  }
+  return alreadyDone
 }
 
 const ws =
@@ -128,7 +124,7 @@ const checkTwitterActivity = async (at, i) => {
 
   try {
     const page = await browser.newPage(url)
-    await delay(3000)
+    await delay(scrapDelay)
     // Run code in the context of the browser
     // Run code in the context of the browser
     const values = await page.evaluate(() => {

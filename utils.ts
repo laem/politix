@@ -12,7 +12,7 @@ export const activeOnBluesky = (id) =>
     id2 === id && activité && hasRecentTweets(activité, analyseDate)
   )
 
-export const arrayToChunks = (array, chunkSize=10) => {
+export const arrayToChunks = (array, chunkSize = 10) => {
   let chunks = []
   for (let i = 0; i < array.length; i += chunkSize) {
     const chunk = array.slice(i, i + chunkSize)
