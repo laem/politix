@@ -77,6 +77,7 @@ export default function PerParty({ entries, blueskyEntries }) {
       >
         {topPartiesEntries.map(([groupeAbrev, count]) => {
           const twitterParty = stats.find(([party]) => party === groupeAbrev)
+          if (!twitterParty) return null
 
           const [party, total, percentActive] = twitterParty
 
