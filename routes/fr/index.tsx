@@ -24,7 +24,9 @@ export default function Top() {
         />
       </Head>
       <BackToHome />
-      <header style={{ display: "flex", alignItems: "center", marginTop: '1rem' }}>
+      <header
+        style={{ display: "flex", alignItems: "center", marginTop: "1rem" }}
+      >
         <span style={{ fontSize: "200%" }}>🥇</span>
         <h1>{title}</h1>
       </header>

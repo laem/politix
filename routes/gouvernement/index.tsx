@@ -1,13 +1,13 @@
-import {Head} from "$fresh/runtime.ts"
+import { Head } from "$fresh/runtime.ts"
 import BackToHome from "../../components/BackToHome.tsx"
-import {blueskyBlue} from "../../components/PerParty.tsx"
+import { blueskyBlue } from "../../components/PerParty.tsx"
 import {
-	BlueskyHandle,
-	politixGridStyle,
-	politixStyle
+  BlueskyHandle,
+  politixGridStyle,
+  politixStyle,
 } from "../../components/Results.tsx"
-import { hasRecentTweets} from "../../date-utils.ts"
-import top from "../../ministres.json" with {type: "json"}
+import { hasRecentTweets } from "../../date-utils.ts"
+import top from "../../ministres.json" with { type: "json" }
 
 const title = "Nos ministres sont-ils sur X ?"
 const description =
@@ -30,7 +30,9 @@ export default function Top() {
         />
       </Head>
       <BackToHome />
-      <header style={{ display: "flex", alignItems: "center", marginTop: '1rem' }}>
+      <header
+        style={{ display: "flex", alignItems: "center", marginTop: "1rem" }}
+      >
         <span style={{ fontSize: "200%", marginRight: ".2rem" }}>🥇</span>
         <h1>{title}</h1>
       </header>
@@ -63,7 +65,7 @@ const List = () => (
             bsky: bskyAt,
             avatar,
             activité: { x: xActivity, bsky: bskyActivity },
-				  analyseDate,
+            analyseDate,
             deletedXAccount,
             notFoundXAccount,
           },
@@ -71,7 +73,7 @@ const List = () => (
       ) => {
         const isActiveOnX = xActivity && Array.isArray(xActivity) &&
           hasRecentTweets(xActivity, analyseDate)
-			  console.log('hasRecentTweets', xActivity, analyseDate)
+        console.log("hasRecentTweets", xActivity, analyseDate)
         const isActiveOnBluesky = bskyActivity && Array.isArray(bskyActivity) &&
           hasRecentTweets(bskyActivity, analyseDate)
 
@@ -109,8 +111,8 @@ const List = () => (
                 )}
             </div>
             <div>
-              {bskyAt != null
-                && (
+              {bskyAt != null &&
+                (
                   <div>
                     <small style={{ whiteSpace: "nowrap" }}>
                       <BlueskyHandle
@@ -119,15 +121,29 @@ const List = () => (
                         avatar={avatar}
                       />
                     </small>
-						{isActiveOnBluesky ? 
-                    <details>
-                      <summary style={{background: blueskyBlue, padding: '0 .4rem 0 .2rem', borderRadius: '.2rem', marginTop: '.2rem', lineHeight: '1.1rem', width: 'fit-content'}}>Actif sur Bluesky</summary>
-                      <ol>
-                        {bskyActivity.map((date, i) => (
-                          <li key={date + i}>{date}</li>
-                        ))}
-                      </ol>
-                    </details> : "Non actif sur Bluesky"}
+                    {isActiveOnBluesky
+                      ? (
+                        <details>
+                          <summary
+                            style={{
+                              background: blueskyBlue,
+                              padding: "0 .4rem 0 .2rem",
+                              borderRadius: ".2rem",
+                              marginTop: ".2rem",
+                              lineHeight: "1.1rem",
+                              width: "fit-content",
+                            }}
+                          >
+                            Actif sur Bluesky
+                          </summary>
+                          <ol>
+                            {bskyActivity.map((date, i) => (
+                              <li key={date + i}>{date}</li>
+                            ))}
+                          </ol>
+                        </details>
+                      )
+                      : "Non actif sur Bluesky"}
                   </div>
                 )}
             </div>

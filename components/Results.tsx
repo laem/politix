@@ -156,7 +156,7 @@ export const BlueskyHandle = ({ député, invert = true, at, avatar }) => {
           filter: invert ? "grayscale(1) invert(1) brightness(100)" : "none",
           display: "inline",
           marginRight: ".2rem",
-              verticalAlign: "middle",
+          verticalAlign: "middle",
         }}
         width="10"
         height="10"
@@ -168,7 +168,7 @@ export const BlueskyHandle = ({ député, invert = true, at, avatar }) => {
             src={avatar}
             style={{
               width: "1.4rem",
-							border: "2px solid white",
+              border: "2px solid white",
               height: "auto",
               borderRadius: "1rem",
               display: "inline",
