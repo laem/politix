@@ -41,6 +41,30 @@ export default function Top() {
         petits comptes qui ont percé récemment.
       </p>
       <br />
+		  <p style={{
+							  textAlign: 'right'
+
+		  }}>
+            <a
+              href={"https://bsky.app/intent/compose?text="+ encodeURIComponent(`Oh le top Bluesky francophone ! 
+
+					  cc @mael.kont.me`)}
+		  target="_blank"
+              style={{
+                textDecoration: 'none',
+              }}
+            >
+            <img
+              src="/bluesky.svg"
+              width="10"
+              height="10"
+              style={{ width: '1rem', height: 'auto', display: 'inline' }}
+              alt="Logo de Bluesky"
+            />{' '}
+              Partager sur Bluesky
+            </a>
+
+		  </p>
       <Dates />
 
       <br />
