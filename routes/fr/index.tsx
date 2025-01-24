@@ -46,9 +46,7 @@ export default function Top() {
 
 		  }}>
             <a
-              href={"https://bsky.app/intent/compose?text="+ encodeURIComponent(`Oh le top Bluesky francophone ! 
-
-					  cc @mael.kont.me`)}
+              href={"https://bsky.app/intent/compose?text="+ encodeURIComponent(`Oh le top Bluesky francophone ! https://politix.top/fr par @mael.kont.me`)}
 		  target="_blank"
               style={{
                 textDecoration: 'none',
