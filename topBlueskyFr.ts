@@ -1,6 +1,8 @@
 import { AtpAgent, AtpSessionEvent, AtpSessionData } from 'npm:@atproto/api'
 import { delay } from './utils.ts'
 
+const password = Deno.env.get('BLUESKY_APP_PASSWORD')
+
 const falsePositives = [
   'labordeliere.bsky.social', // +18 ans, ne skeete que des images donc pas francophone
   'antifapuddinpop.bsky.social', // marked as french but not https://bsky.app/profile/antifapuddinpop.bsky.social/post/3lffmbgxick2x
@@ -24,7 +26,7 @@ const agent = new AtpAgent({
 const analyse = async () => {
   await agent.login({
     identifier: 'mael.kont.me',
-    password: 'wvkd-edeu-wjnt-yf5j',
+    password
   })
 
   console.log('OK', agent.did)
