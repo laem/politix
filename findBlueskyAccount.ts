@@ -19,6 +19,7 @@ const falsePositives = {
   PA720614: ['mlpcdn.bsky.social'],
   PA817203: ['lauremiller.bsky.social'],
   PA793102: ['tristanhylare.bsky.social'],
+  PA841833: ['davidguerin.bsky.social'],
 }
 
 export const findBlueskyAccount = async (politix, i) => {
