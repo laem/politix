@@ -13,13 +13,14 @@ export const logResult = ([député, activity]) => {
   }
 }
 const falsePositives = {
-  PA841825: ['@patricemartin50.bsky.social'],
-  PA793262: ['@onesque.bsky.social'],
-  PA793362: ['@williamjo.se'],
+  PA841825: ['patricemartin50.bsky.social'],
+  PA793262: ['onesque.bsky.social'],
+  PA793362: ['williamjo.se'],
   PA720614: ['mlpcdn.bsky.social'],
-  PA817203: ['@lauremiller.bsky.social'],
-  PA793102: ['@tristanhylare.bsky.social'],
+  PA817203: ['lauremiller.bsky.social'],
+  PA793102: ['tristanhylare.bsky.social'],
 }
+
 export const findBlueskyAccount = async (politix, i) => {
   await delay(i * 300)
   const { nom, prenom } = politix
@@ -44,6 +45,7 @@ export const findBlueskyAccount = async (politix, i) => {
       return false
     }
 
+    console.log('HANDLE', handle)
     if (
       falsePositives[politix.id] &&
       falsePositives[politix.id].includes(handle)
