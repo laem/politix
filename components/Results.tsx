@@ -102,7 +102,9 @@ export default function Results({ givenParty = null }) {
                       </details>
                     </div>
                   )
-                  : "Non actif sur Bluesky"}
+                  : onBluesky(député.id) ? <div><BlueskyHandle invert={false} député={député}/>&nbsp;Non actif sur Bluesky</div> : 
+
+						"Non présent sur Bluesky"}
               </div>
             </li>
           )

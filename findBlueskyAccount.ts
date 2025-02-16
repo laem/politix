@@ -27,9 +27,8 @@ export const findBlueskyAccount = async (politix, i) => {
   const { nom, prenom } = politix
   console.log(`Will analyse ${prenom} ${nom} ${i}`)
 
-  const request = await fetch(
-    `https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=${prenom} ${nom}`
-  )
+  const url = `https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=${prenom} ${nom}`
+  const request = await fetch(url)
   const json = await request.json()
 
   //console.log(json)
