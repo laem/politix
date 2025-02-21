@@ -1,23 +1,23 @@
-import { AtpAgent, AtpSessionEvent, AtpSessionData } from 'npm:@atproto/api'
-import { delay } from './utils.ts'
+import { AtpAgent, AtpSessionData, AtpSessionEvent } from "npm:@atproto/api"
+import { delay } from "./utils.ts"
 
-const password = Deno.env.get('BLUESKY_APP_PASSWORD')
+const password = Deno.env.get("BLUESKY_APP_PASSWORD")
 
 const falsePositives = [
-  'labordeliere.bsky.social', // +18 ans, ne skeete que des images donc pas francophone
-  'antifapuddinpop.bsky.social', // marked as french but not https://bsky.app/profile/antifapuddinpop.bsky.social/post/3lffmbgxick2x
+  "labordeliere.bsky.social", // +18 ans, ne skeete que des images donc pas francophone
+  "antifapuddinpop.bsky.social", // marked as french but not https://bsky.app/profile/antifapuddinpop.bsky.social/post/3lffmbgxick2x
 ]
 
 let old
 
 try {
-  old = JSON.parse(Deno.readTextFileSync('bluesky-top-actors-fr.json') || '{}')
+  old = JSON.parse(Deno.readTextFileSync("bluesky-top-actors-fr.json") || "{}")
 } catch (e) {
   old = { sorted: {}, dates: [] }
 }
 
 const agent = new AtpAgent({
-  service: 'https://bsky.social/xrpc',
+  service: "https://bsky.social/xrpc",
   persistSession: (evt: AtpSessionEvent, sess?: AtpSessionData) => {
     // store the session-data for reuse
   },
@@ -25,16 +25,16 @@ const agent = new AtpAgent({
 
 const analyse = async () => {
   await agent.login({
-    identifier: 'mael.kont.me',
-    password
+    identifier: "mael.kont.me",
+    password,
   })
 
-  console.log('OK', agent.did)
+  console.log("OK", agent.did)
 
   const { data: json } = await agent.app.bsky.feed.searchPosts({
-    q: 'lang:fr',
+    q: "lang:fr",
     limit: 100,
-    sort: 'top',
+    sort: "top",
   })
 
   /* public API not working anymore 21 jan
@@ -47,7 +47,7 @@ const analyse = async () => {
 		*/
 
   const dates = new Set(
-    json.posts.map((post) => post.record.createdAt.split('T')[0])
+    json.posts.map((post) => post.record.createdAt.split("T")[0]),
   )
 
   const handles = new Set([
@@ -59,7 +59,7 @@ const analyse = async () => {
     [...handles].map(async (handle, i) => {
       await delay(i * 100)
       const request = await fetch(
-        `https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile?actor=${handle}`
+        `https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile?actor=${handle}`,
       )
       const json = await request.json()
 
@@ -67,7 +67,7 @@ const analyse = async () => {
 
       const result = [handle, count]
       return result
-    })
+    }),
   )
 
   const totalEntries = {
@@ -78,7 +78,7 @@ const analyse = async () => {
   const sorted = Object.fromEntries(
     Object.entries(totalEntries)
       .sort(([, a], [, b]) => b - a)
-      .filter(([handle]) => !falsePositives.includes(handle))
+      .filter(([handle]) => !falsePositives.includes(handle)),
   )
 
   /*
@@ -97,11 +97,11 @@ const analyse = async () => {
   }
 
   Deno.writeTextFileSync(
-    './bluesky-top-actors-fr.json',
-    JSON.stringify(result, null, 2)
+    "./bluesky-top-actors-fr.json",
+    JSON.stringify(result, null, 2),
   )
 
-  console.log('Fichier écrit')
+  console.log("Fichier écrit")
 }
 
 analyse()

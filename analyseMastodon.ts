@@ -1,19 +1,22 @@
 import députésRandomOrder from "./députés.ts"
-import { findBlueskyAccount, logResultBluesky } from "./findBlueskyAccount.ts"
+import {
+  findMastodonAccount,
+  logResultMastodon,
+} from "./findMastodonAccount.ts"
 
 const analyseDate = new Date().toISOString().split("T")[0]
-const analyseBluesky = async () => {
+const analyseMastodon = async () => {
   const extract = députésRandomOrder
   const results = await Promise.all(
     extract.map(async (député, i) => {
-      const result = await findBlueskyAccount(député, i)
-      logResultBluesky(result)
+      const result = await findMastodonAccount(député, i)
+      logResultMastodon(result)
       return result
     }),
   )
 
   const entries = results.map(([député, activity]) => {
-    const { nom, prenom, groupe, bsky, groupeAbrev } = député
+    const { nom, prenom, groupe, masto, groupeAbrev } = député
 
     return [
       député.id,
@@ -21,7 +24,7 @@ const analyseBluesky = async () => {
         nom,
         prenom,
         groupeAbrev,
-        bsky: bsky || null,
+        masto: masto || null,
         activité: activity,
         analyseDate,
       },
@@ -29,7 +32,7 @@ const analyseBluesky = async () => {
   })
 
   const o = Object.fromEntries(entries)
-  Deno.writeTextFileSync("./bluesky-data.json", JSON.stringify(o, null, 2))
+  Deno.writeTextFileSync("./mastodon-data.json", JSON.stringify(o, null, 2))
 }
 
-analyseBluesky()
+analyseMastodon()

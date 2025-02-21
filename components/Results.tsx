@@ -200,7 +200,9 @@ export const PartyVignette = ({ party, small }) => {
     </a>
   )
 }
-export const BlueskyHandle = ({ député, invert = true, avatar, at, isActive }) => {
+export const BlueskyHandle = (
+  { député, invert = true, avatar, at, isActive },
+) => {
   const handle = at || (député && onBluesky(député.id)[1].bsky)
 
   return (
