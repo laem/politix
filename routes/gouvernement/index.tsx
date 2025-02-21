@@ -80,7 +80,11 @@ const List = () => (
         return (
           <li
             key=""
-            style={politixStyle(xAt, isActiveOnX, isActiveOnBluesky)}
+            style={politixStyle(
+              isActiveOnX,
+              isActiveOnBluesky,
+              false,
+            )}
           >
             <div style={{ maxWidth: "100%" }}>
               <div style={{ whiteSpace: "nowrap", overflow: "scroll" }}>
@@ -119,6 +123,7 @@ const List = () => (
                         at={bskyAt}
                         invert={false}
                         avatar={avatar}
+                        isActive={isActiveOnX || isActiveOnBluesky}
                       />
                     </small>
                     {isActiveOnBluesky

@@ -442,9 +442,7 @@
     "notFoundXAccount": true,
     "activité": {
       "x": null,
-      "bsky": [
-        "2025-02-11"
-      ]
+      "bsky": null
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:ks2tgzxkd25ewzri7qvwpxuo/bafkreie2iznejypl55y6rzxvegpvb72wxpfyjonpjnuquav3yot35gh5d4@jpeg"
   },
@@ -560,10 +558,7 @@
         "2025-02-12",
         "2025-02-12"
       ],
-      "bsky": [
-        "2025-02-10",
-        "2025-02-09"
-      ]
+      "bsky": null
     },
     "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:f2allz6yovsdhudzc2zhvoup/bafkreiasdpzexfmuulylgtvj7len3mpaq2ycqefnzqn35lq5kl7cnoeyke@jpeg"
   },

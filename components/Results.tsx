@@ -76,7 +76,6 @@ export default function Results({ givenParty = null }) {
                 result,
                 isActiveOnBluesky,
                 isActiveOnMastodon,
-                isActive,
               )}
             >
               <div style={{ maxWidth: "100%" }}>
@@ -314,32 +313,32 @@ export const politixGridStyle = {
 }
 
 export const xColor = "#4c0815"
-export const politixStyle = (
-  result,
-  isActiveOnBluesky,
-  isActiveOnMastodon,
-  isActive,
-) => ({
-  listStyleType: "none",
-  width: "12rem",
-  minHeight: "8.5rem",
-  background: result
-    ? xColor
-    : (isActiveOnBluesky && isActiveOnMastodon)
-    ? `linear-gradient(to right bottom, ${blueskyBlue} 0%, ${blueskyBlue} 50%, ${mastodonPurple} 50%, ${mastodonPurple} 100%)`
-    : isActiveOnBluesky
-    ? blueskyBlue
-    : isActiveOnMastodon
-    ? mastodonPurple
-    : "transparent",
-  border: (result && !isActiveOnBluesky && !isActiveOnMastodon)
-    ? ("3px solid " + xColor)
-    : isActiveOnBluesky
-    ? `4px solid ${blueskyBlue}`
-    : isActiveOnMastodon
-    ? `4px solid ${mastodonPurple}`
-    : "3px solid lightgray",
-  color: isActive ? "white" : "black",
-  borderRadius: ".4rem",
-  padding: "0 .4rem",
-})
+export const politixStyle = (result, isActiveOnBluesky, isActiveOnMastodon) => {
+  const isActive = Boolean(
+    result || isActiveOnBluesky || isActiveOnMastodon,
+  )
+  return ({
+    listStyleType: "none",
+    width: "12rem",
+    minHeight: "8.5rem",
+    background: result
+      ? xColor
+      : (isActiveOnBluesky && isActiveOnMastodon)
+      ? `linear-gradient(to right bottom, ${blueskyBlue} 0%, ${blueskyBlue} 50%, ${mastodonPurple} 50%, ${mastodonPurple} 100%)`
+      : isActiveOnBluesky
+      ? blueskyBlue
+      : isActiveOnMastodon
+      ? mastodonPurple
+      : "transparent",
+    border: (result && !isActiveOnBluesky && !isActiveOnMastodon)
+      ? ("3px solid " + xColor)
+      : isActiveOnBluesky
+      ? `4px solid ${blueskyBlue}`
+      : isActiveOnMastodon
+      ? `4px solid ${mastodonPurple}`
+      : "3px solid lightgray",
+    color: isActive ? "white" : "black",
+    borderRadius: ".4rem",
+    padding: "0 .4rem",
+  })
+}
