@@ -12,7 +12,7 @@ export default function Bar({
       {logo
         ? (
           <img
-            src={logo}
+            src={`/${logo}`}
             alt={logo}
             style={{ width: "1rem", height: "1rem" }}
           />
