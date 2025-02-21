@@ -15,7 +15,7 @@ const description =
 
 export default function Top() {
   return (
-    <main style={{ maxWidth: "40rem", margin: "1rem auto" }}>
+    <main>
       <Head>
         <title>{title}</title>
         <meta
@@ -79,7 +79,7 @@ const List = () => (
 
         return (
           <li
-            key={""}
+            key=""
             style={politixStyle(xAt, isActiveOnX, isActiveOnBluesky)}
           >
             <div style={{ maxWidth: "100%" }}>

@@ -9,7 +9,7 @@ const description =
 
 export default function Top() {
   return (
-    <main style={{ maxWidth: "40rem", margin: "1rem auto" }}>
+    <main>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} key="description" />

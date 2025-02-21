@@ -54,3 +54,15 @@ html {
     "Segoe UI Symbol",
     "Noto Color Emoji";
 }
+
+body {
+  margin: 1rem auto;
+  max-width: 80rem;
+}
+
+@media screen and (max-width: 480px) {
+  /* smartphones */
+  body {
+    max-width: 40rem;
+  }
+}
