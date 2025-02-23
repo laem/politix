@@ -1,4 +1,4 @@
-import { blueskyBlue } from "../components/PerParty.tsx"
+import { blueskyBlue, mastodonPurple } from "../components/PerParty.tsx"
 import Results, { xColor } from "../components/Results.tsx"
 import { daysSpan } from "../date-utils.ts"
 
@@ -49,7 +49,8 @@ export default function Home() {
       </p>
       <p style={{ maxWidth: "40rem", margin: "0 auto" }}>
         Découvrez aussi ceux{" "}
-        <Em background={blueskyBlue}>qui sont actifs sur Bluesky</Em>.
+        <Em background={blueskyBlue}>qui sont actifs sur Bluesky</Em>{" "}
+        <Em background={mastodonPurple}>ou sur Mastodon</Em>.
       </p>
       <p
         style={{
