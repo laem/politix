@@ -1,9 +1,15 @@
 const alreadyDone = JSON.parse(Deno.readTextFileSync("data.json") || "{}")
 import bluesky from "../bluesky-data.json" with { type: "json" }
+import mastodon from "../mastodon-data.json" with { type: "json" }
 import { hasRecentTweets } from "../date-utils.ts"
 import députésRandomOrder from "../députés.ts"
-import { activeOnBluesky, onBluesky } from "../utils.ts"
-import PerParty, { blueskyBlue } from "./PerParty.tsx"
+import {
+  activeOnBluesky,
+  activeOnMastodon,
+  onBluesky,
+  onMastodon,
+} from "../utils.ts"
+import PerParty, { blueskyBlue, mastodonPurple } from "./PerParty.tsx"
 import { findContrastedTextColor, partyColors } from "./couleurs-assemblée.ts"
 
 const députés = députésRandomOrder
@@ -15,6 +21,7 @@ const entries = Object.entries(alreadyDone)
 console.log("Nombre de députés analysés pour X : ", entries.length)
 
 const blueskyEntries = Object.entries(bluesky)
+const mastodonEntries = Object.entries(mastodon)
 
 export const centerStyle = { textAlign: "center" }
 
@@ -25,8 +32,12 @@ export default function Results({ givenParty = null }) {
   return (
     <section>
       <h2 style={{ ...centerStyle, marginTop: "1rem" }}>Les députés</h2>
-      {!givenParty &&
-        <PerParty entries={entries} blueskyEntries={blueskyEntries} />}
+      <PerParty
+        entries={entries}
+        blueskyEntries={blueskyEntries}
+        mastodonEntries={mastodonEntries}
+        givenParty={givenParty}
+      />
 
       <h3 style={centerStyle}>
         {givenParty ? `Liste pour le parti ${givenParty}` : `Liste complète`}
@@ -42,17 +53,30 @@ export default function Results({ givenParty = null }) {
             data["@"] === député.twitter
           )
           const dates = xTested && xTested[1].activité
-          const at = député.twitter
           const isActiveOnBluesky = activeOnBluesky(député.id)
+          const isActiveOnMastodon = activeOnMastodon(député.id)
+
+          const at = (isActiveOnBluesky && onBluesky(député.id)[1].bsky) ||
+            (isActiveOnMastodon && onMastodon(député.id)[1].masto) ||
+            député.twitter ||
+            député.nom + député.prenom // the key attribute must always be different
+          // console.log(at)
 
           const result = dates && Array.isArray(dates) &&
             hasRecentTweets(dates, xTested[1]["analyseDate"])
+          const isActive = Boolean(
+            result || isActiveOnBluesky || isActiveOnMastodon,
+          )
           const notTested = !xTested
           const { prenom, nom, groupe, groupeAbrev, twitter } = député
           return (
             <li
               key={at}
-              style={politixStyle(at, result, isActiveOnBluesky)}
+              style={politixStyle(
+                result,
+                isActiveOnBluesky,
+                isActiveOnMastodon,
+              )}
             >
               <div style={{ maxWidth: "100%" }}>
                 <div style={{ whiteSpace: "nowrap", overflow: "scroll" }}>
@@ -81,16 +105,14 @@ export default function Results({ givenParty = null }) {
                   )
                   : notTested
                   ? "Non testé"
-                  : (
-                    "Non actif sur X"
-                  )}
+                  : "Non actif sur X"}
               </div>
               <div>
                 {isActiveOnBluesky
                   ? (
                     <div>
                       <small style={{ whiteSpace: "nowrap" }}>
-                        <BlueskyHandle député={député} />
+                        <BlueskyHandle député={député} isActive={isActive} />
                       </small>
                       <details>
                         <summary>Actif sur Bluesky</summary>
@@ -102,9 +124,46 @@ export default function Results({ givenParty = null }) {
                       </details>
                     </div>
                   )
-                  : onBluesky(député.id) ? <div><BlueskyHandle invert={false} député={député}/>&nbsp;Non actif sur Bluesky</div> : 
-
-						"Non présent sur Bluesky"}
+                  : onBluesky(député.id)
+                  ? (
+                    <div>
+                      <BlueskyHandle
+                        invert={false}
+                        député={député}
+                        isActive={isActive}
+                      />
+                      <br />
+                      Non actif sur Bluesky
+                    </div>
+                  )
+                  : "Non présent sur Bluesky"}
+              </div>
+              <div>
+                {isActiveOnMastodon
+                  ? (
+                    <div>
+                      <small style={{ whiteSpace: "nowrap" }}>
+                        <MastodonHandle député={député} isActive={isActive} />
+                      </small>
+                      <details>
+                        <summary>Actif sur Mastodon</summary>
+                        <ol>
+                          {isActiveOnMastodon[1].activité.map((date, i) => (
+                            <li key={date + i}>{date}</li>
+                          ))}
+                        </ol>
+                      </details>
+                    </div>
+                  )
+                  : onMastodon(député.id)
+                  ? (
+                    <div>
+                      <MastodonHandle député={député} isActive={isActive} />
+                      <br />
+                      Non actif sur Mastodon
+                    </div>
+                  )
+                  : "Non présent sur Mastodon"}
               </div>
             </li>
           )
@@ -140,18 +199,22 @@ export const PartyVignette = ({ party, small }) => {
     </a>
   )
 }
-export const BlueskyHandle = ({ député, invert = true, at, avatar }) => {
+export const BlueskyHandle = (
+  { député, invert = true, avatar, at, isActive },
+) => {
   const handle = at || (député && onBluesky(député.id)[1].bsky)
 
   return (
     <a
       href={`https://bsky.app/profile/${handle}`}
+      target="_blank"
+      rel="noopener noreferrer"
       style={{
-        color: "white",
+        color: isActive ? "white" : "black",
       }}
     >
       <img
-        src={"/bluesky.svg"}
+        src="/bluesky.svg"
         style={{
           width: "1rem",
           height: "auto",
@@ -184,6 +247,54 @@ export const BlueskyHandle = ({ député, invert = true, at, avatar }) => {
   )
 }
 
+export const MastodonHandle = ({ député, avatar, isActive }) => {
+  const acct = député && onMastodon(député.id)[1].masto
+  const [username, server] = acct.split("@")
+
+  return (
+    <a
+      href={`https://${server}/@${username}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        color: isActive ? "white" : "black",
+      }}
+    >
+      <img
+        src="/mastodon.svg"
+        style={{
+          width: "1rem",
+          height: "auto",
+          display: "inline",
+          marginRight: ".2rem",
+          verticalAlign: "middle",
+        }}
+        width="10"
+        height="10"
+        alt="Logo Mastodon"
+      />
+      {avatar &&
+        (
+          <img
+            src={avatar}
+            style={{
+              width: "1.4rem",
+              border: "2px solid white",
+              height: "auto",
+              borderRadius: "1rem",
+              display: "inline",
+              verticalAlign: "middle",
+              margin: "0 .3rem 0 .1rem",
+            }}
+          />
+        )}
+      {username}
+      <br />
+      {`@${server}`}
+    </a>
+  )
+}
+
 export const getPartyName = (party) => {
   const fullName = députés.find(
     ({ groupeAbrev, groupe }) => groupeAbrev === party,
@@ -202,17 +313,32 @@ export const politixGridStyle = {
 }
 
 export const xColor = "#4c0815"
-export const politixStyle = (at, result, isActiveOnBluesky) => ({
-  listStyleType: "none",
-  width: "12rem",
-  minHeight: "8.5rem",
-  background: result ? xColor : isActiveOnBluesky ? blueskyBlue : "transparent",
-  border: (result && !isActiveOnBluesky)
-    ? ("3px solid " + xColor)
-    : isActiveOnBluesky
-    ? `4px solid ${blueskyBlue}`
-    : "3px solid lightgray",
-  color: (result || isActiveOnBluesky) ? "white" : "black",
-  borderRadius: ".4rem",
-  padding: "0 .4rem",
-})
+export const politixStyle = (result, isActiveOnBluesky, isActiveOnMastodon) => {
+  const isActive = Boolean(
+    result || isActiveOnBluesky || isActiveOnMastodon,
+  )
+  return ({
+    listStyleType: "none",
+    width: "12rem",
+    minHeight: "8.5rem",
+    background: result
+      ? xColor
+      : (isActiveOnBluesky && isActiveOnMastodon)
+      ? `linear-gradient(to right bottom, ${blueskyBlue} 0%, ${blueskyBlue} 50%, ${mastodonPurple} 50%, ${mastodonPurple} 100%)`
+      : isActiveOnBluesky
+      ? blueskyBlue
+      : isActiveOnMastodon
+      ? mastodonPurple
+      : "transparent",
+    border: (result && !isActiveOnBluesky && !isActiveOnMastodon)
+      ? ("3px solid " + xColor)
+      : isActiveOnBluesky
+      ? `4px solid ${blueskyBlue}`
+      : isActiveOnMastodon
+      ? `4px solid ${mastodonPurple}`
+      : "3px solid lightgray",
+    color: isActive ? "white" : "black",
+    borderRadius: ".4rem",
+    padding: "0 .4rem",
+  })
+}

@@ -3,7 +3,7 @@ import { launch } from "jsr:@astral/astral"
 import { parse } from "jsr:@std/csv"
 import { analyseDate } from "./date-utils.ts"
 import { delay } from "./utils.ts"
-import { findBlueskyAccount, logResult } from "./findBlueskyAccount.ts"
+import { findBlueskyAccount, logResultBluesky } from "./findBlueskyAccount.ts"
 
 const csv = Deno.readTextFileSync("ministres-x.csv")
 const bskyFalsePositives = ["manuelvalls.bsky.social", "phil374.bsky.social"]
@@ -56,7 +56,7 @@ const doFetch = async () => {
         : await checkTwitterActivity(at, i)
       const result = await findBlueskyAccount({ nom, prenom }, i)
       const [{ bsky, avatar }, activity] = result
-      logResult(result)
+      logResultBluesky(result)
 
       const verifiedBsky = bsky && !bskyFalsePositives.includes(bsky)
         ? bsky

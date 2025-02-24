@@ -15,7 +15,7 @@ const description =
 
 export default function Top() {
   return (
-    <main style={{ maxWidth: "40rem", margin: "1rem auto" }}>
+    <main>
       <Head>
         <title>{title}</title>
         <meta
@@ -79,8 +79,12 @@ const List = () => (
 
         return (
           <li
-            key={""}
-            style={politixStyle(xAt, isActiveOnX, isActiveOnBluesky)}
+            key=""
+            style={politixStyle(
+              isActiveOnX,
+              isActiveOnBluesky,
+              false,
+            )}
           >
             <div style={{ maxWidth: "100%" }}>
               <div style={{ whiteSpace: "nowrap", overflow: "scroll" }}>
@@ -119,6 +123,7 @@ const List = () => (
                         at={bskyAt}
                         invert={false}
                         avatar={avatar}
+                        isActive={isActiveOnX || isActiveOnBluesky}
                       />
                     </small>
                     {isActiveOnBluesky
