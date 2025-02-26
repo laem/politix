@@ -1,4 +1,4 @@
-import top from "../../bluesky-top-actors-fr.json" with { type: "json" }
+import top from "../../data/bluesky-top-actors-fr.json" with { type: "json" }
 import { Head } from "$fresh/runtime.ts"
 import BackToHome from "../../components/BackToHome.tsx"
 

@@ -1,4 +1,4 @@
-import députésRandomOrder from "./députés.ts"
+import députésRandomOrder from "../députés.ts"
 import {
   findMastodonAccount,
   logResultMastodon,
@@ -32,7 +32,10 @@ const analyseMastodon = async () => {
   })
 
   const o = Object.fromEntries(entries)
-  Deno.writeTextFileSync("./mastodon-data.json", JSON.stringify(o, null, 2))
+  Deno.writeTextFileSync(
+    "../data/mastodon-data.json",
+    JSON.stringify(o, null, 2),
+  )
 }
 
 analyseMastodon()

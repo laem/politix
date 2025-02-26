@@ -7,7 +7,7 @@ import {
   politixStyle,
 } from "../../components/Results.tsx"
 import { hasRecentTweets } from "../../date-utils.ts"
-import top from "../../ministres.json" with { type: "json" }
+import top from "../../data/ministres.json" with { type: "json" }
 
 const title = "Nos ministres sont-ils sur X ?"
 const description =

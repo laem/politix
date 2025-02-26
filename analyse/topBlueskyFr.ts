@@ -1,5 +1,5 @@
 import { AtpAgent, AtpSessionData, AtpSessionEvent } from "npm:@atproto/api"
-import { delay } from "./utils.ts"
+import { delay } from "../utils.ts"
 
 const password = Deno.env.get("BLUESKY_APP_PASSWORD")
 
@@ -11,7 +11,9 @@ const falsePositives = [
 let old
 
 try {
-  old = JSON.parse(Deno.readTextFileSync("bluesky-top-actors-fr.json") || "{}")
+  old = JSON.parse(
+    Deno.readTextFileSync("../data/bluesky-top-actors-fr.json") || "{}",
+  )
 } catch (e) {
   old = { sorted: {}, dates: [] }
 }
@@ -97,7 +99,7 @@ const analyse = async () => {
   }
 
   Deno.writeTextFileSync(
-    "./bluesky-top-actors-fr.json",
+    "../data/bluesky-top-actors-fr.json",
     JSON.stringify(result, null, 2),
   )
 

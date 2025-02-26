@@ -1,6 +1,6 @@
 import removeAccents from "npm:remove-accents"
-import { filterRecentTweets } from "./date-utils.ts"
-import { delay } from "./utils.ts"
+import { filterRecentTweets } from "../date-utils.ts"
+import { delay } from "../utils.ts"
 
 export const logResultMastodon = ([député, activity]) => {
   const { nom, prenom, groupe, masto } = député
@@ -13,24 +13,32 @@ export const logResultMastodon = ([député, activity]) => {
 }
 const falsePositives = {
   PA841825: ["technotrotteur@mastodon.social"],
-  PA793362: ["jose_eduardo@mastodon.social", "toshioxgnu@fosstodon.org", "ProfeJoseRivera@mas.to"],
+  PA793362: [
+    "jose_eduardo@mastodon.social",
+    "toshioxgnu@fosstodon.org",
+    "ProfeJoseRivera@mas.to",
+  ],
   PA795386: ["blablamlefevre@mastodon.social"],
   PA722142: ["francois_ruffin@social.jesuislibre.net"],
   PA841495: ["maximeamblard@sciences.re"],
   PA609332: ["olivierfaure@mastodon.social"],
-  PA793102: ["christian_1955_11_16@piaille.fr"]
+  PA793102: ["christian_1955_11_16@piaille.fr"],
+}
+
+let headers
+if (Deno.env.has("MASTODON_TOKEN")) {
+  headers = {
+    Authorization: `Bearer ${Deno.env.get("MASTODON_TOKEN")}`, // need here a Mastodon account
+  }
+} else {
+  headers = {}
 }
 
 export const findMastodonAccount = async (politix, i) => {
-  let headers
-  if (Deno.env.has("MASTODON_TOKEN")) {
-    headers = {
-      Authorization: `Bearer ${Deno.env.get("MASTODON_TOKEN")}`, // need here a Mastodon account
-    }
-    await delay(i * 1000)
-  } else {
-    headers = {}
+  if (headers === {}) {
     await delay(i * 5000)
+  } else {
+    await delay(i * 1000)
   }
   const { nom, prenom } = politix
   console.log(`Will analyse ${prenom} ${nom} ${i}`)

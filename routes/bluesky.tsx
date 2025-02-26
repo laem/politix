@@ -1,4 +1,4 @@
-import bluesky from "../bluesky-data.json" with { type: "json" }
+import bluesky from "../data/bluesky-data.json" with { type: "json" }
 import { BlueskyHandle, PartyVignette } from "../components/Results.tsx"
 import { hasRecentTweets } from "../date-utils.ts"
 import députésRandomOrder from "../députés.ts"

@@ -1,11 +1,11 @@
 // Merci https://gist.github.com/mouette/4cd38e6dce84bd232c78b77506d9a899#file-ministres-x-csv
 import { launch } from "jsr:@astral/astral"
 import { parse } from "jsr:@std/csv"
-import { analyseDate } from "./date-utils.ts"
-import { delay } from "./utils.ts"
+import { analyseDate } from "../date-utils.ts"
+import { delay } from "../utils.ts"
 import { findBlueskyAccount, logResultBluesky } from "./findBlueskyAccount.ts"
 
-const csv = Deno.readTextFileSync("ministres-x.csv")
+const csv = Deno.readTextFileSync("../data/ministres-x.csv")
 const bskyFalsePositives = ["manuelvalls.bsky.social", "phil374.bsky.social"]
 
 const ministres = parse(csv, {
@@ -15,7 +15,7 @@ const ministres = parse(csv, {
 
 let file
 try {
-  file = Deno.readTextFileSync("ministres.json")
+  file = Deno.readTextFileSync("../data/ministres.json")
 } catch (e) {
   file = "{}"
 }
@@ -81,7 +81,7 @@ const doFetch = async () => {
   const o = Object.fromEntries(entries)
 
   Deno.writeTextFileSync(
-    "./ministres.json",
+    "../data/ministres.json",
     JSON.stringify(
       {
         ...alreadyDone,
@@ -91,7 +91,7 @@ const doFetch = async () => {
       2,
     ),
   )
-  return console.log("Voilà c'est analysé dans ./ministres.json")
+  return console.log("Voilà c'est analysé dans ./data/ministres.json")
 }
 
 const ws =

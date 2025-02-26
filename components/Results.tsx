@@ -1,6 +1,6 @@
-const alreadyDone = JSON.parse(Deno.readTextFileSync("data.json") || "{}")
-import bluesky from "../bluesky-data.json" with { type: "json" }
-import mastodon from "../mastodon-data.json" with { type: "json" }
+const alreadyDone = JSON.parse(Deno.readTextFileSync("data/data.json") || "{}")
+import bluesky from "../data/bluesky-data.json" with { type: "json" }
+import mastodon from "../data/mastodon-data.json" with { type: "json" }
 import { hasRecentTweets } from "../date-utils.ts"
 import députésRandomOrder from "../députés.ts"
 import {

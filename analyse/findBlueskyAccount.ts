@@ -1,6 +1,6 @@
 import removeAccents from "npm:remove-accents"
-import { filterRecentTweets } from "./date-utils.ts"
-import { delay } from "./utils.ts"
+import { filterRecentTweets } from "../date-utils.ts"
+import { delay } from "../utils.ts"
 
 export const logResultBluesky = ([député, activity]) => {
   const { nom, prenom, groupe, bsky } = député
