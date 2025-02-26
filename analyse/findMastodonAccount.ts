@@ -25,6 +25,15 @@ const falsePositives = {
   PA793102: ["christian_1955_11_16@piaille.fr"],
 }
 
+const serversOutOfMastodon = [
+  "peertube", // video platform in the Fediverse
+  "@respublicae.eu", // Mirror of X account
+  "birdsite", // Idem
+  "brid.gy", // Bridge of Bluesky account
+  "@rss-parrot.net", // Clémentine Autain : clementine-autain.fr@rss-parrot.net
+  "@kilogram.makeup", // Mirror of Instagram account
+]
+
 let headers
 if (Deno.env.has("MASTODON_TOKEN")) {
   headers = {
@@ -35,6 +44,7 @@ if (Deno.env.has("MASTODON_TOKEN")) {
 }
 
 export const findMastodonAccount = async (politix, i) => {
+  // An account token allows to make more requests whitout error
   if (headers === {}) {
     await delay(i * 5000)
   } else {
@@ -64,13 +74,7 @@ export const findMastodonAccount = async (politix, i) => {
         return false
       }
 
-      if (
-        acct.includes("peertube") || // As Mastodon is in the Fediverse, account could be in another social media
-        acct.includes("@respublicae.eu") || // Mirror of offical account
-        acct.includes("birdsite") || // Idem
-        acct.includes("brid.gy") || // Bridge of Bluesky account
-        acct.includes("@rss-parrot.net") // Clémentine Autain : clementine-autain.fr@rss-parrot.net
-      ) {
+      if (serversOutOfMastodon.find((server) => acct.includes(server))) {
         return false
       }
 
