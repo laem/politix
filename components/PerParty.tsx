@@ -49,11 +49,22 @@ export default function PerParty(
     return { ...memo, [groupeAbrev]: [...(memo[groupeAbrev] || []), isActive] }
   }
 
+  const activeAllParty = (partialSum, [id, next]) => {
+    const { groupeAbrev, activité, analyseDate } = next
+
+    const isActive = activité && hasRecentTweets(activité, analyseDate)
+
+    return partialSum + isActive
+  }
+
   const statsPerParty = ([party, results]) => [
     party,
     results.length,
     Math.round((results.filter(Boolean).length / results.length) * 100),
   ]
+
+  const blueskyAllParty = blueskyEntries.reduce(activeAllParty, 0)
+  const blueskyAllPartyTotal = blueskyEntries.length
 
   const blueskyPerParty = blueskyEntries.reduce(activePerParty, {})
 
@@ -62,6 +73,10 @@ export default function PerParty(
     .sort(([, , a], [, , b]) => -a + b)
 
   //console.log({ blueskyStats, blueskyPerParty })
+
+  const mastodonAllParty = mastodonEntries.reduce(activeAllParty, 0)
+  const mastodonAllPartyTotal = mastodonEntries.length
+  console.log(mastodonAllParty, mastodonAllPartyTotal)
 
   const mastodonPerParty = mastodonEntries.reduce(activePerParty, {})
 
@@ -206,6 +221,67 @@ export default function PerParty(
             Concernant Bluesky, nous prenons le premier compte trouvé avec la
             recherche "prénom nom".
           </p>
+          <div
+            style={{
+              maxWidth: "50rem",
+              margin: "2rem auto",
+              "padding-left": "110px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "80%",
+                gap: ".4rem",
+              }}
+            >
+              <Bar
+                {...{
+                  percentActive: (blueskyAllParty / blueskyAllPartyTotal * 100)
+                    .toFixed(1),
+                  total: blueskyAllPartyTotal,
+                  background: blueskyBlue,
+                  suffix: "",
+                  logo: "bluesky.svg",
+                }}
+              />
+              <Bar
+                {...{
+                  percentActive:
+                    (mastodonAllParty / mastodonAllPartyTotal * 100).toFixed(1),
+                  total: mastodonAllPartyTotal,
+                  background: mastodonPurple,
+                  suffix: "",
+                  logo: "mastodon.svg",
+                }}
+              />
+              <Bar
+                {...{
+                  percentActive: (topPartiesEntries.reduce(
+                    (partialSum, [, a]) => partialSum + a,
+                    0,
+                  ) / firstPartyCount) * 100,
+                  text: `${
+                    topPartiesEntries.reduce((partialSum, [, a]) =>
+                      partialSum + a, 0)
+                  } députés`,
+                  background: "#eee",
+                  color: "#333",
+                }}
+              />
+              <small
+                style={{
+                  color: "#bbb",
+                  lineHeight: ".8rem",
+                  textAlign: "right",
+                  fontStyle: "italic",
+                }}
+              >
+                Assemblée nationale
+              </small>
+            </div>
+          </div>
           <h3 style={{ margin: "2rem 0 1rem", ...centerStyle }}>
             Décompte par groupe parlementaire
           </h3>
