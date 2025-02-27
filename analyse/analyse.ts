@@ -1,7 +1,7 @@
 import { launch } from "jsr:@astral/astral"
-import députésRandomOrder from "./députés.ts"
-import { arrayToChunks, delay } from "./utils.ts"
-import { analyseDate } from "./date-utils.ts"
+import députésRandomOrder from "../députés.ts"
+import { arrayToChunks, delay } from "../utils.ts"
+import { analyseDate } from "../date-utils.ts"
 
 const limit = +Deno.args[0]
 const initialDelay = +Deno.args[1] || 30
@@ -83,7 +83,7 @@ const doFetch = async () => {
 }
 
 const writeFile = (data) => {
-  Deno.writeTextFileSync("./data.json", JSON.stringify(data, null, 2))
+  Deno.writeTextFileSync("../data/data.json", JSON.stringify(data, null, 2))
   console.log("File written with " + Object.keys(data).length + " data points")
 }
 function readFile() {

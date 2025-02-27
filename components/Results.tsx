@@ -1,6 +1,6 @@
-const alreadyDone = JSON.parse(Deno.readTextFileSync("data.json") || "{}")
-import bluesky from "../bluesky-data.json" with { type: "json" }
-import mastodon from "../mastodon-data.json" with { type: "json" }
+const alreadyDone = JSON.parse(Deno.readTextFileSync("data/data.json") || "{}")
+import bluesky from "../data/bluesky-data.json" with { type: "json" }
+import mastodon from "../data/mastodon-data.json" with { type: "json" }
 import { hasRecentTweets } from "../date-utils.ts"
 import députésRandomOrder from "../députés.ts"
 import {
@@ -42,9 +42,6 @@ export default function Results({ givenParty = null }) {
       <h3 style={centerStyle}>
         {givenParty ? `Liste pour le parti ${givenParty}` : `Liste complète`}
       </h3>
-      <a href="/bluesky" style={{ "float": "right", marginRight: "1rem" }}>
-        Voir les députés sur Bluesky
-      </a>
       <ul
         style={politixGridStyle}
       >
@@ -180,11 +177,11 @@ export const PartyVignette = ({ party, small }) => {
   const simpleParty = party.replace("-NFP", "") // Les gens ne comprennent pas pourquoi seul LFI a NFP dans son nom, et ça créée une vignette de parti 2x plus grosse que les autres
   return (
     <a href={`/parti/${party}`} style={{ textDecoration: "none" }}>
-      <div
+      <span
         style={{
           background: partyColor,
           borderRadius: ".4rem",
-          padding: small ? "0 .2rem" : ".4rem .2rem",
+          padding: small ? "0 .3rem" : ".4rem .6rem",
           width: "4rem",
 
           textAlign: "center",
@@ -195,7 +192,7 @@ export const PartyVignette = ({ party, small }) => {
         title={group}
       >
         {simpleParty}
-      </div>
+      </span>
     </a>
   )
 }
@@ -247,7 +244,7 @@ export const BlueskyHandle = (
   )
 }
 
-export const MastodonHandle = ({ député, avatar, isActive }) => {
+export const MastodonHandle = ({ député, avatar, isActive, breakline = true }) => {
   const acct = député && onMastodon(député.id)[1].masto
   const [username, server] = acct.split("@")
 
@@ -289,7 +286,7 @@ export const MastodonHandle = ({ député, avatar, isActive }) => {
           />
         )}
       {username}
-      <br />
+      {breakline ? <br /> : ""}
       {`@${server}`}
     </a>
   )

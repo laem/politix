@@ -1,6 +1,6 @@
 import { parse } from "jsr:@std/csv"
 
-const csv = Deno.readTextFileSync("députés-datan-25-12-2024.csv")
+const csv = Deno.readTextFileSync("data/députés-datan-25-12-2024.csv")
 
 const députésRaw0 = parse(csv, {
   skipFirstRow: true,

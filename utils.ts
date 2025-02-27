@@ -1,5 +1,5 @@
-import bluesky from "./bluesky-data.json" with { type: "json" }
-import mastodon from "./mastodon-data.json" with { type: "json" }
+import bluesky from "./data/bluesky-data.json" with { type: "json" }
+import mastodon from "./data/mastodon-data.json" with { type: "json" }
 import { hasRecentTweets } from "./date-utils.ts"
 const blueskyEntries = Object.entries(bluesky)
 const mastodonEntries = Object.entries(mastodon)

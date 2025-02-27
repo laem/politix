@@ -1,5 +1,6 @@
-import bluesky from "../bluesky-data.json" with { type: "json" }
+import bluesky from "../data/bluesky-data.json" with { type: "json" }
 import { BlueskyHandle, PartyVignette } from "../components/Results.tsx"
+import BackToHome from "../components/BackToHome.tsx"
 import { hasRecentTweets } from "../date-utils.ts"
 import députésRandomOrder from "../députés.ts"
 import OpenBlueskyTabs from "../islands/OpenBlueskyTabs.tsx"
@@ -21,44 +22,74 @@ const atsMessages = ats.reduce((memo, next) => {
 export default function Bluesky() {
   return (
     <main>
+      <BackToHome />
       <h1>Voici la liste des députés français présents sur Bluesky</h1>
-      {atsMessages.map((text) => (
-        <div>
-          <textArea
-            key={text}
-            style={{ width: "12rem", height: "6rem", margin: "1rem" }}
-          >
-            {text}
-          </textArea>
-          <OpenBlueskyTabs ats={text.split(" ")} />
-        </div>
-      ))}
 
+      <h2>Ceux actifs</h2>
       <ul>
-        {blueskyEntries
-          .filter(([, { bsky }]) => bsky)
+        {députésRandomOrder
+          .filter(({ id }) =>
+            bluesky[id].activité &&
+            hasRecentTweets(bluesky[id].activité, bluesky[id].analyseDate)
+          )
           .map(
-            (
-              [id, { nom, prenom, groupeAbrev, bsky, activité, analyseDate }],
-            ) => {
-              const député = députésRandomOrder.find((d) => d.id === id)
+            (député) => {
+              const { id, nom, prenom, groupeAbrev } = député
+              const { bsky, activité, analyseDate } = bluesky[id]
 
               return (
                 <li style={{ marginBottom: "1rem" }} key={id}>
-                  <div>{prenom} {nom}</div>
-
-                  <PartyVignette party={groupeAbrev} small={true} />
-                  <BlueskyHandle député={député} invert={false} />
                   <div>
-                    {(activité && hasRecentTweets(activité, analyseDate))
-                      ? "Actif"
-                      : "Non actif"}
+                    {prenom} {nom} &nbsp;
+                    <PartyVignette party={groupeAbrev} small={true} /> &nbsp;
+                    <BlueskyHandle député={député} invert={false} />{" "}
+                    &nbsp; Actif
                   </div>
                 </li>
               )
             },
           )}
       </ul>
+
+      <h2>Ceux inactifs</h2>
+      <ul>
+        {députésRandomOrder
+          .filter(({ id }) =>
+            bluesky[id].bsky &&
+            !(bluesky[id].activité &&
+              hasRecentTweets(bluesky[id].activité, bluesky[id].analyseDate))
+          )
+          .map(
+            (député) => {
+              const { id, nom, prenom, groupeAbrev } = député
+              const { bsky, activité, analyseDate } = bluesky[id]
+
+              return (
+                <li style={{ marginBottom: "1rem" }} key={id}>
+                  <div>
+                    {prenom} {nom} &nbsp;
+                    <PartyVignette party={groupeAbrev} small={true} /> &nbsp;
+                    <BlueskyHandle député={député} invert={false} />{" "}
+                    &nbsp; Inactif
+                  </div>
+                </li>
+              )
+            },
+          )}
+      </ul>
+
+      <h3>Ci-dessous vous pouvez copier les comptes des députés</h3>
+      {atsMessages.map((text) => (
+        <div>
+          <textArea
+            key={text}
+            style={{ width: "15rem", height: "12rem", margin: "1rem" }}
+          >
+            {text}
+          </textArea>
+          <OpenBlueskyTabs ats={text.split(" ")} />
+        </div>
+      ))}
     </main>
   )
 }
