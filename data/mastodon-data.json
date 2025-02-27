@@ -715,8 +715,8 @@
     "nom": "Dive",
     "prenom": "Julien",
     "groupeAbrev": "DR",
-    "masto": "Ju708@piaille.fr",
-    "activité": [],
+    "masto": null,
+    "activité": null,
     "analyseDate": "2025-02-23"
   },
   "PA841749": {
@@ -3001,8 +3001,8 @@
     "nom": "Alexandre",
     "prenom": "Laurent",
     "groupeAbrev": "LFI-NFP",
-    "masto": "Alex@toot.community",
-    "activité": [],
+    "masto": null,
+    "activité": null,
     "analyseDate": "2025-02-23"
   },
   "PA719890": {
@@ -4265,8 +4265,8 @@
     "nom": "Firmin Le Bodo",
     "prenom": "Agnès",
     "groupeAbrev": "HOR",
-    "masto": "agnesfirmin@mastodon.socialspill.com",
-    "activité": [],
+    "masto": null,
+    "activité": null,
     "analyseDate": "2025-02-23"
   },
   "PA569": {

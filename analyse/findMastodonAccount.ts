@@ -23,6 +23,9 @@ const falsePositives = {
   PA841495: ["maximeamblard@sciences.re"],
   PA609332: ["olivierfaure@mastodon.social"],
   PA793102: ["christian_1955_11_16@piaille.fr"],
+  PA712015: ["Ju708@piaille.fr"],
+  PA267780: ["agnesfirmin@mastodon.socialspill.com"],
+  PA793262: ["Alex@toot.community"],
 }
 
 const serversOutOfMastodon = [

@@ -30,7 +30,7 @@ const analyseBluesky = async () => {
 
   const o = Object.fromEntries(entries)
   Deno.writeTextFileSync(
-    "../data/bluesky-data.json",
+    "data/bluesky-data.json",
     JSON.stringify(o, null, 2),
   )
 }
