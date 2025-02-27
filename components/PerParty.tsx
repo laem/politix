@@ -282,6 +282,39 @@ export default function PerParty(
               </small>
             </div>
           </div>
+          <a href="/bluesky" style={{ "float": "right", marginRight: "1rem" }}>
+            Voir les députés sur Bluesky &nbsp;
+            <img
+              src="/bluesky.svg"
+              style={{
+                width: "1rem",
+                height: "auto",
+                display: "inline",
+                marginRight: ".2rem",
+                verticalAlign: "middle",
+              }}
+              width="10"
+              height="10"
+              alt="Logo Mastodon"
+            />
+          </a>
+          <br />
+          <a href="/mastodon" style={{ "float": "right", marginRight: "1rem" }}>
+            Voir les députés sur Mastodon &nbsp;
+            <img
+              src="/mastodon.svg"
+              style={{
+                width: "1rem",
+                height: "auto",
+                display: "inline",
+                marginRight: ".2rem",
+                verticalAlign: "middle",
+              }}
+              width="10"
+              height="10"
+              alt="Logo Mastodon"
+            />
+          </a>
           <h3 style={{ margin: "2rem 0 1rem", ...centerStyle }}>
             Décompte par groupe parlementaire
           </h3>

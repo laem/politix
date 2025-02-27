@@ -42,9 +42,6 @@ export default function Results({ givenParty = null }) {
       <h3 style={centerStyle}>
         {givenParty ? `Liste pour le parti ${givenParty}` : `Liste complète`}
       </h3>
-      <a href="/bluesky" style={{ "float": "right", marginRight: "1rem" }}>
-        Voir les députés sur Bluesky
-      </a>
       <ul
         style={politixGridStyle}
       >
@@ -180,11 +177,11 @@ export const PartyVignette = ({ party, small }) => {
   const simpleParty = party.replace("-NFP", "") // Les gens ne comprennent pas pourquoi seul LFI a NFP dans son nom, et ça créée une vignette de parti 2x plus grosse que les autres
   return (
     <a href={`/parti/${party}`} style={{ textDecoration: "none" }}>
-      <div
+      <span
         style={{
           background: partyColor,
           borderRadius: ".4rem",
-          padding: small ? "0 .2rem" : ".4rem .2rem",
+          padding: small ? "0 .3rem" : ".4rem .6rem",
           width: "4rem",
 
           textAlign: "center",
@@ -195,7 +192,7 @@ export const PartyVignette = ({ party, small }) => {
         title={group}
       >
         {simpleParty}
-      </div>
+      </span>
     </a>
   )
 }
