@@ -23,7 +23,7 @@ export default function Top() {
       <header
         style={{ display: "flex", alignItems: "center", marginTop: "1rem" }}
       >
-        <span style={{ fontSize: "200%" }}>🥇</span>
+        <span style={{ fontSize: "200%" }}>&#129351;</span>
         <h1>{title}</h1>
       </header>
       <Results />

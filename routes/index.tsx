@@ -22,7 +22,7 @@ export default function Home() {
         }}
       >
         <div style={{ fontSize: "500%", textAlign: "center", width: "100%" }}>
-          😒
+          &#128530;
         </div>
         <h1
           style={{
@@ -115,6 +115,23 @@ export default function Home() {
               }}
             >
               Suivre sur Bluesky
+            </a>
+          </span>
+          <span>
+            <img
+              src="/mastodon.svg"
+              width="10"
+              height="10"
+              style={{ width: "1rem", height: "auto", display: "inline" }}
+              alt="Logo de Mastodon"
+            />{" "}
+            <a
+              href="https://piaille.fr/@viango"
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              Suivre sur Mastodon (Viango)
             </a>
           </span>
         </small>

@@ -27,7 +27,11 @@ export default function Bluesky() {
                   <div>
                     {prenom} {nom} &nbsp;
                     <PartyVignette party={groupeAbrev} small={true} /> &nbsp;
-                    <MastodonHandle député={député} invert={false} breakline={false} />{" "}
+                    <MastodonHandle
+                      député={député}
+                      invert={false}
+                      breakline={false}
+                    />{" "}
                     &nbsp; Actif
                   </div>
                 </li>
@@ -54,7 +58,11 @@ export default function Bluesky() {
                   <div>
                     {prenom} {nom} &nbsp;
                     <PartyVignette party={groupeAbrev} small={true} /> &nbsp;
-                    <MastodonHandle député={député} invert={false} breakline={false} />{" "}
+                    <MastodonHandle
+                      député={député}
+                      invert={false}
+                      breakline={false}
+                    />{" "}
                     &nbsp; Inactif
                   </div>
                 </li>

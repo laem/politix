@@ -17,6 +17,7 @@ const falsePositives = {
     "jose_eduardo@mastodon.social",
     "toshioxgnu@fosstodon.org",
     "ProfeJoseRivera@mas.to",
+    "jzavala@vis.social",
   ],
   PA795386: ["blablamlefevre@mastodon.social"],
   PA722142: ["francois_ruffin@social.jesuislibre.net"],
@@ -26,6 +27,9 @@ const falsePositives = {
   PA712015: ["Ju708@piaille.fr"],
   PA267780: ["agnesfirmin@mastodon.socialspill.com"],
   PA793262: ["Alex@toot.community"],
+  PA720614: ["MarineLePen@mastodon.xyz"],
+  PA609332: ["Olyfort@mastodon.social"],
+  PA712015: ["Ju708@piaille.fr"],
 }
 
 const serversOutOfMastodon = [

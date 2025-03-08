@@ -244,7 +244,9 @@ export const BlueskyHandle = (
   )
 }
 
-export const MastodonHandle = ({ député, avatar, isActive, breakline = true }) => {
+export const MastodonHandle = (
+  { député, avatar, isActive, breakline = true },
+) => {
   const acct = député && onMastodon(député.id)[1].masto
   const [username, server] = acct.split("@")
 
