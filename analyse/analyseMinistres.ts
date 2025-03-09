@@ -55,7 +55,7 @@ const doFetch = async () => {
         ? [, null]
         : await checkTwitterActivity(at, i)
       const result = await findBlueskyAccount({ nom, prenom }, i)
-      const [{ bsky, avatar }, activity] = result
+      const [{ bsky, avatar_bsky: avatar }, activity] = result
       logResultBluesky(result)
 
       const verifiedBsky = bsky && !bskyFalsePositives.includes(bsky)

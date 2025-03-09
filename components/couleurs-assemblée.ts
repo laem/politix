@@ -14,6 +14,19 @@ export const partyColors = {
   NI: "#dddddd",
 }
 
+// https://fr.wikipedia.org/wiki/Groupe_politique_du_Parlement_europ%C3%A9en#2024-2029
+export const partyEuropeColors = {
+  PPE: "#0054a1",
+  "S&D": "#dd0000",
+  Patriots: "#2f1c59",
+  "CRE": "#186ca8",
+  "RE": "#00a1fe",
+  "Verts/ALE": "#009900",
+  "GUE/NGL": "#990000",
+  "ENS": "#000033",
+  "NI": "#c0c0c0",
+}
+
 export function findContrastedTextColor(color: string, simple: boolean) {
   const r = hexToR(color),
     g = hexToG(color),

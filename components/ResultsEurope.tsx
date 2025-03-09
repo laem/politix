@@ -1,44 +1,40 @@
-const alreadyDone = JSON.parse(Deno.readTextFileSync("data/data.json") || "{}")
-import bluesky from "../data/bluesky-data.json" with { type: "json" }
-import mastodon from "../data/mastodon-data.json" with { type: "json" }
+import europe from "../data/europe-data.json" with { type: "json" }
 import { hasRecentTweets } from "../date-utils.ts"
-import députésRandomOrder from "../députés.ts"
+import { europeanMembersRandomOrder } from "../députésEuropéens.ts"
 import {
-  activeOnBluesky,
-  activeOnMastodon,
-  onBluesky,
-  onMastodon,
+  activeOnBlueskyEurope,
+  activeOnMastodonEurope,
+  onBlueskyEurope,
+  onMastodonEurope,
 } from "../utils.ts"
-import PerParty, { blueskyBlue, mastodonPurple } from "./PerParty.tsx"
-import { findContrastedTextColor, partyColors } from "./couleurs-assemblée.ts"
+import PerPartyEurope, {
+  blueskyBlue,
+  mastodonPurple,
+} from "./PerPartyEurope.tsx"
+import {
+  findContrastedTextColor,
+  partyEuropeColors,
+} from "./couleurs-assemblée.ts"
 
-const députés = députésRandomOrder
+const députés = europeanMembersRandomOrder
 
 export const findDéputé = (id) => députés.find((député) => député.id === id)
 
-const entries = Object.entries(alreadyDone)
-
-console.log("Nombre de députés analysés pour X : ", entries.length)
-
-const blueskyEntries = Object.entries(bluesky)
-const mastodonEntries = Object.entries(mastodon)
+const europeEntries = Object.entries(europe)
 
 export const centerStyle = { textAlign: "center" }
 
 const filteredDéputés = (party) =>
   party ? députés.filter((député) => député.groupeAbrev === party) : députés
 
-export default function Results({ givenParty = null }) {
+export default function ResultsEurope({ givenParty = null }) {
   return (
     <section>
       <h2 style={{ ...centerStyle, marginTop: "1rem" }}>Les députés</h2>
-      <PerParty
-        entries={entries}
-        blueskyEntries={blueskyEntries}
-        mastodonEntries={mastodonEntries}
+      <PerPartyEurope
+        europeEntries={europeEntries}
         givenParty={givenParty}
       />
-
       <h3 style={centerStyle}>
         {givenParty ? `Liste pour le parti ${givenParty}` : `Liste complète`}
       </h3>
@@ -46,31 +42,23 @@ export default function Results({ givenParty = null }) {
         style={politixGridStyle}
       >
         {filteredDéputés(givenParty).map((député) => {
-          const xTested = entries.find(([id, data]) =>
-            data["@"] === député.twitter
-          )
-          const dates = xTested && xTested[1].activité
-          const isActiveOnBluesky = activeOnBluesky(député.id)
-          const isActiveOnMastodon = activeOnMastodon(député.id)
+          const isActiveOnBluesky = activeOnBlueskyEurope(député.id)
+          const isActiveOnMastodon = activeOnMastodonEurope(député.id)
 
-          const at = (isActiveOnBluesky && onBluesky(député.id)[1].bsky) ||
-            (isActiveOnMastodon && onMastodon(député.id)[1].masto) ||
-            député.twitter ||
+          const at =
+            (isActiveOnBluesky && onBlueskyEurope(député.id)[1].bsky) ||
+            (isActiveOnMastodon && onMastodonEurope(député.id)[1].masto) ||
             député.nom + député.prenom // the key attribute must always be different
           // console.log(at)
 
-          const result = dates && Array.isArray(dates) &&
-            hasRecentTweets(dates, xTested[1]["analyseDate"])
           const isActive = Boolean(
-            result || isActiveOnBluesky || isActiveOnMastodon,
+            isActiveOnBluesky || isActiveOnMastodon,
           )
-          const notTested = !xTested
-          const { prenom, nom, groupe, groupeAbrev, twitter } = député
+          const { prenom, nom, groupeAbrev, country } = député
           return (
             <li
               key={at}
               style={politixStyle(
-                result,
                 isActiveOnBluesky,
                 isActiveOnMastodon,
               )}
@@ -81,29 +69,7 @@ export default function Results({ givenParty = null }) {
                 </div>
               </div>
               <PartyVignette party={groupeAbrev} small={true} />
-              <div>
-                <small style={{ color: "#f1a8b7" }}>
-                  X {twitter || ": non présent"}
-                </small>
-              </div>
-              <div>
-                {result
-                  ? (
-                    <div>
-                      <details>
-                        <summary>Actif sur X</summary>
-                        <ol>
-                          {dates.map((date, i) => (
-                            <li key={date + i}>{date}</li>
-                          ))}
-                        </ol>
-                      </details>
-                    </div>
-                  )
-                  : notTested
-                  ? "Non testé"
-                  : "Non actif sur X"}
-              </div>
+              {country}
               <div>
                 {isActiveOnBluesky
                   ? (
@@ -114,14 +80,14 @@ export default function Results({ givenParty = null }) {
                       <details>
                         <summary>Actif sur Bluesky</summary>
                         <ol>
-                          {isActiveOnBluesky[1].activité.map((date, i) => (
+                          {isActiveOnBluesky[1].activité_bsky.map((date, i) => (
                             <li key={date + i}>{date}</li>
                           ))}
                         </ol>
                       </details>
                     </div>
                   )
-                  : onBluesky(député.id)
+                  : onBlueskyEurope(député.id)
                   ? (
                     <div>
                       <BlueskyHandle
@@ -145,14 +111,15 @@ export default function Results({ givenParty = null }) {
                       <details>
                         <summary>Actif sur Mastodon</summary>
                         <ol>
-                          {isActiveOnMastodon[1].activité.map((date, i) => (
-                            <li key={date + i}>{date}</li>
-                          ))}
+                          {isActiveOnMastodon[1].activité_masto.map((
+                            date,
+                            i,
+                          ) => <li key={date + i}>{date}</li>)}
                         </ol>
                       </details>
                     </div>
                   )
-                  : onMastodon(député.id)
+                  : onMastodonEurope(député.id)
                   ? (
                     <div>
                       <MastodonHandle député={député} isActive={isActive} />
@@ -171,18 +138,20 @@ export default function Results({ givenParty = null }) {
 }
 
 export const PartyVignette = ({ party, small }) => {
-  const partyColor = partyColors[party] || "chartreuse",
+  const partyColor = partyEuropeColors[party] || "chartreuse",
     partyTextColor = findContrastedTextColor(partyColor, true)
   const group = getPartyName(party)
-  const simpleParty = party.replace("-NFP", "") // Les gens ne comprennent pas pourquoi seul LFI a NFP dans son nom, et ça créée une vignette de parti 2x plus grosse que les autres
   return (
-    <a href={`/parti/${party}`} style={{ textDecoration: "none" }}>
+    <a
+      href={`/europe/parti/${party.replaceAll("/", "-")}`}
+      style={{ textDecoration: "none" }}
+    >
       <span
         style={{
           background: partyColor,
           borderRadius: ".4rem",
           padding: small ? "0 .3rem" : ".4rem .6rem",
-          width: "4rem",
+          width: "7rem",
 
           textAlign: "center",
           color: partyTextColor,
@@ -191,7 +160,7 @@ export const PartyVignette = ({ party, small }) => {
         }}
         title={group}
       >
-        {simpleParty}
+        {party}
       </span>
     </a>
   )
@@ -199,7 +168,7 @@ export const PartyVignette = ({ party, small }) => {
 export const BlueskyHandle = (
   { député, invert = true, avatar, at, isActive },
 ) => {
-  const handle = at || (député && onBluesky(député.id)[1].bsky)
+  const handle = at || (député && onBlueskyEurope(député.id)[1].bsky)
 
   return (
     <a
@@ -247,7 +216,7 @@ export const BlueskyHandle = (
 export const MastodonHandle = (
   { député, avatar, isActive, breakline = true },
 ) => {
-  const acct = député && onMastodon(député.id)[1].masto
+  const acct = député && onMastodonEurope(député.id)[1].masto
   const [username, server] = acct.split("@")
 
   return (
@@ -296,8 +265,8 @@ export const MastodonHandle = (
 
 export const getPartyName = (party) => {
   const fullName = députés.find(
-    ({ groupeAbrev, groupe }) => groupeAbrev === party,
-  ).groupe
+    ({ groupeAbrev, politicalGroup }) => groupeAbrev === party,
+  ).politicalGroup
   return fullName
 }
 
@@ -312,26 +281,22 @@ export const politixGridStyle = {
 }
 
 export const xColor = "#4c0815"
-export const politixStyle = (result, isActiveOnBluesky, isActiveOnMastodon) => {
+export const politixStyle = (isActiveOnBluesky, isActiveOnMastodon) => {
   const isActive = Boolean(
-    result || isActiveOnBluesky || isActiveOnMastodon,
+    isActiveOnBluesky || isActiveOnMastodon,
   )
   return ({
     listStyleType: "none",
     width: "12rem",
     minHeight: "8.5rem",
-    background: result
-      ? xColor
-      : (isActiveOnBluesky && isActiveOnMastodon)
+    background: (isActiveOnBluesky && isActiveOnMastodon)
       ? `linear-gradient(to right bottom, ${blueskyBlue} 0%, ${blueskyBlue} 50%, ${mastodonPurple} 50%, ${mastodonPurple} 100%)`
       : isActiveOnBluesky
       ? blueskyBlue
       : isActiveOnMastodon
       ? mastodonPurple
       : "transparent",
-    border: (result && !isActiveOnBluesky && !isActiveOnMastodon)
-      ? ("3px solid " + xColor)
-      : isActiveOnBluesky
+    border: isActiveOnBluesky
       ? `4px solid ${blueskyBlue}`
       : isActiveOnMastodon
       ? `4px solid ${mastodonPurple}`

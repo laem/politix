@@ -1,14 +1,14 @@
 import Bar from "../Bar.tsx"
 import { hasRecentTweets } from "../date-utils.ts"
-import députésRandomOrder from "../députés.ts"
+import europeanMembersRandomOrder from "../députésEuropéens.ts"
 import {
   centerStyle,
   findDéputé,
   getPartyName,
   PartyVignette,
-} from "./Results.tsx"
+} from "./ResultsEurope.tsx"
 
-const partiesCount = députésRandomOrder.reduce((memo, next) => {
+const partiesCount = europeanMembersRandomOrder.reduce((memo, next) => {
   const { groupeAbrev } = next
 
   return { ...memo, [groupeAbrev]: (memo[groupeAbrev] || 0) + 1 }
@@ -21,36 +21,19 @@ const topPartiesEntries = Object.entries(partiesCount).sort(
 const totalCount = topPartiesEntries.length,
   firstPartyCount = topPartiesEntries[0][1]
 
-export default function PerParty(
-  { entries, blueskyEntries, mastodonEntries, givenParty },
-) {
-  const perParty = entries.reduce((memo, [id, { analyseDate, activité }]) => {
-    const active = activité &&
-      Array.isArray(activité) &&
-      hasRecentTweets(activité, analyseDate)
-    const député = findDéputé(id)
-    const { prenom, nom, groupe, groupeAbrev, twitter } = député
-    return { ...memo, [groupeAbrev]: [...(memo[groupeAbrev] || []), active] }
-  }, {})
-
-  const stats = Object.entries(perParty)
-    .map(([party, results]) => [
-      party,
-      results.length,
-      Math.round((results.filter(Boolean).length / results.length) * 100),
-    ])
-    .sort(([, , a], [, , b]) => -a + b)
-
-  const activePerParty = (memo, [id, next]) => {
-    const { groupeAbrev, activité, analyseDate } = next
+export default function PerPartyEurope({ europeEntries, givenParty }) {
+  const activePerParty = (ac) => (memo, [id, next]) => {
+    const { groupeAbrev, analyseDate } = next
+    const activité = next[ac]
 
     const isActive = activité && hasRecentTweets(activité, analyseDate)
 
     return { ...memo, [groupeAbrev]: [...(memo[groupeAbrev] || []), isActive] }
   }
 
-  const activeAllParty = (partialSum, [id, next]) => {
-    const { groupeAbrev, activité, analyseDate } = next
+  const activeAllParty = (ac) => (partialSum, [id, next]) => {
+    const { groupeAbrev, analyseDate } = next
+    const activité = next[ac]
 
     const isActive = activité && hasRecentTweets(activité, analyseDate)
 
@@ -63,10 +46,16 @@ export default function PerParty(
     Math.round((results.filter(Boolean).length / results.length) * 100),
   ]
 
-  const blueskyAllParty = blueskyEntries.reduce(activeAllParty, 0)
-  const blueskyAllPartyTotal = blueskyEntries.length
+  const blueskyAllParty = europeEntries.reduce(
+    activeAllParty("activité_bsky"),
+    0,
+  )
+  const blueskyAllPartyTotal = europeEntries.length
 
-  const blueskyPerParty = blueskyEntries.reduce(activePerParty, {})
+  const blueskyPerParty = europeEntries.reduce(
+    activePerParty("activité_bsky"),
+    {},
+  )
 
   const blueskyStats = Object.entries(blueskyPerParty)
     .map(statsPerParty)
@@ -74,10 +63,16 @@ export default function PerParty(
 
   //console.log({ blueskyStats, blueskyPerParty })
 
-  const mastodonAllParty = mastodonEntries.reduce(activeAllParty, 0)
-  const mastodonAllPartyTotal = mastodonEntries.length
+  const mastodonAllParty = europeEntries.reduce(
+    activeAllParty("activité_masto"),
+    0,
+  )
+  const mastodonAllPartyTotal = europeEntries.length
 
-  const mastodonPerParty = mastodonEntries.reduce(activePerParty, {})
+  const mastodonPerParty = europeEntries.reduce(
+    activePerParty("activité_masto"),
+    {},
+  )
 
   const mastodonStats = Object.entries(mastodonPerParty)
     .map(statsPerParty)
@@ -86,35 +81,30 @@ export default function PerParty(
   //console.log({ mastodonStats, mastodonPerParty })
 
   const groupeBar = ([groupeAbrev, count]) => {
-    const twitterParty = stats.find(([party]) => party === groupeAbrev)
-    if (!twitterParty) return null
-
-    const [party, total, percentActive] = twitterParty
-
     const blueskyStatsLine = blueskyStats.find(
-      ([party2]) => party === party2,
+      ([party]) => groupeAbrev === party,
     )
     const [, blueskyTotal, blueskyPercentActive] = blueskyStatsLine || [
       null,
       0,
-      députésRandomOrder.filter(
+      europeanMembersRandomOrder.filter(
         ({ groupeAbrev }) => groupeAbrev === party,
       ).length,
     ]
 
     const mastodonStatsLine = mastodonStats.find(
-      ([party2]) => party === party2,
+      ([party]) => groupeAbrev === party,
     )
     const [, mastodonTotal, mastodonPercentActive] = mastodonStatsLine || [
       null,
       0,
-      députésRandomOrder.filter(
+      europeanMembersRandomOrder.filter(
         ({ groupeAbrev }) => groupeAbrev === party,
       ).length,
     ]
 
     console.log(
-      party,
+      groupeAbrev,
       blueskyTotal,
       `${blueskyPercentActive}%`,
       mastodonTotal,
@@ -122,7 +112,7 @@ export default function PerParty(
     )
     return (
       <li
-        key={party}
+        key={groupeAbrev}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -136,8 +126,14 @@ export default function PerParty(
             marginBottom: ".4rem",
           }}
         >
-          <div style={{ width: "5rem", marginRight: "0rem" }}>
-            <PartyVignette party={party} />
+          <div
+            style={{
+              width: "8rem",
+              marginRight: "0rem",
+              "text-align": "center",
+            }}
+          >
+            <PartyVignette party={groupeAbrev} />
           </div>
           <div
             style={{
@@ -147,14 +143,6 @@ export default function PerParty(
               gap: ".4rem",
             }}
           >
-            <Bar
-              {...{
-                percentActive,
-                total,
-                background: "black",
-                logo: "x.png",
-              }}
-            />
             <Bar
               {...{
                 percentActive: blueskyPercentActive,
@@ -191,9 +179,7 @@ export default function PerParty(
             fontStyle: "italic",
           }}
         >
-          {
-            getPartyName(party).replace("- Nouveau Front Populaire", "") // cf commentaire dans le composant PartyVignette
-          }
+          {getPartyName(groupeAbrev)}
         </small>
       </li>
     )
@@ -210,12 +196,6 @@ export default function PerParty(
       )
       : (
         <div>
-          <p style={{ textAlign: "center", color: "#980c0c" }}>
-            La dernière analyse X date du 12 février 2025 : nous avons testé
-            {" "}
-            {entries.length} députés grâce aux données{" "}
-            <a href="https://datan.fr">datan</a> améliorées.
-          </p>
           <p style={{ textAlign: "center", color: "darkBlue" }}>
             Concernant Bluesky et Mastodon, nous prenons le premier compte
             trouvé avec la recherche "prénom nom".
@@ -262,8 +242,10 @@ export default function PerParty(
                     0,
                   ) / firstPartyCount) * 100,
                   text: `${
-                    topPartiesEntries.reduce((partialSum, [, a]) =>
-                      partialSum + a, 0)
+                    topPartiesEntries.reduce(
+                      (partialSum, [, a]) => partialSum + a,
+                      0,
+                    )
                   } députés`,
                   background: "#eee",
                   color: "#333",
@@ -277,11 +259,14 @@ export default function PerParty(
                   fontStyle: "italic",
                 }}
               >
-                Assemblée nationale
+                Parlement européen
               </small>
             </div>
           </div>
-          <a href="/bluesky" style={{ "float": "right", marginRight: "1rem" }}>
+          <a
+            href="/europe/bluesky"
+            style={{ "float": "right", marginRight: "1rem" }}
+          >
             Voir les députés sur Bluesky &nbsp;
             <img
               src="/bluesky.svg"
@@ -294,11 +279,14 @@ export default function PerParty(
               }}
               width="10"
               height="10"
-              alt="Logo Mastodon"
+              alt="Logo Bluesky"
             />
           </a>
           <br />
-          <a href="/mastodon" style={{ "float": "right", marginRight: "1rem" }}>
+          <a
+            href="/europe/mastodon"
+            style={{ "float": "right", marginRight: "1rem" }}
+          >
             Voir les députés sur Mastodon &nbsp;
             <img
               src="/mastodon.svg"
