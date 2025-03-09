@@ -8,13 +8,9 @@
     "build": "deno run -A dev.ts build",
     "preview": "deno run -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update .",
-    "update_data": "deno run --allow-read --allow-write=data/bluesky-data.json --allow-net analyse/analyseBluesky.ts && deno run --allow-read --allow-write=data/mastodon-data.json --allow-net --allow-env --env-file analyse/analyseMastodon.ts"
+    "analyse_data": "./analyse_data.sh"
   },
-  "lint": {
-    "rules": {
-      "tags": ["fresh", "recommended"]
-    }
-  },
+  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "exclude": ["**/_fresh/*"],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
@@ -24,17 +20,12 @@
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "$std/": "https://deno.land/std@0.216.0/"
   },
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact"
-  },
+  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "deploy": {
     "project": "1dac12da-066d-4640-9acb-4fa957ce3e2b",
     "exclude": ["**/node_modules"],
     "include": [],
     "entrypoint": "main.ts"
   },
-  "fmt": {
-    "semiColons": false
-  }
+  "fmt": { "semiColons": false }
 }

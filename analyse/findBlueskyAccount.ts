@@ -3,26 +3,16 @@ import { filterRecentTweets } from "../date-utils.ts"
 import { delay } from "../utils.ts"
 
 export const logResultBluesky = ([député, activity]) => {
-  const { nom, prenom, groupe, bsky } = député
-  console.log(`On recherche ${prenom} ${nom}`)
-  console.log(`-- de ${groupe}`)
+  const { nom, prenom, groupe, bsky, politicalGroup } = député
+  console.log(`On recherche ${prenom} ${nom} -- de ${groupe || politicalGroup}`)
   if (!activity) console.log(`Introuvable ou inactif`)
   else {
     console.log(`Trouvé : ${bsky}`)
     console.log(`Activité`, activity)
   }
 }
-const falsePositives = {
-  PA841825: ["patricemartin50.bsky.social"],
-  PA793262: ["onesque.bsky.social"],
-  PA793362: ["williamjo.se"],
-  PA720614: ["mlpcdn.bsky.social"],
-  PA817203: ["lauremiller.bsky.social"],
-  PA793102: ["tristanhylare.bsky.social"],
-  PA841833: ["davidguerin.bsky.social"],
-}
 
-export const findBlueskyAccount = async (politix, i) => {
+export const findBlueskyAccount = async (politix, i, falsePositives) => {
   await delay(i * 300)
   const { nom, prenom } = politix
   console.log(`Will analyse ${prenom} ${nom} ${i}`)
@@ -80,5 +70,5 @@ export const findBlueskyAccount = async (politix, i) => {
   const recent = filterRecentTweets(activity)
     .slice(0, 5)
     .map((date) => date.toISOString().split("T")[0])
-  return [{ ...politix, bsky: at, avatar: actor.avatar }, recent]
+  return [{ ...politix, bsky: at, avatar_bsky: actor.avatar }, recent]
 }

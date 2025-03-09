@@ -2,12 +2,12 @@ import { parse } from "jsr:@std/csv"
 
 const csv = Deno.readTextFileSync("data/députés-datan-25-12-2024.csv")
 
-const députésRaw0 = parse(csv, {
+const députésRaw = parse(csv, {
   skipFirstRow: true,
   strip: true,
 })
 
-const députésRandomOrder = députésRaw0
+const députésRandomOrder = députésRaw
   .map((value) => ({ value, sort: Math.random() }))
   .sort((a, b) => a.sort - b.sort)
   .map(({ value }) => value)

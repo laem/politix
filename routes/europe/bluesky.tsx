@@ -1,12 +1,15 @@
-import bluesky from "../data/bluesky-data.json" with { type: "json" }
-import { BlueskyHandle, PartyVignette } from "../components/Results.tsx"
-import BackToHome from "../components/BackToHome.tsx"
-import { hasRecentTweets } from "../date-utils.ts"
-import députésRandomOrder from "../députés.ts"
-import OpenBlueskyTabs from "../islands/OpenBlueskyTabs.tsx"
-const blueskyEntries = Object.entries(bluesky)
+import europe from "../../data/europe-data.json" with { type: "json" }
+import {
+  BlueskyHandle,
+  PartyVignette,
+} from "../../components/ResultsEurope.tsx"
+import BackToHome from "../../components/BackToHome.tsx"
+import { hasRecentTweets } from "../../date-utils.ts"
+import europeanMembersRandomOrder from "../../députésEuropéens.ts"
+import OpenBlueskyTabs from "../../islands/OpenBlueskyTabs.tsx"
+const europeEntries = Object.entries(europe)
 
-const ats = blueskyEntries.map(([, { bsky }]) => bsky && ("@" + bsky)).filter(
+const ats = europeEntries.map(([, { bsky }]) => bsky && ("@" + bsky)).filter(
   Boolean,
 )
 
@@ -23,25 +26,25 @@ export default function Bluesky() {
   return (
     <main>
       <BackToHome />
-      <h1>Voici la liste des députés français présents sur Bluesky</h1>
+      <h1>Voici la liste des députés européens présents sur Bluesky</h1>
 
       <h2>Ceux actifs</h2>
       <ul>
-        {députésRandomOrder
+        {europeanMembersRandomOrder
           .filter(({ id }) =>
-            bluesky[id].activité &&
-            hasRecentTweets(bluesky[id].activité, bluesky[id].analyseDate)
+            europe[id].activité_bsky &&
+            hasRecentTweets(europe[id].activité_bsky, europe[id].analyseDate)
           )
           .map(blueskyLine(true))}
       </ul>
 
       <h2>Ceux inactifs</h2>
       <ul>
-        {députésRandomOrder
+        {europeanMembersRandomOrder
           .filter(({ id }) =>
-            bluesky[id].bsky &&
-            !(bluesky[id].activité &&
-              hasRecentTweets(bluesky[id].activité, bluesky[id].analyseDate))
+            europe[id].bsky &&
+            !(europe[id].activité_bsky &&
+              hasRecentTweets(europe[id].activité_bsky, europe[id].analyseDate))
           )
           .map(blueskyLine(false))}
       </ul>
@@ -63,15 +66,16 @@ export default function Bluesky() {
 }
 
 const blueskyLine = (actif) => (député) => {
-  const { id, nom, prenom, groupeAbrev } = député
+  const { id, nom, prenom, groupeAbrev, country } = député
 
   return (
     <li style={{ marginBottom: "1rem" }} key={id}>
       <div>
         {prenom} {nom} &nbsp;
         <PartyVignette party={groupeAbrev} small={true} /> &nbsp;
-        <BlueskyHandle député={député} invert={false} /> &nbsp;{" "}
-        {actif ? "Actif" : "Inactif"}
+        {country} &nbsp;
+        <BlueskyHandle député={député} invert={false} />
+        &nbsp; {actif ? "Actif" : "Inactif"}
       </div>
     </li>
   )

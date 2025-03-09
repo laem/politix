@@ -3,9 +3,9 @@ import BackToHome from "../../components/BackToHome.tsx"
 import Results from "../../components/Results.tsx"
 
 const title =
-  "Quels députés sont toujours actifs sur X ? Lesquels sont sur Bluesky ?"
+  "Quels députés sont toujours actifs sur X ? Lesquels sont sur Bluesky ou sur Mastodon ?"
 const description =
-  `Une analyse régulière de l'activité des députés de la République française sur X (Twitter) et sur son alternative ouverte Bluesky.`
+  `Une analyse régulière de l'activité des députés de la République française sur X (Twitter) sur son alternative ouverte Bluesky et sur son alternative libre Mastodon.`
 
 export default function Top() {
   return (

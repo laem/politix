@@ -194,6 +194,7 @@ const Li = ({ href, text }) => (
 const menuEntries = [
   ["gouvernement", "Le gouvernement"],
   ["parlement", "Le parlement"],
+  ["europe", "Le parlement européen"],
   ["fr", "Le top des comptes Bluesky 🇫🇷"],
 ]
 

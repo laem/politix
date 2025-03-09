@@ -1,4 +1,8 @@
-# Fresh project
+# Politix
+
+Politix https://politix.top analyses MPs' activity on X, Bluesky and Mastodon.
+
+### Fresh project
 
 Your new Fresh project is ready to go. You can follow the Fresh "Getting
 Started" guide here: https://fresh.deno.dev/docs/getting-started
@@ -14,3 +18,11 @@ deno task start
 ```
 
 This will watch the project directory and restart as necessary.
+
+### Analyse data
+
+Just run :
+
+```
+deno task analyse_data
+```
