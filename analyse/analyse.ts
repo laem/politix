@@ -79,18 +79,18 @@ const doFetch = async () => {
     }),
   )
 
-  return console.log("Voilà c'est analysé dans ./data.json")
+  console.log("Voilà c'est analysé dans ./data.json")
 }
 
 const writeFile = (data) => {
-  Deno.writeTextFileSync("../data/data.json", JSON.stringify(data, null, 2))
+  Deno.writeTextFileSync("data/data.json", JSON.stringify(data, null, 2))
   console.log("File written with " + Object.keys(data).length + " data points")
 }
 function readFile() {
   let alreadyDone
 
   try {
-    alreadyDone = JSON.parse(Deno.readTextFileSync("data.json") || "{}")
+    alreadyDone = JSON.parse(Deno.readTextFileSync("data/data.json") || "{}")
   } catch (e) {
     alreadyDone = {}
   }
@@ -105,6 +105,8 @@ const browser = await launch({
   headless: false,
 })
 
+console.log("Ne pas fermer le navigateur !")
+
 await delay(initialDelay * 1000)
 
 const checkTwitterActivity = async (at, i) => {
@@ -114,18 +116,17 @@ const checkTwitterActivity = async (at, i) => {
   }
 
   const netAt = at.slice(1)
-  console.log("Lancement du scraping pour ", netAt)
+  console.log("Lancement du scraping pour", netAt)
 
   //const url = 'https://xcancel.com/' + netAt
   const url = "https://x.com/" + netAt
   //const url = 'https://nitter.poast.org/' + netAt
   //const url = 'https://cartes.app/blog'
-  console.log("will" + url + " " + i)
+  console.log("will " + url + " " + i)
 
   try {
     const page = await browser.newPage(url)
     await delay(scrapDelay)
-    // Run code in the context of the browser
     // Run code in the context of the browser
     const values = await page.evaluate(() => {
       const html = document.body.innerHTML
@@ -138,6 +139,7 @@ const checkTwitterActivity = async (at, i) => {
         (match) => match[1],
       )
     })
+    page.close()
 
     console.log(values)
     if (values !== "!exist" && values.length < 2) {
@@ -187,4 +189,6 @@ const dateFromAttr = (str) => {
   }
 }
 
-doFetch()
+await doFetch()
+
+browser.close()
