@@ -80,6 +80,9 @@ export const findMastodonAccount = async (politix, i, falsePositives) => {
         falsePositives,
       )
       if (!actor2.id) throw new Error("actor2.id is not defined.")
+      if (actor2.acct.includes("@")) {
+        throw new Error("actor2 is not on actor_server")
+      }
       actor = actor2
       actor.acct += `@${actor_server}`
     } catch (e) {
@@ -124,7 +127,9 @@ const searchAccountMastodon = async (
 
     // console.log(json)
     const actor = json.accounts.find(
-      ({ display_name: name, acct, avatar }) => {
+      ({ display_name: name, acct, avatar, bot }) => {
+        if (bot) return false
+
         const nomSansAccents = removeAccents(nom).toLowerCase() // cf mariercd.bsky.social
         const prenomSansAccents = removeAccents(prenom).toLowerCase() // cf mariercd.bsky.social et bothorel.bsky.social
         const nameSansAccents = removeAccents(name).toLowerCase()

@@ -28,10 +28,9 @@ export const europeanMembersRandomOrder = xml_parser.parse(
     let children_json = {}
     children.forEach(({ tagName, children: c }) => {
       if (tagName === "fullName") {
-        ;[
-          children_json["prenom"],
-          children_json["nom"],
-        ] = c[0].value.split(" ")
+        const nameSplit = c[0].value.split(" ")
+        children_json["prenom"] = nameSplit[0]
+        children_json["nom"] = nameSplit.slice(1).join(" ")
       } else {
         children_json[tagName] = c[0].value
       }

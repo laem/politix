@@ -8,7 +8,17 @@ import {
   logResultMastodon,
 } from "./findMastodonAccount.ts"
 
-const falsePositivesBluesky = {}
+const falsePositivesBluesky = {
+  257059: ["bgoncalves.bsky.social"], // need to be connected to be seen
+  257063: ["catarinamartins.bsky.social"], // same
+  28307: ["chicoassisfran.bsky.social"],
+  197422: ["christinebs.bsky.social"],
+  124806: ["davidmcallister.bsky.social"],
+  96761: ["axelmelodiasvoss.bsky.social"],
+  256973: ["fnwdhs.bsky.social"],
+  256957: ["marvmarvmary.bsky.social"],
+  125042: ["javilopen.bsky.social"],
+}
 const falsePositivesMastodon = {
   125052: ["astro_jcm@mastodon.online"],
   257131: ["siwa@pol.social"],
@@ -17,6 +27,8 @@ const falsePositivesMastodon = {
   256920: ["ileglaz@masto.bike"],
   197780: ["bartgroothuis@mastodon.online"],
   197621: ["euribates@tkz.one"],
+  197718: ["ngonzalez@mastodon.tetaneutral.net"],
+  190464: ["thomas_waitz@mastodon.social"],
 }
 
 const analyseDate = new Date().toISOString().split("T")[0]

@@ -11,6 +11,7 @@ const falsePositives = {
     "toshioxgnu@fosstodon.org",
     "ProfeJoseRivera@mas.to",
     "jzavala@vis.social",
+    "rastamaldita@universeodon.com ",
   ],
   PA795386: ["blablamlefevre@mastodon.social"],
   PA722142: ["francois_ruffin@social.jesuislibre.net"],
