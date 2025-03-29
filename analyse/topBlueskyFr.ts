@@ -1,6 +1,13 @@
 import { AtpAgent, AtpSessionData, AtpSessionEvent } from "npm:@atproto/api"
 import { delay } from "../utils.ts"
 
+if (
+  !Deno.env.has("BLUESKY_APP_ACCOUNT") || !Deno.env.has("BLUESKY_APP_PASSWORD")
+) {
+  throw new TypeError("No Bluesky app defined in .env file")
+}
+
+const identifier = Deno.env.get("BLUESKY_APP_ACCOUNT")
 const password = Deno.env.get("BLUESKY_APP_PASSWORD")
 
 const falsePositives = [
@@ -27,7 +34,7 @@ const agent = new AtpAgent({
 
 const analyse = async () => {
   await agent.login({
-    identifier: "mael.kont.me",
+    identifier, // : "mael.kont.me",
     password,
   })
 

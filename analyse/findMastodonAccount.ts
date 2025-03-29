@@ -32,7 +32,7 @@ if (Deno.env.has("MASTODON_TOKEN")) {
   ownHeaders = {}
 }
 
-const mastoServer = Deno.env.get("MASTODON_SERVER")
+const mastoServer = Deno.env.get("MASTODON_SERVER") || "mastodon.social"
 
 export const findMastodonAccount = async (politix, i, falsePositives) => {
   // An account token allows to make more requests whitout error

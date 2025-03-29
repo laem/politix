@@ -33,7 +33,7 @@ export default function Top() {
       <header
         style={{ display: "flex", alignItems: "center", marginTop: "1rem" }}
       >
-        <span style={{ fontSize: "200%", marginRight: ".2rem" }}>🥇</span>
+        <span class="emoji">🥇</span>
         <h1>{title}</h1>
       </header>
       <p>{description}</p>
