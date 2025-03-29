@@ -38,6 +38,7 @@ export const findBlueskyAccount = async (politix, i, falsePositives) => {
 
     console.log("HANDLE", handle)
     if (
+      falsePositives &&
       falsePositives[politix.id] &&
       falsePositives[politix.id].includes(handle)
     ) {

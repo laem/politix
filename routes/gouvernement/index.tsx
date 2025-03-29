@@ -73,13 +73,13 @@ const List = () => (
       ) => {
         const isActiveOnX = xActivity && Array.isArray(xActivity) &&
           hasRecentTweets(xActivity, analyseDate)
-        console.log("hasRecentTweets", xActivity, analyseDate)
+        // console.log("hasRecentTweets", xActivity, analyseDate)
         const isActiveOnBluesky = bskyActivity && Array.isArray(bskyActivity) &&
           hasRecentTweets(bskyActivity, analyseDate)
 
         return (
           <li
-            key=""
+            key={nom}
             style={politixStyle(
               isActiveOnX,
               isActiveOnBluesky,

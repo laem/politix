@@ -29,6 +29,7 @@ const falsePositivesMastodon = {
   197621: ["euribates@tkz.one"],
   197718: ["ngonzalez@mastodon.tetaneutral.net"],
   190464: ["thomas_waitz@mastodon.social"],
+  125042: ["javilopezg@mastodon.social"],
 }
 
 const analyseDate = new Date().toISOString().split("T")[0]
