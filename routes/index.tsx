@@ -21,7 +21,7 @@ export default function Home() {
           padding: "2rem",
         }}
       >
-        <div class="emoji">
+        <div style={{ fontSize: "500%", textAlign: "center", width: "100%" }}>
           &#128530;
         </div>
         <h1
