@@ -21,7 +21,7 @@ export default function Home() {
           padding: "2rem",
         }}
       >
-        <div style={{ fontSize: "500%", textAlign: "center", width: "100%" }}>
+        <div class="emoji">
           &#128530;
         </div>
         <h1
@@ -196,6 +196,7 @@ const menuEntries = [
   ["parlement", "Le parlement"],
   ["europe", "Le parlement européen"],
   ["fr", "Le top des comptes Bluesky 🇫🇷"],
+  ["methodo", "La méthodologie"],
 ]
 
 const Em = ({ background, children }) => (

@@ -27,5 +27,5 @@
     "include": [],
     "entrypoint": "main.ts"
   },
-  "fmt": { "semiColons": false }
+  "fmt": { "semiColons": false, "exclude": ["*.md"] }
 }

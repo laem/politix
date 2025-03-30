@@ -5,14 +5,19 @@ import { analyseDate } from "../date-utils.ts"
 import { delay } from "../utils.ts"
 import { findBlueskyAccount, logResultBluesky } from "./findBlueskyAccount.ts"
 
-const csv = Deno.readTextFileSync("../data/ministres-x.csv")
-const bskyFalsePositives = ["manuelvalls.bsky.social", "phil374.bsky.social"]
+const csv = Deno.readTextFileSync("data/ministres-x.csv")
+const bskyFalsePositives = [
+  "manuelvalls.bsky.social",
+  "phil374.bsky.social",
+  "jxstinbabinks.bsky.social",
+]
 
 const ministres = parse(csv, {
   skipFirstRow: true,
   strip: true,
 })
 
+/*
 let file
 try {
   file = Deno.readTextFileSync("../data/ministres.json")
@@ -22,6 +27,7 @@ try {
 
 const alreadyDone = JSON.parse(file)
 const doneEntries = Object.entries(alreadyDone)
+*/
 
 const limit = Deno.args[0]
 const initialDelay = Deno.args[1] || 30
@@ -30,14 +36,13 @@ const iterationDelay = Deno.args[2] || 20
 const extract = ministres
   /* Instead of filtering the deleted accounts, we'll save the status of the account in the data.json file to store raw data, and potentially correct the source @ in députés-*
    */
-  .filter(
+  /*.filter(
     (d) =>
       !doneEntries.find(
-        ([nom, { analyseDate: doneAnalyseDate }]) =>
-          console.log(d, nom, analyseDate, doneAnalyseDate) ||
-          (nom === d["Nom"] && doneAnalyseDate === analyseDate),
+        ([nom, { analyseDate: doneAnalyseDate }]) => // console.log(d, nom, analyseDate, doneAnalyseDate) ||
+        (nom === d["Nom"] && doneAnalyseDate === analyseDate),
       ),
-  )
+  )*/
   .slice(0, limit)
 
 console.log(extract)
@@ -54,7 +59,7 @@ const doFetch = async () => {
       const [, values] = noTwitterAccount
         ? [, null]
         : await checkTwitterActivity(at, i)
-      const result = await findBlueskyAccount({ nom, prenom }, i)
+      const result = await findBlueskyAccount({ nom, prenom }, i, {})
       const [{ bsky, avatar_bsky: avatar }, activity] = result
       logResultBluesky(result)
 
@@ -81,12 +86,9 @@ const doFetch = async () => {
   const o = Object.fromEntries(entries)
 
   Deno.writeTextFileSync(
-    "../data/ministres.json",
+    "data/ministres.json",
     JSON.stringify(
-      {
-        ...alreadyDone,
-        ...o,
-      },
+      o, // {...alreadyDone, ...o}
       null,
       2,
     ),
@@ -101,6 +103,8 @@ const browser = await launch({
   wsEndpoint: ws,
   headless: false,
 })
+
+console.log("Ne pas fermer le navigateur !")
 
 await delay(initialDelay * 1000)
 
@@ -123,7 +127,6 @@ const checkTwitterActivity = async (at, i) => {
     const page = await browser.newPage(url)
     await delay(3000)
     // Run code in the context of the browser
-    // Run code in the context of the browser
     const values = await page.evaluate(() => {
       const html = document.body.innerHTML
 
@@ -135,6 +138,7 @@ const checkTwitterActivity = async (at, i) => {
         (match) => match[1],
       )
     })
+    page.close()
 
     console.log(values)
     if (values !== "!exist" && values.length < 2) {
@@ -150,4 +154,6 @@ const checkTwitterActivity = async (at, i) => {
   }
 }
 
-doFetch()
+await doFetch()
+
+browser.close()

@@ -14,6 +14,7 @@ import * as $gouvernement_index from "./routes/gouvernement/index.tsx"
 import * as $greet_name_ from "./routes/greet/[name].tsx"
 import * as $index from "./routes/index.tsx"
 import * as $mastodon from "./routes/mastodon.tsx"
+import * as $methodo_index from "./routes/methodo/index.tsx"
 import * as $parlement_index from "./routes/parlement/index.tsx"
 import * as $parti_party_ from "./routes/parti/[party].tsx"
 import * as $Counter from "./islands/Counter.tsx"
@@ -34,6 +35,7 @@ const manifest = {
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
     "./routes/mastodon.tsx": $mastodon,
+    "./routes/methodo/index.tsx": $methodo_index,
     "./routes/parlement/index.tsx": $parlement_index,
     "./routes/parti/[party].tsx": $parti_party_,
   },

@@ -8,10 +8,27 @@ import {
 } from "../../components/Results.tsx"
 import { hasRecentTweets } from "../../date-utils.ts"
 import top from "../../data/ministres.json" with { type: "json" }
+import Bar from "../../Bar.tsx"
 
 const title = "Nos ministres sont-ils sur X ?"
 const description =
   `Analyse de l'activité des ministres de notre gouvernement sur le réseau social d'influence X de Musk, ainsi que sur Bluesky, l'alternative ouverte à X.`
+
+const entries = Object.entries(top)
+const total = entries.length
+const isActive = (activity, analyseDate) =>
+  activity && Array.isArray(activity) &&
+  hasRecentTweets(activity, analyseDate)
+
+const xIsActive = entries.filter((
+  [, { activité: { x: xActivity }, analyseDate }],
+) => isActive(xActivity, analyseDate)).length
+const xPercentActive = (xIsActive / total * 100).toFixed(1)
+
+const blueskyIsActive = entries.filter((
+  [, { activité: { bsky: bskyActivity }, analyseDate }],
+) => isActive(bskyActivity, analyseDate)).length
+const blueskyPercentActive = (blueskyIsActive / total * 100).toFixed(1)
 
 export default function Top() {
   return (
@@ -33,7 +50,7 @@ export default function Top() {
       <header
         style={{ display: "flex", alignItems: "center", marginTop: "1rem" }}
       >
-        <span style={{ fontSize: "200%", marginRight: ".2rem" }}>🥇</span>
+        <span class="emoji">🥇</span>
         <h1>{title}</h1>
       </header>
       <p>{description}</p>
@@ -42,12 +59,39 @@ export default function Top() {
         jours.
       </p>
       <br />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "40rem",
+          gap: ".4rem",
+          margin: "auto",
+        }}
+      >
+        <Bar
+          {...{
+            percentActive: xPercentActive,
+            total,
+            background: "black",
+            suffix: "",
+            logo: "x.png",
+          }}
+        />
+        <Bar
+          {...{
+            percentActive: blueskyPercentActive,
+            total,
+            background: blueskyBlue,
+            suffix: "",
+            logo: "bluesky.svg",
+          }}
+        />
+      </div>
       <List />
     </main>
   )
 }
 
-const entries = Object.entries(top)
 const priorityFilter = ([nom]) =>
   nom.includes("Macron") || nom.includes("Gouvernement")
 const priorityEntries = entries.filter(priorityFilter)
@@ -73,13 +117,13 @@ const List = () => (
       ) => {
         const isActiveOnX = xActivity && Array.isArray(xActivity) &&
           hasRecentTweets(xActivity, analyseDate)
-        console.log("hasRecentTweets", xActivity, analyseDate)
+        // console.log("hasRecentTweets", xActivity, analyseDate)
         const isActiveOnBluesky = bskyActivity && Array.isArray(bskyActivity) &&
           hasRecentTweets(bskyActivity, analyseDate)
 
         return (
           <li
-            key=""
+            key={nom}
             style={politixStyle(
               isActiveOnX,
               isActiveOnBluesky,
