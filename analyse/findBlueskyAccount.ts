@@ -15,7 +15,7 @@ export const logResultBluesky = ([député, activity]) => {
 export const findBlueskyAccount = async (politix, i, falsePositives) => {
   await delay(i * 300)
   const { nom, prenom } = politix
-  console.log(`Will analyse ${prenom} ${nom} ${i}`)
+  console.log(`Will analyse ${prenom} ${nom} ${i} sur Bluesky`)
 
   const url =
     `https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=${prenom} ${nom}`

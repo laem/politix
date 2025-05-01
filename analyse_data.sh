@@ -12,7 +12,12 @@ deno run ${basic_allow} ${env_allow} --allow-write=data/mastodon-data.json analy
 # European Parliament
 deno run ${basic_allow} ${env_allow} --allow-write=data/europe-data.json analyse/analyseEurope.ts
 
-# Gouvernement français
-deno run ${basic_allow} --allow-env  --allow-write=data/ministres.json,/tmp,$HOME/.cache/astral --allow-run=$HOME/.cache/astral/125.0.6400.0/chrome-linux64/chrome analyse/analyseMinistres.ts
 
+# Analyse des comptes sur X
+rm -rf $HOME/.cache/astral
+
+# Gouvernement français
+deno run ${basic_allow} --allow-env --allow-write=data/ministres.json,/tmp,$HOME/.cache/astral --allow-run analyse/analyseMinistres.ts
+
+# Fin de l'analyse des comptes sur X
 rm -rf $HOME/.cache/astral

@@ -47,7 +47,8 @@ const mastodonLine = (actif) => (député) => {
           invert={false}
           breakline={false}
         />{" "}
-        &nbsp; Actif
+        &nbsp;
+        {actif ? "Actif" : "Inactif"}
       </div>
     </li>
   )

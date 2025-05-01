@@ -106,7 +106,7 @@ const browser = await launch({
 
 console.log("Ne pas fermer le navigateur !")
 
-await delay(initialDelay * 1000)
+// await delay(initialDelay * 1000)
 
 const checkTwitterActivity = async (at, i) => {
   await delay(i * iterationDelay * 1000)

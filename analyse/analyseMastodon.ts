@@ -12,6 +12,7 @@ const falsePositives = {
     "ProfeJoseRivera@mas.to",
     "jzavala@vis.social",
     "rastamaldita@universeodon.com ",
+    "jossiel77@mastodon.social",
   ],
   PA795386: ["blablamlefevre@mastodon.social"],
   PA722142: ["francois_ruffin@social.jesuislibre.net"],
@@ -22,6 +23,7 @@ const falsePositives = {
   PA267780: ["agnesfirmin@mastodon.socialspill.com"],
   PA793262: ["Alex@toot.community"],
   PA720614: ["MarineLePen@mastodon.xyz"],
+  PA840793: ["marccapdevila@mastodont.cat"],
 }
 
 const analyseDate = new Date().toISOString().split("T")[0]

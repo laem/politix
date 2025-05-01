@@ -21,6 +21,7 @@ const serversOutOfMastodon = [
   "@rss-parrot.net", // Clémentine Autain : clementine-autain.fr@rss-parrot.net
   "@kilogram.makeup", // Mirror of Instagram account
   "bird.makeup", // Mirror of Twitter account
+  "@social.network.europa.eu", // Doesn't exist anymore
 ]
 
 let ownHeaders
@@ -42,7 +43,7 @@ export const findMastodonAccount = async (politix, i, falsePositives) => {
     await delay(i * 1000)
   }
   const { nom, prenom } = politix
-  console.log(`Will analyse ${prenom} ${nom} ${i}`)
+  console.log(`Will analyse ${prenom} ${nom} ${i} sur Mastodon`)
 
   let actor = await searchAccountMastodon(
     mastoServer,
