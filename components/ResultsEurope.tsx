@@ -30,7 +30,7 @@ const filteredDéputés = (party) =>
 export default function ResultsEurope({ givenParty = null }) {
   return (
     <section>
-      <h2 style={{ ...centerStyle, marginTop: "1rem" }}>Les députés</h2>
+      <h2 style={{ ...centerStyle, marginTop: "1rem" }}>Les eurodéputés</h2>
       <PerPartyEurope
         europeEntries={europeEntries}
         givenParty={givenParty}

@@ -75,7 +75,7 @@ export default function Top() {
             alt="Logo Mastodon"
           />
         </a>
-        !
+        .
       </p>
       <ResultsEurope />
     </main>

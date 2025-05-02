@@ -18,6 +18,12 @@ const falsePositivesBluesky = {
   256973: ["fnwdhs.bsky.social"],
   256957: ["marvmarvmary.bsky.social"],
   125042: ["javilopen.bsky.social"],
+  131580: ["jbjail.bsky.social"],
+  256850: ["filipturek.bsky.social"],
+  256883: ["alexandair.bsky.social"],
+  256959: ["alexsell76.bsky.social"],
+  197687: ["phil-o-tremblay.bsky.social"],
+  197475: ["christine414.bsky.social"],
 }
 const falsePositivesMastodon = {
   125052: ["astro_jcm@mastodon.online"],
@@ -33,7 +39,7 @@ const falsePositivesMastodon = {
   197577: ["GillesBoyer@mastodon.social"],
   256910: ["AnthonySmith@mastodon.sdf.org"],
   257002: ["jcepeda@techhub.social"],
-  197426: ["sms@vmst.io"],
+  197426: ["sms@vmst.io", "Loomit@nrw.social"],
   257066: ["andrerodrigues@mastodon.gamedev.place"],
   256883: ["Esperance28@piaille.fr"],
   197475: ["christineanderson@mastodon.scot"],

@@ -43,6 +43,12 @@ export default function Top() {
           <a href="https://piaille.fr">piaille.fr</a> .
         </p>
         <br />
+        Les données viennent de <a href="https://datan.fr">datan.fr</a>{" "}
+        pour les députés français et du{" "}
+        <a href="https://www.europarl.europa.eu/meps/fr/full-list/all">
+          site officel du parlement européen
+        </a>{" "}
+        pour les eurodéputés.
       </div>
     </main>
   )
