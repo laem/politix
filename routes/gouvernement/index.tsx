@@ -1,11 +1,7 @@
 import { Head } from "$fresh/runtime.ts"
 import BackToHome from "../../components/BackToHome.tsx"
 import { blueskyBlue } from "../../components/PerParty.tsx"
-import {
-  BlueskyHandle,
-  politixGridStyle,
-  politixStyle,
-} from "../../components/Results.tsx"
+import { BlueskyHandle, politixStyle } from "../../components/Results.tsx"
 import { hasRecentTweets } from "../../date-utils.ts"
 import top from "../../data/ministres.json" with { type: "json" }
 import Bar from "../../Bar.tsx"
@@ -97,9 +93,7 @@ const priorityFilter = ([nom]) =>
 const priorityEntries = entries.filter(priorityFilter)
 const rest = entries.filter((e) => !priorityFilter(e))
 const List = () => (
-  <ul
-    style={politixGridStyle}
-  >
+  <ul id="PoliticianGrid">
     {[...priorityEntries, ...rest].map(
       (
         [
@@ -124,6 +118,7 @@ const List = () => (
         return (
           <li
             key={nom}
+            class="politicianBox"
             style={politixStyle(
               isActiveOnX,
               isActiveOnBluesky,

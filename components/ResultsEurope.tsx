@@ -38,9 +38,8 @@ export default function ResultsEurope({ givenParty = null }) {
       <h3 style={centerStyle}>
         {givenParty ? `Liste pour le parti ${givenParty}` : `Liste complète`}
       </h3>
-      <ul
-        style={politixGridStyle}
-      >
+      <div id="ContainerGrid">
+      <div id="PoliticianGrid">
         {filteredDéputés(givenParty).map((député) => {
           const isActiveOnBluesky = activeOnBlueskyEurope(député.id)
           const isActiveOnMastodon = activeOnMastodonEurope(député.id)
@@ -56,8 +55,9 @@ export default function ResultsEurope({ givenParty = null }) {
           )
           const { prenom, nom, groupeAbrev, country } = député
           return (
-            <li
+            <div
               key={at}
+              class="politicianBox"
               style={politixStyle(
                 isActiveOnBluesky,
                 isActiveOnMastodon,
@@ -129,10 +129,11 @@ export default function ResultsEurope({ givenParty = null }) {
                   )
                   : "Non présent sur Mastodon"}
               </div>
-            </li>
+            </div>
           )
         })}
-      </ul>
+      </div>
+      </div>
     </section>
   )
 }
@@ -144,19 +145,14 @@ export const PartyVignette = ({ party, small }) => {
   return (
     <a
       href={`/europe/parti/${party.replaceAll("/", "-")}`}
-      style={{ textDecoration: "none" }}
+      style={{ textDecoration: "none", fontSize: small ? "100%" : "130%" }}
     >
       <span
+        class="partySticker"
         style={{
           background: partyColor,
-          borderRadius: ".4rem",
           padding: small ? "0 .3rem" : ".4rem .6rem",
-          width: "7rem",
-
-          textAlign: "center",
           color: partyTextColor,
-          fontSize: small ? "100%" : "130%",
-          border: "2px solid white",
         }}
         title={group}
       >
@@ -270,25 +266,12 @@ export const getPartyName = (party) => {
   return fullName
 }
 
-export const politixGridStyle = {
-  display: "grid",
-  gridAutoColumns: "12rem",
-  gridTemplateColumns: "repeat(auto-fill, 12rem)",
-  alignItems: "baseline",
-  gap: "1rem",
-  marginTop: "2rem",
-  paddingLeft: "1rem",
-}
-
 export const xColor = "#4c0815"
 export const politixStyle = (isActiveOnBluesky, isActiveOnMastodon) => {
   const isActive = Boolean(
     isActiveOnBluesky || isActiveOnMastodon,
   )
   return ({
-    listStyleType: "none",
-    width: "12rem",
-    minHeight: "8.5rem",
     background: (isActiveOnBluesky && isActiveOnMastodon)
       ? `linear-gradient(to right bottom, ${blueskyBlue} 0%, ${blueskyBlue} 50%, ${mastodonPurple} 50%, ${mastodonPurple} 100%)`
       : isActiveOnBluesky
@@ -302,7 +285,5 @@ export const politixStyle = (isActiveOnBluesky, isActiveOnMastodon) => {
       ? `4px solid ${mastodonPurple}`
       : "3px solid lightgray",
     color: isActive ? "white" : "black",
-    borderRadius: ".4rem",
-    padding: "0 .4rem",
   })
 }

@@ -42,9 +42,7 @@ export default function Results({ givenParty = null }) {
       <h3 style={centerStyle}>
         {givenParty ? `Liste pour le parti ${givenParty}` : `Liste complète`}
       </h3>
-      <ul
-        style={politixGridStyle}
-      >
+      <ul id="PoliticianGrid">
         {filteredDéputés(givenParty).map((député) => {
           const xTested = entries.find(([id, data]) =>
             data["@"] === député.twitter
@@ -69,6 +67,7 @@ export default function Results({ givenParty = null }) {
           return (
             <li
               key={at}
+              class="politicianBox"
               style={politixStyle(
                 result,
                 isActiveOnBluesky,
@@ -176,18 +175,16 @@ export const PartyVignette = ({ party, small }) => {
   const group = getPartyName(party)
   const simpleParty = party.replace("-NFP", "") // Les gens ne comprennent pas pourquoi seul LFI a NFP dans son nom, et ça créée une vignette de parti 2x plus grosse que les autres
   return (
-    <a href={`/parti/${party}`} style={{ textDecoration: "none" }}>
+    <a
+      href={`/parti/${party}`}
+      style={{ textDecoration: "none", fontSize: small ? "100%" : "130%" }}
+    >
       <span
+        class="partySticker"
         style={{
           background: partyColor,
-          borderRadius: ".4rem",
           padding: small ? "0 .3rem" : ".4rem .6rem",
-          width: "4rem",
-
-          textAlign: "center",
           color: partyTextColor,
-          fontSize: small ? "100%" : "130%",
-          border: "2px solid white",
         }}
         title={group}
       >
@@ -301,25 +298,12 @@ export const getPartyName = (party) => {
   return fullName
 }
 
-export const politixGridStyle = {
-  display: "grid",
-  gridAutoColumns: "12rem",
-  gridTemplateColumns: "repeat(auto-fill, 12rem)",
-  alignItems: "baseline",
-  gap: "1rem",
-  marginTop: "2rem",
-  paddingLeft: "1rem",
-}
-
 export const xColor = "#4c0815"
 export const politixStyle = (result, isActiveOnBluesky, isActiveOnMastodon) => {
   const isActive = Boolean(
     result || isActiveOnBluesky || isActiveOnMastodon,
   )
   return ({
-    listStyleType: "none",
-    width: "12rem",
-    minHeight: "8.5rem",
     background: result
       ? xColor
       : (isActiveOnBluesky && isActiveOnMastodon)
@@ -337,7 +321,5 @@ export const politixStyle = (result, isActiveOnBluesky, isActiveOnMastodon) => {
       ? `4px solid ${mastodonPurple}`
       : "3px solid lightgray",
     color: isActive ? "white" : "black",
-    borderRadius: ".4rem",
-    padding: "0 .4rem",
   })
 }

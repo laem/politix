@@ -171,14 +171,7 @@ export default function PerPartyEurope({ europeEntries, givenParty }) {
             />
           </div>
         </div>
-        <small
-          style={{
-            color: "#bbb",
-            lineHeight: ".8rem",
-            textAlign: "right",
-            fontStyle: "italic",
-          }}
-        >
+        <small class="smallPartyName">
           {getPartyName(groupeAbrev)}
         </small>
       </li>
@@ -251,14 +244,7 @@ export default function PerPartyEurope({ europeEntries, givenParty }) {
                   color: "#333",
                 }}
               />
-              <small
-                style={{
-                  color: "#bbb",
-                  lineHeight: ".8rem",
-                  textAlign: "right",
-                  fontStyle: "italic",
-                }}
-              >
+              <small class="smallPartyName">
                 Parlement européen
               </small>
             </div>

@@ -60,14 +60,57 @@ body {
   max-width: 80rem;
 }
 
+.emoji {
+  font-size: 200%;
+  margin-right: .2rem;
+}
+
+#ContainerGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#PoliticianGrid {
+  display: grid;
+  grid-auto-columns: 12rem;
+  grid-template-columns: repeat(auto-fill, 12rem);
+  align-items: baseline;
+  gap: 1rem;
+  margin-top: 2rem;
+  width: -moz-available;
+  width: -webkit-fill-available;
+}
+
+.politicianBox {
+  width: 12rem;
+  min-height: 8.5rem;
+  border-radius: .4rem;
+  padding: 0 .4rem;
+}
+
+.partySticker {
+  border-radius: .4rem;
+  text-align: center;
+  margin: 0 4px;
+}
+
+.smallPartyName {
+  color: #666;
+  line-height: .8rem;
+  text-align: right;
+  font-style: italic;
+}
+
 @media screen and (max-width: 480px) {
   /* smartphones */
   body {
-    max-width: 40rem;
+    max-width: 20rem;
   }
-}
-
-.emoji {
-  font-size: 200%;
-  margin-right: 0.2rem;
+  #PoliticianGrid {
+    width: auto;
+  }
+  .partySticker {
+    font-size: 80%;
+  }
 }

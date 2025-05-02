@@ -183,14 +183,7 @@ export default function PerParty(
             />
           </div>
         </div>
-        <small
-          style={{
-            color: "#bbb",
-            lineHeight: ".8rem",
-            textAlign: "right",
-            fontStyle: "italic",
-          }}
-        >
+        <small class="smallPartyName">
           {
             getPartyName(party).replace("- Nouveau Front Populaire", "") // cf commentaire dans le composant PartyVignette
           }
@@ -269,14 +262,7 @@ export default function PerParty(
                   color: "#333",
                 }}
               />
-              <small
-                style={{
-                  color: "#bbb",
-                  lineHeight: ".8rem",
-                  textAlign: "right",
-                  fontStyle: "italic",
-                }}
-              >
+              <small class="smallPartyName">
                 Assemblée nationale
               </small>
             </div>
