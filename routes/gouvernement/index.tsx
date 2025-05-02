@@ -93,107 +93,110 @@ const priorityFilter = ([nom]) =>
 const priorityEntries = entries.filter(priorityFilter)
 const rest = entries.filter((e) => !priorityFilter(e))
 const List = () => (
-  <ul id="PoliticianGrid">
-    {[...priorityEntries, ...rest].map(
-      (
-        [
-          nom,
-          {
-            "x": xAt,
-            bsky: bskyAt,
-            avatar,
-            activité: { x: xActivity, bsky: bskyActivity },
-            analyseDate,
-            deletedXAccount,
-            notFoundXAccount,
-          },
-        ],
-      ) => {
-        const isActiveOnX = xActivity && Array.isArray(xActivity) &&
-          hasRecentTweets(xActivity, analyseDate)
-        // console.log("hasRecentTweets", xActivity, analyseDate)
-        const isActiveOnBluesky = bskyActivity && Array.isArray(bskyActivity) &&
-          hasRecentTweets(bskyActivity, analyseDate)
+  <div id="ContainerGrid">
+    <div id="PoliticianGrid">
+      {[...priorityEntries, ...rest].map(
+        (
+          [
+            nom,
+            {
+              "x": xAt,
+              bsky: bskyAt,
+              avatar,
+              activité: { x: xActivity, bsky: bskyActivity },
+              analyseDate,
+              deletedXAccount,
+              notFoundXAccount,
+            },
+          ],
+        ) => {
+          const isActiveOnX = xActivity && Array.isArray(xActivity) &&
+            hasRecentTweets(xActivity, analyseDate)
+          // console.log("hasRecentTweets", xActivity, analyseDate)
+          const isActiveOnBluesky = bskyActivity &&
+            Array.isArray(bskyActivity) &&
+            hasRecentTweets(bskyActivity, analyseDate)
 
-        return (
-          <li
-            key={nom}
-            class="politicianBox"
-            style={politixStyle(
-              isActiveOnX,
-              isActiveOnBluesky,
-              false,
-            )}
-          >
-            <div style={{ maxWidth: "100%" }}>
-              <div style={{ whiteSpace: "nowrap", overflow: "scroll" }}>
-                {nom}
+          return (
+            <div
+              key={nom}
+              class="politicianBox"
+              style={politixStyle(
+                isActiveOnX,
+                isActiveOnBluesky,
+                false,
+              )}
+            >
+              <div style={{ maxWidth: "100%" }}>
+                <div style={{ whiteSpace: "nowrap", overflow: "scroll" }}>
+                  {nom}
+                </div>
+              </div>
+              <div>
+                <small style={{ color: "#f1a8b7" }}>
+                  X {xAt || ": non présent"}
+                </small>
+              </div>
+              <div>
+                {isActiveOnX
+                  ? (
+                    <div>
+                      <details>
+                        <summary>Actif sur X</summary>
+                        <ol>
+                          {xActivity.map((date, i) => (
+                            <li key={date + i}>{date}</li>
+                          ))}
+                        </ol>
+                      </details>
+                    </div>
+                  )
+                  : (
+                    "Non actif sur X"
+                  )}
+              </div>
+              <div>
+                {bskyAt != null &&
+                  (
+                    <div>
+                      <small style={{ whiteSpace: "nowrap" }}>
+                        <BlueskyHandle
+                          at={bskyAt}
+                          invert={false}
+                          avatar={avatar}
+                          isActive={isActiveOnX || isActiveOnBluesky}
+                        />
+                      </small>
+                      {isActiveOnBluesky
+                        ? (
+                          <details>
+                            <summary
+                              style={{
+                                background: blueskyBlue,
+                                padding: "0 .4rem 0 .2rem",
+                                borderRadius: ".2rem",
+                                marginTop: ".2rem",
+                                lineHeight: "1.1rem",
+                                width: "fit-content",
+                              }}
+                            >
+                              Actif sur Bluesky
+                            </summary>
+                            <ol>
+                              {bskyActivity.map((date, i) => (
+                                <li key={date + i}>{date}</li>
+                              ))}
+                            </ol>
+                          </details>
+                        )
+                        : "Non actif sur Bluesky"}
+                    </div>
+                  )}
               </div>
             </div>
-            <div>
-              <small style={{ color: "#f1a8b7" }}>
-                X {xAt || ": non présent"}
-              </small>
-            </div>
-            <div>
-              {isActiveOnX
-                ? (
-                  <div>
-                    <details>
-                      <summary>Actif sur X</summary>
-                      <ol>
-                        {xActivity.map((date, i) => (
-                          <li key={date + i}>{date}</li>
-                        ))}
-                      </ol>
-                    </details>
-                  </div>
-                )
-                : (
-                  "Non actif sur X"
-                )}
-            </div>
-            <div>
-              {bskyAt != null &&
-                (
-                  <div>
-                    <small style={{ whiteSpace: "nowrap" }}>
-                      <BlueskyHandle
-                        at={bskyAt}
-                        invert={false}
-                        avatar={avatar}
-                        isActive={isActiveOnX || isActiveOnBluesky}
-                      />
-                    </small>
-                    {isActiveOnBluesky
-                      ? (
-                        <details>
-                          <summary
-                            style={{
-                              background: blueskyBlue,
-                              padding: "0 .4rem 0 .2rem",
-                              borderRadius: ".2rem",
-                              marginTop: ".2rem",
-                              lineHeight: "1.1rem",
-                              width: "fit-content",
-                            }}
-                          >
-                            Actif sur Bluesky
-                          </summary>
-                          <ol>
-                            {bskyActivity.map((date, i) => (
-                              <li key={date + i}>{date}</li>
-                            ))}
-                          </ol>
-                        </details>
-                      )
-                      : "Non actif sur Bluesky"}
-                  </div>
-                )}
-            </div>
-          </li>
-        )
-      },
-    )}
-  </ul>
+          )
+        },
+      )}
+    </div>
+  </div>
 )
