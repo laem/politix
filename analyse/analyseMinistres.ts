@@ -33,6 +33,8 @@ const limit = Deno.args[0]
 const initialDelay = Deno.args[1] || 30
 const iterationDelay = Deno.args[2] || 20
 
+const scrapDelay = 3000
+
 const extract = ministres
   /* Instead of filtering the deleted accounts, we'll save the status of the account in the data.json file to store raw data, and potentially correct the source @ in députés-*
    */
@@ -106,7 +108,7 @@ const browser = await launch({
 
 console.log("Ne pas fermer le navigateur !")
 
-// await delay(initialDelay * 1000)
+await delay(initialDelay * 1000)
 
 const checkTwitterActivity = async (at, i) => {
   await delay(i * iterationDelay * 1000)
@@ -115,17 +117,17 @@ const checkTwitterActivity = async (at, i) => {
   }
 
   const netAt = at.slice(1)
-  console.log("Lancement du scraping pour ", netAt)
+  console.log("Lancement du scraping pour", netAt)
 
   //const url = 'https://xcancel.com/' + netAt
   const url = "https://x.com/" + netAt
   //const url = 'https://nitter.poast.org/' + netAt
   //const url = 'https://cartes.app/blog'
-  console.log("will" + url + " " + i)
+  // console.log("will " + url + " " + i)
 
   try {
     const page = await browser.newPage(url)
-    await delay(3000)
+    await delay(scrapDelay)
     // Run code in the context of the browser
     const values = await page.evaluate(() => {
       const html = document.body.innerHTML
@@ -138,9 +140,11 @@ const checkTwitterActivity = async (at, i) => {
         (match) => match[1],
       )
     })
-    page.close()
 
-    console.log(values)
+    page.close()
+    console.log(`Fin du scraping pour ${netAt} (${values.length} messages récents)`)
+
+    // console.log(values)
     if (values !== "!exist" && values.length < 2) {
       throw new Error(
         "Pas assez de tweets trouvés, c'est suspect ! Investiguer " + at,

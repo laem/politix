@@ -4,18 +4,17 @@ import { delay } from "../utils.ts"
 
 export const logResultBluesky = ([député, activity]) => {
   const { nom, prenom, groupe, bsky, politicalGroup } = député
-  console.log(`On recherche ${prenom} ${nom} -- de ${groupe || politicalGroup}`)
-  if (!activity) console.log(`Introuvable ou inactif`)
-  else {
-    console.log(`Trouvé : ${bsky}`)
-    console.log(`Activité`, activity)
-  }
+  // console.log(`On recherche ${prenom} ${nom} -- de ${groupe || politicalGroup}`)
+  const groupName = groupe?.replace("- Nouveau Front Populaire", "") || politicalGroup?.replace("- Nouveau Front Populaire", "")
+
+  if (!activity) console.log(`Introuvable ou inactif ${prenom} ${nom} de ${groupName}`)
+  else console.log(`Trouvé ${prenom} ${nom} de ${groupName} : ${bsky} avec ${activity.length} messages récents`)
 }
 
 export const findBlueskyAccount = async (politix, i, falsePositives) => {
   await delay(i * 300)
   const { nom, prenom } = politix
-  console.log(`Will analyse ${prenom} ${nom} ${i} sur Bluesky`)
+  console.log(`Will analyse ${prenom} ${nom} ${i} -- de ${politix.groupe || politix.politicalGroup} sur Bluesky`)
 
   const url =
     `https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=${prenom} ${nom}`
@@ -36,7 +35,6 @@ export const findBlueskyAccount = async (politix, i, falsePositives) => {
       return false
     }
 
-    console.log("HANDLE", handle)
     if (
       falsePositives &&
       falsePositives[politix.id] &&
@@ -44,6 +42,8 @@ export const findBlueskyAccount = async (politix, i, falsePositives) => {
     ) {
       return false
     }
+
+    // console.log("HANDLE", handle)
     return true // We're expecting the bluesky search algo to return the right account as the first
   })
   if (!actor) return [politix, null]

@@ -102,12 +102,13 @@ function readFile() {
 const ws =
   "ws://127.0.0.1:1337/devtools/browser/e82185e6-f90d-4da1-9a67-0a8445f82b85"
 
+
+console.log("Ne pas fermer le navigateur !")
+
 const browser = await launch({
   wsEndpoint: ws,
   headless: false,
 })
-
-console.log("Ne pas fermer le navigateur !")
 
 await delay(initialDelay * 1000)
 
@@ -124,7 +125,7 @@ const checkTwitterActivity = async (at, i) => {
   const url = "https://x.com/" + netAt
   //const url = 'https://nitter.poast.org/' + netAt
   //const url = 'https://cartes.app/blog'
-  console.log("will " + url + " " + i)
+  // console.log("will " + url + " " + i)
 
   try {
     const page = await browser.newPage(url)
