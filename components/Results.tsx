@@ -1,4 +1,7 @@
-const alreadyDone = JSON.parse(Deno.readTextFileSync("data/x-data.json") || "{}")
+let alreadyDone = {}
+try {
+  alreadyDone = JSON.parse(Deno.readTextFileSync("data/x-data.json"))
+} catch (e) {}
 import bluesky from "../data/bluesky-data.json" with { type: "json" }
 import mastodon from "../data/mastodon-data.json" with { type: "json" }
 import { hasRecentTweets } from "../date-utils.ts"

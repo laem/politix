@@ -5,16 +5,24 @@ import { delay } from "../utils.ts"
 export const logResultBluesky = ([député, activity]) => {
   const { nom, prenom, groupe, bsky, politicalGroup } = député
   // console.log(`On recherche ${prenom} ${nom} -- de ${groupe || politicalGroup}`)
-  const groupName = groupe?.replace("- Nouveau Front Populaire", "") || politicalGroup?.replace("- Nouveau Front Populaire", "")
+  const groupName = groupe?.replace("- Nouveau Front Populaire", "") ||
+    politicalGroup?.replace("- Nouveau Front Populaire", "")
 
-  if (!activity) console.log(`Introuvable ou inactif ${prenom} ${nom} de ${groupName}`)
-  else console.log(`Trouvé ${prenom} ${nom} de ${groupName} : ${bsky} avec ${activity.length} messages récents`)
+  if (!activity) {
+    console.log(`Introuvable ou inactif ${prenom} ${nom} de ${groupName}`)
+  } else {console.log(
+      `Trouvé ${prenom} ${nom} de ${groupName} : ${bsky} avec ${activity.length} messages récents`,
+    )}
 }
 
 export const findBlueskyAccount = async (politix, i, falsePositives) => {
   await delay(i * 300)
   const { nom, prenom } = politix
-  console.log(`Will analyse ${prenom} ${nom} ${i} -- de ${politix.groupe || politix.politicalGroup} sur Bluesky`)
+  console.log(
+    `Will analyse ${prenom} ${nom} ${i} -- de ${
+      politix.groupe || politix.politicalGroup
+    } sur Bluesky`,
+  )
 
   const url =
     `https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=${prenom} ${nom}`

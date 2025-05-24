@@ -33,7 +33,7 @@ const limit = Deno.args[0]
 const initialDelay = Deno.args[1] || 30
 const iterationDelay = Deno.args[2] || 20
 
-const scrapDelay = 3000
+const scrapDelay = 5000
 
 const extract = ministres
   /* Instead of filtering the deleted accounts, we'll save the status of the account in the data.json file to store raw data, and potentially correct the source @ in députés-*
@@ -136,17 +136,23 @@ const checkTwitterActivity = async (at, i) => {
         return "!exist"
       }
 
+      if (!html.includes("Follow")) {
+        throw new Error("Compte non trouvé ")
+      }
+
       return Array.from(html.matchAll(/datetime="(\d\d\d\d-\d\d-\d\d)T/g)).map(
         (match) => match[1],
       )
     })
 
     page.close()
-    console.log(`Fin du scraping pour ${netAt} (${values.length} messages récents)`)
+    console.log(
+      `Fin du scraping pour ${netAt} (${values.length} messages récents)`,
+    )
 
     // console.log(values)
     if (values !== "!exist" && values.length < 2) {
-      throw new Error(
+      console.log(
         "Pas assez de tweets trouvés, c'est suspect ! Investiguer " + at,
       )
     }

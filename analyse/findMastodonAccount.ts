@@ -5,10 +5,14 @@ import { delay } from "../utils.ts"
 export const logResultMastodon = ([député, activity]) => {
   const { nom, prenom, groupe, masto, politicalGroup } = député
   // console.log(`On recherche ${prenom} ${nom} -- de ${groupe || politicalGroup}`)
-  const groupName = groupe?.replace("- Nouveau Front Populaire", "") || politicalGroup?.replace("- Nouveau Front Populaire", "")
+  const groupName = groupe?.replace("- Nouveau Front Populaire", "") ||
+    politicalGroup?.replace("- Nouveau Front Populaire", "")
 
-  if (!activity) console.log(`Introuvable ou inactif ${prenom} ${nom} de ${groupName}`)
-  else console.log(`Trouvé ${prenom} ${nom} de ${groupName} : ${masto} avec ${activity.length} messages récents`)
+  if (!activity) {
+    console.log(`Introuvable ou inactif ${prenom} ${nom} de ${groupName}`)
+  } else {console.log(
+      `Trouvé ${prenom} ${nom} de ${groupName} : ${masto} avec ${activity.length} messages récents`,
+    )}
 }
 
 const serversOutOfMastodon = [

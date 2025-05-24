@@ -7,7 +7,7 @@ const limit = +Deno.args[0]
 const initialDelay = +Deno.args[1] || 30
 const iterationDelay = +Deno.args[2] || 20
 
-const scrapDelay = 3000
+const scrapDelay = 5000
 
 const seconds = limit * iterationDelay + initialDelay,
   minutes = seconds / 60
@@ -56,28 +56,30 @@ const doFetch = async () => {
       }
       const [, values] = await checkTwitterActivity(député.twitter, i)
 
-      const entry = [
-        député.id,
-        {
-          nom,
-          prenom,
-          analyseDate,
-          groupeAbrev,
-          "@": député.twitter || null,
-          deletedAccount: values === "!exist",
-          notFoundAccount: !values,
-          activité: values,
-        },
-      ]
+      if (values !== false) {
+        const entry = [
+          député.id,
+          {
+            nom,
+            prenom,
+            analyseDate,
+            groupeAbrev,
+            "@": député.twitter || null,
+            deletedAccount: values === "!exist",
+            notFoundAccount: !values,
+            activité: values,
+          },
+        ]
 
-      const o = Object.fromEntries([endisablestry])
+        const o = Object.fromEntries([entry])
 
-      const done = readFile()
+        const done = readFile()
 
-      writeFile({
-        ...done,
-        ...o,
-      })
+        writeFile({
+          ...done,
+          ...o,
+        })
+      }
     }),
   )
 
@@ -101,7 +103,6 @@ function readFile() {
 
 const ws =
   "ws://127.0.0.1:1337/devtools/browser/e82185e6-f90d-4da1-9a67-0a8445f82b85"
-
 
 console.log("Ne pas fermer le navigateur !")
 
@@ -138,15 +139,23 @@ const checkTwitterActivity = async (at, i) => {
         return "!exist"
       }
 
+      if (!html.includes("Follow")) {
+        throw new Error("Compte non trouvé ")
+      }
+
       return Array.from(html.matchAll(/datetime="(\d\d\d\d-\d\d-\d\d)T/g)).map(
         (match) => match[1],
       )
     })
-    page.close()
 
-    console.log(values)
+    page.close()
+    console.log(
+      `Fin du scraping pour ${netAt} (${values.length} messages récents)`,
+    )
+
+    // console.log(values)
     if (values !== "!exist" && values.length < 2) {
-      throw new Error(
+      console.log(
         "Pas assez de tweets trouvés, c'est suspect ! Investiguer " + at,
       )
     }
