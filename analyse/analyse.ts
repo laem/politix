@@ -20,6 +20,8 @@ const députés = députésRandomOrder.map((d) => {
   return d
 })
 
+const dataPath = "data/x-data.json"
+
 const alreadyDone = readFile()
 const doneEntries = Object.entries(alreadyDone)
 
@@ -68,7 +70,7 @@ const doFetch = async () => {
         },
       ]
 
-      const o = Object.fromEntries([entry])
+      const o = Object.fromEntries([endisablestry])
 
       const done = readFile()
 
@@ -79,18 +81,18 @@ const doFetch = async () => {
     }),
   )
 
-  console.log("Voilà c'est analysé dans ./data.json")
+  console.log("Voilà c'est analysé dans " + dataPath)
 }
 
 const writeFile = (data) => {
-  Deno.writeTextFileSync("data/data.json", JSON.stringify(data, null, 2))
+  Deno.writeTextFileSync(dataPath, JSON.stringify(data, null, 2))
   console.log("File written with " + Object.keys(data).length + " data points")
 }
 function readFile() {
   let alreadyDone
 
   try {
-    alreadyDone = JSON.parse(Deno.readTextFileSync("data/data.json") || "{}")
+    alreadyDone = JSON.parse(Deno.readTextFileSync(dataPath) || "{}")
   } catch (e) {
     alreadyDone = {}
   }

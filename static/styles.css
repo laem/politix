@@ -96,7 +96,7 @@ body {
 }
 
 .smallPartyName {
-  color: #666;
+  color: #666; /* pour le contraste de couleurs */
   line-height: .8rem;
   text-align: right;
   font-style: italic;
