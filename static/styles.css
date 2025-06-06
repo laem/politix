@@ -96,6 +96,31 @@ body {
   font-style: italic;
 }
 
+.barContainer {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.bar {
+  border-radius: .2rem;
+  padding-left: .2rem;
+  white-space: nowrap;
+}
+
+.barsGroup {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: .4rem;
+}
+
+#ParlementContainer {
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding-left: 50px;
+}
+
 @media screen and (max-width: 480px) {
   /* smartphones */
   body {

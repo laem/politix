@@ -8,7 +8,7 @@ export default function Bar({
   logo,
 }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: ".4rem" }}>
+    <div class="barContainer">
       {logo
         ? (
           <img
@@ -19,12 +19,10 @@ export default function Bar({
         )
         : <div style={{ width: "1rem" }}></div>}
       <div
+        class="bar"
         style={{
           width: (percentActive != null ? percentActive : 100) + "%",
           background,
-          borderRadius: ".2rem",
-          paddingLeft: ".2rem",
-          whiteSpace: "nowrap",
         }}
       >
         <div style={{ marginLeft: ".4rem" }}>

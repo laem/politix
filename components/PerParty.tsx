@@ -139,14 +139,7 @@ export default function PerParty(
           <div style={{ width: "5rem", marginRight: "0rem" }}>
             <PartyVignette party={party} />
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "80%",
-              gap: ".4rem",
-            }}
-          >
+          <div class="barsGroup">
             <Bar
               {...{
                 percentActive,
@@ -213,21 +206,8 @@ export default function PerParty(
             Concernant Bluesky et Mastodon, nous prenons le premier compte
             trouvé avec la recherche "prénom nom".
           </p>
-          <div
-            style={{
-              maxWidth: "50rem",
-              margin: "2rem auto",
-              "padding-left": "50px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "80%",
-                gap: ".4rem",
-              }}
-            >
+          <div id="ParlementContainer">
+            <div class="barsGroup">
               <Bar
                 {...{
                   percentActive: (blueskyAllParty / blueskyAllPartyTotal * 100)
