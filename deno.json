@@ -27,5 +27,8 @@
     "include": [],
     "entrypoint": "main.ts"
   },
-  "fmt": { "semiColons": false, "exclude": ["*.md", "static/*.css"] }
+  "fmt": {
+    "semiColons": false,
+    "exclude": ["*.md", "static/*.css", "data/*.json"]
+  }
 }

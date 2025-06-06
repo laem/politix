@@ -7,7 +7,7 @@ import députésRandomOrder from "../députés.ts"
 export default function Mastodon() {
   return (
     <main>
-      <BackToHome />
+      <BackToHome linkBack="/parlement" textBack="Revenir au parlement" />
       <h1>Voici la liste des députés français présents sur Mastodon</h1>
 
       <h2>Ceux actifs</h2>

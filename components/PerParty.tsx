@@ -217,7 +217,7 @@ export default function PerParty(
             style={{
               maxWidth: "50rem",
               margin: "2rem auto",
-              "padding-left": "110px",
+              "padding-left": "50px",
             }}
           >
             <div

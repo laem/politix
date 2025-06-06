@@ -24,15 +24,26 @@ export default function Bar({
           background,
           borderRadius: ".2rem",
           paddingLeft: ".2rem",
-          color: color || (percentActive < 5 ? "black" : "white"),
           whiteSpace: "nowrap",
         }}
       >
         <div style={{ marginLeft: ".4rem" }}>
           {text ? <small>{text}</small> : (
             <>
-              <span>{percentActive}&nbsp;%</span>
-              <small style={{ opacity: "0.65" }}>
+              <span
+                style={{
+                  color: color || (percentActive < 5 ? "black" : "white"),
+                }}
+              >
+                {percentActive}%
+              </span>
+              &nbsp;
+              <small
+                style={{
+                  opacity: "0.65",
+                  color: color || (percentActive < 15 ? "black" : "white"),
+                }}
+              >
                 ({Math.round((percentActive / 100) * total)} / {total} {suffix})
               </small>
             </>

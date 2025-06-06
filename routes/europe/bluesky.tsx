@@ -25,7 +25,7 @@ const atsMessages = ats.reduce((memo, next) => {
 export default function Bluesky() {
   return (
     <main>
-      <BackToHome />
+      <BackToHome linkBack="/europe" textBack="Revenir au parlement européen" />
       <h1>Voici la liste des députés européens présents sur Bluesky</h1>
 
       <h2>Ceux actifs</h2>

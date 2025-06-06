@@ -10,7 +10,7 @@ import europeanMembersRandomOrder from "../../députésEuropéens.ts"
 export default function Mastodon() {
   return (
     <main>
-      <BackToHome />
+      <BackToHome linkBack="/europe" textBack="Revenir au parlement européen" />
       <h1>Voici la liste des députés européens présents sur Mastodon</h1>
 
       <h2>Ceux actifs</h2>

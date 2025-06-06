@@ -6,7 +6,7 @@ export default function GreetPage(props: PageProps) {
   const { party } = props.params
   return (
     <main>
-      <BackToHome />
+      <BackToHome linkBack="/parlement" textBack="Revenir au parlement" />
       <Results givenParty={party} />
     </main>
   )

@@ -56,7 +56,7 @@ html {
 }
 
 body {
-  margin: 2rem auto;
+  margin: 2rem 10%;
   max-width: 80rem;
 }
 
@@ -65,17 +65,11 @@ body {
   margin-right: .2rem;
 }
 
-#ContainerGrid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 #PoliticianGrid {
   display: grid;
   grid-auto-columns: 12rem;
   grid-template-columns: repeat(auto-fill, 12rem);
-  align-items: baseline;
+  align-items: stretch;
   gap: 1rem;
   margin-top: 2rem;
   width: -moz-available;

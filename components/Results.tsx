@@ -45,130 +45,128 @@ export default function Results({ givenParty = null }) {
       <h3 style={centerStyle}>
         {givenParty ? `Liste pour le parti ${givenParty}` : `Liste complète`}
       </h3>
-      <div id="ContainerGrid">
-        <div id="PoliticianGrid">
-          {filteredDéputés(givenParty).map((député) => {
-            const xTested = entries.find(([id, data]) =>
-              data["@"] === député.twitter
-            )
-            const dates = xTested && xTested[1].activité
-            const isActiveOnBluesky = activeOnBluesky(député.id)
-            const isActiveOnMastodon = activeOnMastodon(député.id)
+      <div id="PoliticianGrid">
+        {filteredDéputés(givenParty).map((député) => {
+          const xTested = entries.find(([id, data]) =>
+            data["@"] === député.twitter
+          )
+          const dates = xTested && xTested[1].activité
+          const isActiveOnBluesky = activeOnBluesky(député.id)
+          const isActiveOnMastodon = activeOnMastodon(député.id)
 
-            const at = (isActiveOnBluesky && onBluesky(député.id)[1].bsky) ||
-              (isActiveOnMastodon && onMastodon(député.id)[1].masto) ||
-              député.twitter ||
-              député.nom + député.prenom // the key attribute must always be different
-            // console.log(at)
+          const at = (isActiveOnBluesky && onBluesky(député.id)[1].bsky) ||
+            (isActiveOnMastodon && onMastodon(député.id)[1].masto) ||
+            député.twitter ||
+            député.nom + député.prenom // the key attribute must always be different
+          // console.log(at)
 
-            const result = dates && Array.isArray(dates) &&
-              hasRecentTweets(dates, xTested[1]["analyseDate"])
-            const isActive = Boolean(
-              result || isActiveOnBluesky || isActiveOnMastodon,
-            )
-            const notTested = !xTested
-            const { prenom, nom, groupe, groupeAbrev, twitter } = député
-            return (
-              <div
-                key={at}
-                class="politicianBox"
-                style={politixStyle(
-                  result,
-                  isActiveOnBluesky,
-                  isActiveOnMastodon,
-                )}
-              >
-                <div style={{ maxWidth: "100%" }}>
-                  <div style={{ whiteSpace: "nowrap", overflow: "scroll" }}>
-                    {prenom} {nom}
-                  </div>
-                </div>
-                <PartyVignette party={groupeAbrev} small={true} />
-                <div>
-                  <small style={{ color: "#f1a8b7" }}>
-                    X {twitter || ": non présent"}
-                  </small>
-                </div>
-                <div>
-                  {result
-                    ? (
-                      <div>
-                        <details>
-                          <summary>Actif sur X</summary>
-                          <ol>
-                            {dates.map((date, i) => (
-                              <li key={date + i}>{date}</li>
-                            ))}
-                          </ol>
-                        </details>
-                      </div>
-                    )
-                    : notTested
-                    ? "Non testé"
-                    : "Non actif sur X"}
-                </div>
-                <div>
-                  {isActiveOnBluesky
-                    ? (
-                      <div>
-                        <small style={{ whiteSpace: "nowrap" }}>
-                          <BlueskyHandle député={député} isActive={isActive} />
-                        </small>
-                        <details>
-                          <summary>Actif sur Bluesky</summary>
-                          <ol>
-                            {isActiveOnBluesky[1].activité.map((date, i) => (
-                              <li key={date + i}>{date}</li>
-                            ))}
-                          </ol>
-                        </details>
-                      </div>
-                    )
-                    : onBluesky(député.id)
-                    ? (
-                      <div>
-                        <BlueskyHandle
-                          invert={false}
-                          député={député}
-                          isActive={isActive}
-                        />
-                        <br />
-                        Non actif sur Bluesky
-                      </div>
-                    )
-                    : "Non présent sur Bluesky"}
-                </div>
-                <div>
-                  {isActiveOnMastodon
-                    ? (
-                      <div>
-                        <small style={{ whiteSpace: "nowrap" }}>
-                          <MastodonHandle député={député} isActive={isActive} />
-                        </small>
-                        <details>
-                          <summary>Actif sur Mastodon</summary>
-                          <ol>
-                            {isActiveOnMastodon[1].activité.map((date, i) => (
-                              <li key={date + i}>{date}</li>
-                            ))}
-                          </ol>
-                        </details>
-                      </div>
-                    )
-                    : onMastodon(député.id)
-                    ? (
-                      <div>
-                        <MastodonHandle député={député} isActive={isActive} />
-                        <br />
-                        Non actif sur Mastodon
-                      </div>
-                    )
-                    : "Non présent sur Mastodon"}
+          const result = dates && Array.isArray(dates) &&
+            hasRecentTweets(dates, xTested[1]["analyseDate"])
+          const isActive = Boolean(
+            result || isActiveOnBluesky || isActiveOnMastodon,
+          )
+          const notTested = !xTested
+          const { prenom, nom, groupe, groupeAbrev, twitter } = député
+          return (
+            <div
+              key={at}
+              class="politicianBox"
+              style={politixStyle(
+                result,
+                isActiveOnBluesky,
+                isActiveOnMastodon,
+              )}
+            >
+              <div style={{ maxWidth: "100%" }}>
+                <div style={{ whiteSpace: "nowrap", overflow: "scroll" }}>
+                  {prenom} {nom}
                 </div>
               </div>
-            )
-          })}
-        </div>
+              <PartyVignette party={groupeAbrev} small={true} />
+              <div>
+                <small style={{ color: "#f1a8b7" }}>
+                  X {twitter || ": non présent"}
+                </small>
+              </div>
+              <div>
+                {result
+                  ? (
+                    <div>
+                      <details>
+                        <summary>Actif sur X</summary>
+                        <ol>
+                          {dates.map((date, i) => (
+                            <li key={date + i}>{date}</li>
+                          ))}
+                        </ol>
+                      </details>
+                    </div>
+                  )
+                  : notTested
+                  ? "Non testé"
+                  : "Non actif sur X"}
+              </div>
+              <div>
+                {isActiveOnBluesky
+                  ? (
+                    <div>
+                      <small style={{ whiteSpace: "nowrap" }}>
+                        <BlueskyHandle député={député} isActive={isActive} />
+                      </small>
+                      <details>
+                        <summary>Actif sur Bluesky</summary>
+                        <ol>
+                          {isActiveOnBluesky[1].activité.map((date, i) => (
+                            <li key={date + i}>{date}</li>
+                          ))}
+                        </ol>
+                      </details>
+                    </div>
+                  )
+                  : onBluesky(député.id)
+                  ? (
+                    <div>
+                      <BlueskyHandle
+                        invert={false}
+                        député={député}
+                        isActive={isActive}
+                      />
+                      <br />
+                      Non actif sur Bluesky
+                    </div>
+                  )
+                  : "Non présent sur Bluesky"}
+              </div>
+              <div>
+                {isActiveOnMastodon
+                  ? (
+                    <div>
+                      <small style={{ whiteSpace: "nowrap" }}>
+                        <MastodonHandle député={député} isActive={isActive} />
+                      </small>
+                      <details>
+                        <summary>Actif sur Mastodon</summary>
+                        <ol>
+                          {isActiveOnMastodon[1].activité.map((date, i) => (
+                            <li key={date + i}>{date}</li>
+                          ))}
+                        </ol>
+                      </details>
+                    </div>
+                  )
+                  : onMastodon(député.id)
+                  ? (
+                    <div>
+                      <MastodonHandle député={député} isActive={isActive} />
+                      <br />
+                      Non actif sur Mastodon
+                    </div>
+                  )
+                  : "Non présent sur Mastodon"}
+              </div>
+            </div>
+          )
+        })}
       </div>
     </section>
   )
