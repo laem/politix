@@ -78,7 +78,7 @@ export default function Results({ givenParty = null }) {
               )}
             >
               <div style={{ maxWidth: "100%" }}>
-                <div style={{ whiteSpace: "nowrap", overflow: "scroll" }}>
+                <div style={{ whiteSpace: "nowrap", overflow: "scroll", "scrollbar-width": "none" }}>
                   {prenom} {nom}
                 </div>
               </div>

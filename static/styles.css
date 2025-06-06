@@ -56,8 +56,16 @@ html {
 }
 
 body {
+  display: flex;
+  justify-content: center;
+}
+
+
+main {
   margin: 2rem 10%;
   max-width: 80rem;
+  width: -moz-available;
+  width: -webkit-fill-available;
 }
 
 .emoji {

@@ -4,144 +4,146 @@ import { daysSpan } from "../date-utils.ts"
 
 export default function Home() {
   return (
-    <div
-      style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        padding: "0 .4rem",
-      }}
-    >
-      <header
+    <main>
+      <div
         style={{
-          maxWidth: "12rem",
-          background: "crimson",
-          color: "white",
-          borderRadius: ".6rem 2rem",
-          margin: "1rem auto 3rem",
-          padding: "2rem",
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "0 .4rem",
         }}
       >
-        <div style={{ fontSize: "500%", textAlign: "center", width: "100%" }}>
-          &#128530;
-        </div>
-        <h1
+        <header
           style={{
-            filter: "drop-shadow(0 0 0.75rem #000)",
+            maxWidth: "12rem",
+            background: "crimson",
+            color: "white",
+            borderRadius: ".6rem 2rem",
+            margin: "1rem auto 3rem",
+            padding: "2rem",
           }}
         >
-          Politi
-          <span
+          <div style={{ fontSize: "500%", textAlign: "center", width: "100%" }}>
+            &#128530;
+          </div>
+          <h1
             style={{
-              color: "black",
-              filter: "drop-shadow(0 0 0.75rem #fff)",
+              filter: "drop-shadow(0 0 0.75rem #000)",
             }}
           >
-            X
-          </span>
-        </h1>
-      </header>
-      <p style={{ maxWidth: "40rem", margin: "0 auto" }}>
-        Découvrez qui sont les <em>politix</em>, ces élus de la République
-        <br />
-        <Em background={xColor}>qui sont actifs sur X</Em> dans les {daysSpan}
-        {" "}
-        derniers jours.
-      </p>
-      <p style={{ maxWidth: "40rem", margin: "0 auto" }}>
-        Découvrez aussi ceux{" "}
-        <Em background={blueskyBlue}>qui sont actifs sur Bluesky</Em>{" "}
-        <Em background={mastodonPurple}>ou sur Mastodon</Em>.
-      </p>
-      <p
-        style={{
-          textAlign: "right",
-        }}
-      >
-        <small
+            Politi
+            <span
+              style={{
+                color: "black",
+                filter: "drop-shadow(0 0 0.75rem #fff)",
+              }}
+            >
+              X
+            </span>
+          </h1>
+        </header>
+        <p style={{ maxWidth: "40rem", margin: "0 auto" }}>
+          Découvrez qui sont les <em>politix</em>, ces élus de la République
+          <br />
+          <Em background={xColor}>qui sont actifs sur X</Em> dans les {daysSpan}
+          {" "}
+          derniers jours.
+        </p>
+        <p style={{ maxWidth: "40rem", margin: "0 auto" }}>
+          Découvrez aussi ceux{" "}
+          <Em background={blueskyBlue}>qui sont actifs sur Bluesky</Em>{" "}
+          <Em background={mastodonPurple}>ou sur Mastodon</Em>.
+        </p>
+        <p
           style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "end",
+            textAlign: "right",
           }}
         >
-          <span>
-            <img
-              src={"/git.svg"}
-              style={{
-                width: "1rem",
-                height: "1rem",
-                filter: "grayscale(1) invert(0)",
-                display: "inline",
-                marginRight: ".2rem",
-                verticalAlign: "middle",
-              }}
-              width="10"
-              height="10"
-              alt="Logo Git"
-            />
+          <small
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "end",
+            }}
+          >
+            <span>
+              <img
+                src={"/git.svg"}
+                style={{
+                  width: "1rem",
+                  height: "1rem",
+                  filter: "grayscale(1) invert(0)",
+                  display: "inline",
+                  marginRight: ".2rem",
+                  verticalAlign: "middle",
+                }}
+                width="10"
+                height="10"
+                alt="Logo Git"
+              />
 
-            <a
-              href="https://github.com/laem/politix"
-              style={{
-                textDecoration: "none",
-              }}
-            >
-              Code source
-            </a>
-          </span>
-          <span>
-            👤{" "}
-            <a
-              href="https://kont.me"
-              style={{
-                textDecoration: "none",
-              }}
-            >
-              Par Maël
-            </a>
-          </span>
-          <span>
-            <img
-              src="/bluesky.svg"
-              width="10"
-              height="10"
-              style={{ width: "1rem", height: "auto", display: "inline" }}
-              alt="Logo de Bluesky"
-            />{" "}
-            <a
-              href="https://bsky.app/profile/mael.kont.me"
-              style={{
-                textDecoration: "none",
-              }}
-            >
-              Suivre sur Bluesky
-            </a>
-          </span>
-          <span>
-            <img
-              src="/mastodon.svg"
-              width="10"
-              height="10"
-              style={{ width: "1rem", height: "auto", display: "inline" }}
-              alt="Logo de Mastodon"
-            />{" "}
-            <a
-              href="https://piaille.fr/@viango"
-              style={{
-                textDecoration: "none",
-              }}
-            >
-              Suivre sur Mastodon (Viango)
-            </a>
-          </span>
-        </small>
-      </p>
-      <nav style={{ margin: "1rem auto", maxWidth: "22rem" }}>
-        <ul style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-          {menuEntries.map(([href, text]) => <Li {...{ href, text }} />)}
-        </ul>
-      </nav>
-    </div>
+              <a
+                href="https://github.com/laem/politix"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                Code source
+              </a>
+            </span>
+            <span>
+              👤{" "}
+              <a
+                href="https://kont.me"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                Par Maël
+              </a>
+            </span>
+            <span>
+              <img
+                src="/bluesky.svg"
+                width="10"
+                height="10"
+                style={{ width: "1rem", height: "auto", display: "inline" }}
+                alt="Logo de Bluesky"
+              />{" "}
+              <a
+                href="https://bsky.app/profile/mael.kont.me"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                Suivre sur Bluesky
+              </a>
+            </span>
+            <span>
+              <img
+                src="/mastodon.svg"
+                width="10"
+                height="10"
+                style={{ width: "1rem", height: "auto", display: "inline" }}
+                alt="Logo de Mastodon"
+              />{" "}
+              <a
+                href="https://piaille.fr/@viango"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                Suivre sur Mastodon (Viango)
+              </a>
+            </span>
+          </small>
+        </p>
+        <nav style={{ margin: "1rem auto", maxWidth: "22rem" }}>
+          <ul style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {menuEntries.map(([href, text]) => <Li {...{ href, text }} />)}
+          </ul>
+        </nav>
+      </div>
+    </main>
   )
 }
 
