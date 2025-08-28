@@ -22,7 +22,7 @@ rm -rf $HOME/.cache/astral
 # rm -rf $HOME/.cache/astral
 
 # Gouvernement français
-deno run ${basic_allow} --allow-env --allow-write=data/ministres.json,/tmp,$HOME/.cache/astral --allow-run analyse/analyseMinistres.ts
+# deno run ${basic_allow} --allow-env --allow-write=data/ministres.json,/tmp,$HOME/.cache/astral --allow-run analyse/analyseMinistres.ts
 
 # Fin de l'analyse des comptes sur X
 rm -rf $HOME/.cache/astral
