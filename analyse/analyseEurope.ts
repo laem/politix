@@ -41,7 +41,7 @@ const falsePositivesMastodon = {
   257002: ["jcepeda@techhub.social"],
   197426: ["sms@vmst.io", "Loomit@nrw.social"],
   257066: ["andrerodrigues@mastodon.gamedev.place"],
-  256883: ["Esperance28@piaille.fr"],
+  256883: ["Esperance28@piaille.fr", "alexandair@infosec.exchange"],
   197475: ["christineanderson@mastodon.scot"],
   88552: ["juliensnz@piaille.fr"],
   257124: ["GiuseppeLupo@mastodon.uno"],

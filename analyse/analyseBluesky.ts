@@ -4,11 +4,16 @@ import { findBlueskyAccount, logResultBluesky } from "./findBlueskyAccount.ts"
 const falsePositives = {
   PA841825: ["patricemartin50.bsky.social"],
   PA793262: ["onesque.bsky.social"],
-  PA793362: ["williamjo.se"],
-  PA720614: ["mlpcdn.bsky.social"],
+  PA793362: [
+    "williamjo.se",
+    "jose-eduardo.bsky.social", // need to be connected to be seen
+  ],
+  PA720614: ["mlpcdn.bsky.social", "mlp-jail.bsky.social"],
   PA817203: ["lauremiller.bsky.social"],
   PA793102: ["tristanhylare.bsky.social"],
   PA841833: ["davidguerin.bsky.social"],
+  PA842255: ["cbourgonsicard.bsky.social"],
+  PA794886: ["sceauphie.bsky.social"],
 }
 
 const analyseDate = new Date().toISOString().split("T")[0]
