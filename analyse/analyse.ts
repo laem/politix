@@ -3,7 +3,7 @@ import députésRandomOrder from '../députés.ts'
 import { arrayToChunks, delay } from '../utils.ts'
 import { analyseDate } from '../date-utils.ts'
 
-const limit = +Deno.args[0]
+const limit = +Deno.args[0] || 10
 const initialDelay = +Deno.args[1] || 30
 const iterationDelay = +Deno.args[2] || 20
 
@@ -11,7 +11,7 @@ const scrapDelay = 5000
 
 const seconds = limit * iterationDelay + initialDelay,
   minutes = seconds / 60
-console.log('Will take ' + seconds + ' seconds, donc ' + minutes)
+console.log('Will take ' + seconds + ' seconds, donc ' + Math.floor(minutes)+ ' minutes'.)
 
 const députés = députésRandomOrder.map((d) => {
   if (!d.twitter) return d
@@ -90,6 +90,7 @@ const writeFile = (data) => {
   Deno.writeTextFileSync(dataPath, JSON.stringify(data, null, 2))
   console.log('File written with ' + Object.keys(data).length + ' data points')
 }
+
 function readFile() {
   let alreadyDone
 
@@ -102,7 +103,7 @@ function readFile() {
 }
 
 const ws =
-  'ws://127.0.0.1:1337/devtools/browser/e82185e6-f90d-4da1-9a67-0a8445f82b85'
+  'ws://127.0.0.1:1337/devtools/browser/c50b67da-061a-47bd-b4cb-616c934a2b50'
 
 console.log('Ne pas fermer le navigateur !')
 
