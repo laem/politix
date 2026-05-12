@@ -18,7 +18,8 @@
     "preact/": "https://esm.sh/preact@10.22.0/",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
-    "$std/": "https://deno.land/std@0.216.0/"
+    "$std/": "https://deno.land/std@0.216.0/",
+    "@astral/astral": "jsr:@astral/astral@0.5.6"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "deploy": {
