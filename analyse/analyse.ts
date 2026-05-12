@@ -5,7 +5,7 @@ import { analyseDate } from '../date-utils.ts'
 
 const limit = +Deno.args[0] || 10
 const initialDelay = +Deno.args[1] || 30
-const iterationDelay = +Deno.args[2] || 5
+const iterationDelay = +Deno.args[2] || 20
 
 const scrapDelay = 5000
 
