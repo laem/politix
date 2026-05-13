@@ -1,32 +1,33 @@
-import { AtpAgent, AtpSessionData, AtpSessionEvent } from "npm:@atproto/api"
-import { delay } from "../utils.ts"
+import { AtpAgent, AtpSessionData, AtpSessionEvent } from 'npm:@atproto/api'
+import { delay } from '../utils.ts'
 
 if (
-  !Deno.env.has("BLUESKY_APP_ACCOUNT") || !Deno.env.has("BLUESKY_APP_PASSWORD")
+  !Deno.env.has('BLUESKY_APP_ACCOUNT') ||
+  !Deno.env.has('BLUESKY_APP_PASSWORD')
 ) {
-  throw new TypeError("No Bluesky app defined in .env file")
+  throw new TypeError('No Bluesky app defined in .env file')
 }
 
-const identifier = Deno.env.get("BLUESKY_APP_ACCOUNT")
-const password = Deno.env.get("BLUESKY_APP_PASSWORD")
+const identifier = Deno.env.get('BLUESKY_APP_ACCOUNT')
+const password = Deno.env.get('BLUESKY_APP_PASSWORD')
 
 const falsePositives = [
-  "labordeliere.bsky.social", // +18 ans, ne skeete que des images donc pas francophone
-  "antifapuddinpop.bsky.social", // marked as french but not https://bsky.app/profile/antifapuddinpop.bsky.social/post/3lffmbgxick2x
+  'labordeliere.bsky.social', // +18 ans, ne skeete que des images donc pas francophone
+  'antifapuddinpop.bsky.social', // marked as french but not https://bsky.app/profile/antifapuddinpop.bsky.social/post/3lffmbgxick2x
 ]
 
 let old
 
 try {
   old = JSON.parse(
-    Deno.readTextFileSync("../data/bluesky-top-actors-fr.json") || "{}",
+    Deno.readTextFileSync('./data/bluesky-top-actors-fr.json') || '{}',
   )
 } catch (e) {
   old = { sorted: {}, dates: [] }
 }
 
 const agent = new AtpAgent({
-  service: "https://bsky.social/xrpc",
+  service: 'https://bsky.social/xrpc',
   persistSession: (evt: AtpSessionEvent, sess?: AtpSessionData) => {
     // store the session-data for reuse
   },
@@ -38,12 +39,12 @@ const analyse = async () => {
     password,
   })
 
-  console.log("OK", agent.did)
+  console.log('OK', agent.did)
 
   const { data: json } = await agent.app.bsky.feed.searchPosts({
-    q: "lang:fr",
+    q: 'lang:fr',
     limit: 100,
-    sort: "top",
+    sort: 'top',
   })
 
   /* public API not working anymore 21 jan
@@ -56,7 +57,7 @@ const analyse = async () => {
 		*/
 
   const dates = new Set(
-    json.posts.map((post) => post.record.createdAt.split("T")[0]),
+    json.posts.map((post) => post.record.createdAt.split('T')[0]),
   )
 
   const handles = new Set([
@@ -106,11 +107,11 @@ const analyse = async () => {
   }
 
   Deno.writeTextFileSync(
-    "../data/bluesky-top-actors-fr.json",
+    './data/bluesky-top-actors-fr.json',
     JSON.stringify(result, null, 2),
   )
 
-  console.log("Fichier écrit")
+  console.log('Fichier écrit')
 }
 
 analyse()
