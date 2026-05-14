@@ -4,12 +4,15 @@ import { findBlueskyAccount, logResultBluesky } from './findBlueskyAccount.ts'
 const falsePositives = {
   PA841825: ['patricemartin50.bsky.social'],
   PA793262: ['onesque.bsky.social'],
-  PA793362: [
+  PA793362: 'all',
+  /* so many false positives for this one that we need to block it, should be added manually
+		[
     'williamjo.se',
     'jose-eduardo.bsky.social', // need to be connected to be seen
     'jrgzz.bsky.social',
+    'joseontheair.bsky.social',
   ],
-  PA720614: ['mlpcdn.bsky.social', 'mlp-jail.bsky.social'],
+  */ PA720614: ['mlpcdn.bsky.social', 'mlp-jail.bsky.social'],
   PA817203: ['lauremiller.bsky.social'],
   PA793102: ['tristanhylare.bsky.social'],
   PA841833: ['davidguerin.bsky.social'],
