@@ -2445,7 +2445,7 @@
     "nom": "Molac",
     "prenom": "Paul",
     "groupeAbrev": "LIOT",
-    "bsky": "handle.invalid",
+    "bsky": "paulmolac.bsky.social",
     "activité": [],
     "analyseDate": "2026-05-12"
   },
@@ -2809,7 +2809,7 @@
     "nom": "Bannier",
     "prenom": "Géraldine",
     "groupeAbrev": "DEM",
-    "bsky": "handle.invalid",
+    "bsky": "gbannier.bsky.social",
     "activité": [],
     "analyseDate": "2026-05-12"
   },
@@ -4794,4 +4794,3 @@
     "analyseDate": "2026-05-12"
   }
 }
-
