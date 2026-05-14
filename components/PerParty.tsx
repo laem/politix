@@ -196,7 +196,8 @@ export default function PerParty({
       </p>
       <p style={{ textAlign: 'center', color: 'darkBlue' }}>
         Concernant Bluesky et Mastodon, nous prenons le premier compte trouvé
-        avec la recherche "prénom nom".
+        avec la recherche "prénom nom", puis corrigeons les faux positifs et
+        négatifs à la main.
       </p>
       <div id="ParlementContainer">
         <div class="barsGroup">
