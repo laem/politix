@@ -25,6 +25,7 @@ const serversOutOfMastodon = [
   "@kilogram.makeup", // Mirror of Instagram account
   "bird.makeup", // Mirror of Twitter account
   "@social.network.europa.eu", // Doesn't exist anymore
+  "threads.net", // Meta social media
 ]
 
 let ownHeaders
@@ -122,44 +123,42 @@ const searchAccountMastodon = async (
   headers,
   falsePositives,
 ) => {
-  try {
-    const url =
-      `https://${server}/api/v2/search?q=${prenom} ${nom}&type=accounts`
-    const request = await fetch(url, { method: "GET", headers: headers })
-    const json = await request.json()
-    if (json.error) console.log(json.error)
+  const url =
+    `https://${server}/api/v2/search?q=${prenom} ${nom}&type=accounts`
+  const request = await fetch(url, { method: "GET", headers: headers })
+  const json = await request.json()
+  if (json.error) console.log(json.error)
 
-    // console.log(json)
-    const actor = json.accounts.find(
-      ({ display_name: name, acct, avatar, bot }) => {
-        if (bot) return false
+  // console.log(json)
+  const actor = json.accounts.find(
+    ({ display_name: name, acct, avatar, bot }) => {
+      if (bot) return false
 
-        const nomSansAccents = removeAccents(nom).toLowerCase() // cf mariercd.bsky.social
-        const prenomSansAccents = removeAccents(prenom).toLowerCase() // cf mariercd.bsky.social et bothorel.bsky.social
-        const nameSansAccents = removeAccents(name).toLowerCase()
-        if (acct.search("@") == -1) acct += `@${server}`
+      const nomSansAccents = removeAccents(nom).toLowerCase() // cf mariercd.bsky.social
+      const prenomSansAccents = removeAccents(prenom).toLowerCase() // cf mariercd.bsky.social et bothorel.bsky.social
+      const nameSansAccents = removeAccents(name).toLowerCase()
+      if (acct.search("@") == -1) acct += `@${server}`
 
-        if (
-          !nameSansAccents.includes(nomSansAccents) ||
-          !nameSansAccents.includes(prenomSansAccents)
-        ) {
-          //https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=pen%20marine%20le returns Marine Turchi as the first entry, and an irrelevant result as a second
-          return false
-        }
+      if (
+        !nameSansAccents.includes(nomSansAccents) ||
+        !nameSansAccents.includes(prenomSansAccents)
+      ) {
+        //https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=pen%20marine%20le returns Marine Turchi as the first entry, and an irrelevant result as a second
+        return false
+      }
 
-        if (serversOutOfMastodon.find((server2) => acct.includes(server2))) {
-          return false
-        }
+      if (serversOutOfMastodon.find((server2) => acct.includes(server2))) {
+        return false
+      }
 
-        if (
-          falsePositives[id] &&
-          falsePositives[id].includes(acct)
-        ) {
-          return false
-        }
-        return true // We're expecting the Mastodon search algo to return the right account as the first
-      },
-    )
-    return actor
-  } catch (e) {}
+      if (
+        falsePositives[id] &&
+        falsePositives[id].includes(acct)
+      ) {
+        return false
+      }
+      return true // We're expecting the Mastodon search algo to return the right account as the first
+    },
+  )
+  return actor
 }
