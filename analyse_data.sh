@@ -14,7 +14,7 @@ deno run ${basic_allow} ${env_allow} --allow-write=data/europe-data.json analyse
 
 
 # Début de l'analyse des comptes sur X
-rm -rf $HOME/.cache/astral
+# rm -rf $HOME/.cache/astral
 
 # Parlementaires français
 # deno run ${basic_allow} --allow-env --allow-write=data/x-data.json,/tmp,$HOME/.cache/astral --allow-run analyse/analyse.ts
@@ -25,4 +25,4 @@ rm -rf $HOME/.cache/astral
 # deno run ${basic_allow} --allow-env --allow-write=data/ministres.json,/tmp,$HOME/.cache/astral --allow-run analyse/analyseMinistres.ts
 
 # Fin de l'analyse des comptes sur X
-rm -rf $HOME/.cache/astral
+# rm -rf $HOME/.cache/astral

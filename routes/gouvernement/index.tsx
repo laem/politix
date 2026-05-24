@@ -19,12 +19,10 @@ const isActive = (activity, analyseDate) =>
 const xIsActive = entries.filter((
   [, { activité: { x: xActivity }, analyseDate }],
 ) => isActive(xActivity, analyseDate)).length
-const xPercentActive = (xIsActive / total * 100).toFixed(1)
 
 const blueskyIsActive = entries.filter((
   [, { activité: { bsky: bskyActivity }, analyseDate }],
 ) => isActive(bskyActivity, analyseDate)).length
-const blueskyPercentActive = (blueskyIsActive / total * 100).toFixed(1)
 
 export default function Top() {
   return (
@@ -66,20 +64,22 @@ export default function Top() {
       >
         <Bar
           {...{
-            percentActive: xPercentActive,
+            active: xIsActive,
             total,
             background: "black",
             suffix: "",
             logo: "x.png",
+            digit: 1,
           }}
         />
         <Bar
           {...{
-            percentActive: blueskyPercentActive,
+            active: blueskyIsActive,
             total,
             background: blueskyBlue,
             suffix: "",
             logo: "bluesky.svg",
+            digit: 1,
           }}
         />
       </div>

@@ -1,12 +1,15 @@
 export default function Bar({
-  percentActive,
+  active,
   total,
   background,
   suffix = "testés",
   text,
   color,
   logo,
+  digit = 0,
 }) {
+  const percentActive = ((active / total) * 100).toFixed(digit)
+
   return (
     <div class="barContainer">
       {logo
@@ -21,7 +24,7 @@ export default function Bar({
       <div
         class="bar"
         style={{
-          width: (percentActive != null ? percentActive : 100) + "%",
+          width: ((percentActive != null && !isNaN(percentActive)) ? percentActive : 100) + "%",
           background,
         }}
       >
@@ -42,7 +45,7 @@ export default function Bar({
                   color: color || (percentActive < 15 ? "black" : "white"),
                 }}
               >
-                ({Math.round((percentActive / 100) * total)} / {total} {suffix})
+                ({active} / {total} {suffix})
               </small>
             </>
           )}

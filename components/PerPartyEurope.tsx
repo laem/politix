@@ -43,7 +43,7 @@ export default function PerPartyEurope({ europeEntries, givenParty }) {
   const statsPerParty = ([party, results]) => [
     party,
     results.length,
-    Math.round((results.filter(Boolean).length / results.length) * 100),
+    results.filter(Boolean).length,
   ]
 
   const blueskyAllParty = europeEntries.reduce(
@@ -84,7 +84,7 @@ export default function PerPartyEurope({ europeEntries, givenParty }) {
     const blueskyStatsLine = blueskyStats.find(
       ([party]) => groupeAbrev === party,
     )
-    const [, blueskyTotal, blueskyPercentActive] = blueskyStatsLine || [
+    const [, blueskyTotal, blueskyActive] = blueskyStatsLine || [
       null,
       0,
       europeanMembersRandomOrder.filter(
@@ -95,7 +95,7 @@ export default function PerPartyEurope({ europeEntries, givenParty }) {
     const mastodonStatsLine = mastodonStats.find(
       ([party]) => groupeAbrev === party,
     )
-    const [, mastodonTotal, mastodonPercentActive] = mastodonStatsLine || [
+    const [, mastodonTotal, mastodonActive] = mastodonStatsLine || [
       null,
       0,
       europeanMembersRandomOrder.filter(
@@ -106,9 +106,9 @@ export default function PerPartyEurope({ europeEntries, givenParty }) {
     console.log(
       groupeAbrev,
       blueskyTotal,
-      `${blueskyPercentActive}%`,
+      `${blueskyActive}%`,
       mastodonTotal,
-      `${mastodonPercentActive}%`,
+      `${mastodonActive}%`,
     )
     return (
       <li
@@ -145,7 +145,7 @@ export default function PerPartyEurope({ europeEntries, givenParty }) {
           >
             <Bar
               {...{
-                percentActive: blueskyPercentActive,
+                active: blueskyActive,
                 total: blueskyTotal,
                 background: blueskyBlue,
                 suffix: "",
@@ -154,7 +154,7 @@ export default function PerPartyEurope({ europeEntries, givenParty }) {
             />
             <Bar
               {...{
-                percentActive: mastodonPercentActive,
+                active: mastodonActive,
                 total: mastodonTotal,
                 background: mastodonPurple,
                 suffix: "",
@@ -163,7 +163,7 @@ export default function PerPartyEurope({ europeEntries, givenParty }) {
             />
             <Bar
               {...{
-                percentActive: (count / firstPartyCount) * 100,
+                active: count,
                 text: `${count} députés`,
                 background: "#eee",
                 color: "#333",
@@ -210,30 +210,26 @@ export default function PerPartyEurope({ europeEntries, givenParty }) {
             >
               <Bar
                 {...{
-                  percentActive: (blueskyAllParty / blueskyAllPartyTotal * 100)
-                    .toFixed(1),
+                  active: blueskyAllParty,
                   total: blueskyAllPartyTotal,
                   background: blueskyBlue,
                   suffix: "",
                   logo: "bluesky.svg",
+                  digit: 1,
                 }}
               />
               <Bar
                 {...{
-                  percentActive:
-                    (mastodonAllParty / mastodonAllPartyTotal * 100).toFixed(1),
+                  active: mastodonAllParty,
                   total: mastodonAllPartyTotal,
                   background: mastodonPurple,
                   suffix: "",
                   logo: "mastodon.svg",
+                  digit: 1,
                 }}
               />
               <Bar
                 {...{
-                  percentActive: (topPartiesEntries.reduce(
-                    (partialSum, [, a]) => partialSum + a,
-                    0,
-                  ) / firstPartyCount) * 100,
                   text: `${
                     topPartiesEntries.reduce(
                       (partialSum, [, a]) => partialSum + a,

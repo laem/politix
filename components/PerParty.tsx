@@ -41,7 +41,7 @@ export default function PerParty({
     .map(([party, results]) => [
       party,
       results.length,
-      Math.round((results.filter(Boolean).length / results.length) * 100),
+      results.filter(Boolean).length,
     ])
     .sort(([, , a], [, , b]) => -a + b)
 
@@ -64,7 +64,7 @@ export default function PerParty({
   const statsPerParty = ([party, results]) => [
     party,
     results.length,
-    Math.round((results.filter(Boolean).length / results.length) * 100),
+    results.filter(Boolean).length,
   ]
 
   const blueskyAllParty = blueskyEntries.reduce(activeAllParty, 0)
@@ -93,10 +93,10 @@ export default function PerParty({
     const twitterParty = stats.find(([party]) => party === groupeAbrev)
     if (!twitterParty) return null
 
-    const [party, total, percentActive] = twitterParty
+    const [party, total, active] = twitterParty
 
     const blueskyStatsLine = blueskyStats.find(([party2]) => party === party2)
-    const [, blueskyTotal, blueskyPercentActive] = blueskyStatsLine || [
+    const [, blueskyTotal, blueskyActive] = blueskyStatsLine || [
       null,
       0,
       députésRandomOrder.filter(({ groupeAbrev }) => groupeAbrev === party)
@@ -104,7 +104,7 @@ export default function PerParty({
     ]
 
     const mastodonStatsLine = mastodonStats.find(([party2]) => party === party2)
-    const [, mastodonTotal, mastodonPercentActive] = mastodonStatsLine || [
+    const [, mastodonTotal, mastodonActive] = mastodonStatsLine || [
       null,
       0,
       députésRandomOrder.filter(({ groupeAbrev }) => groupeAbrev === party)
@@ -114,9 +114,9 @@ export default function PerParty({
     console.log(
       party,
       blueskyTotal,
-      `${blueskyPercentActive}%`,
+      `${blueskyActive}%`,
       mastodonTotal,
-      `${mastodonPercentActive}%`,
+      `${mastodonActive}%`,
     )
     return (
       <li
@@ -140,7 +140,7 @@ export default function PerParty({
           <div class="barsGroup">
             <Bar
               {...{
-                percentActive,
+                active,
                 total,
                 background: 'black',
                 logo: 'x.png',
@@ -148,7 +148,7 @@ export default function PerParty({
             />
             <Bar
               {...{
-                percentActive: blueskyPercentActive,
+                active: blueskyActive,
                 total: blueskyTotal,
                 background: blueskyBlue,
                 suffix: '',
@@ -157,7 +157,7 @@ export default function PerParty({
             />
             <Bar
               {...{
-                percentActive: mastodonPercentActive,
+                active: mastodonActive,
                 total: mastodonTotal,
                 background: mastodonPurple,
                 suffix: '',
@@ -166,7 +166,7 @@ export default function PerParty({
             />
             <Bar
               {...{
-                percentActive: (count / firstPartyCount) * 100,
+                active: count,
                 text: `${count} députés`,
                 background: '#eee',
                 color: '#333',
@@ -203,37 +203,26 @@ export default function PerParty({
         <div class="barsGroup">
           <Bar
             {...{
-              percentActive: (
-                (blueskyAllParty / blueskyAllPartyTotal) *
-                100
-              ).toFixed(1),
+              active: blueskyAllParty,
               total: blueskyAllPartyTotal,
               background: blueskyBlue,
               suffix: '',
               logo: 'bluesky.svg',
+              digit: 1,
             }}
           />
           <Bar
             {...{
-              percentActive: (
-                (mastodonAllParty / mastodonAllPartyTotal) *
-                100
-              ).toFixed(1),
+              active: mastodonAllParty,
               total: mastodonAllPartyTotal,
               background: mastodonPurple,
               suffix: '',
               logo: 'mastodon.svg',
+              digit: 1,
             }}
           />
           <Bar
             {...{
-              percentActive:
-                (topPartiesEntries.reduce(
-                  (partialSum, [, a]) => partialSum + a,
-                  0,
-                ) /
-                  firstPartyCount) *
-                100,
               text: `${topPartiesEntries.reduce(
                 (partialSum, [, a]) => partialSum + a,
                 0,
