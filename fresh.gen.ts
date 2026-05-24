@@ -4,6 +4,7 @@
 
 import * as $_404 from "./routes/_404.tsx"
 import * as $_app from "./routes/_app.tsx"
+import * as $assemblee_index from "./routes/assemblee/index.tsx"
 import * as $bluesky from "./routes/bluesky.tsx"
 import * as $europe_bluesky from "./routes/europe/bluesky.tsx"
 import * as $europe_index from "./routes/europe/index.tsx"
@@ -15,7 +16,6 @@ import * as $greet_name_ from "./routes/greet/[name].tsx"
 import * as $index from "./routes/index.tsx"
 import * as $mastodon from "./routes/mastodon.tsx"
 import * as $methodo_index from "./routes/methodo/index.tsx"
-import * as $parlement_index from "./routes/parlement/index.tsx"
 import * as $parti_party_ from "./routes/parti/[party].tsx"
 import * as $Counter from "./islands/Counter.tsx"
 import * as $OpenBlueskyTabs from "./islands/OpenBlueskyTabs.tsx"
@@ -25,6 +25,7 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/assemblee/index.tsx": $assemblee_index,
     "./routes/bluesky.tsx": $bluesky,
     "./routes/europe/bluesky.tsx": $europe_bluesky,
     "./routes/europe/index.tsx": $europe_index,
@@ -36,7 +37,6 @@ const manifest = {
     "./routes/index.tsx": $index,
     "./routes/mastodon.tsx": $mastodon,
     "./routes/methodo/index.tsx": $methodo_index,
-    "./routes/parlement/index.tsx": $parlement_index,
     "./routes/parti/[party].tsx": $parti_party_,
   },
   islands: {
